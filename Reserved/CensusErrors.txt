@@ -1,6 +1,4 @@
 Guncho Mockup (for Glulx only).i7x by Guncho Cabal - an extension stored in the correct author's folder, but with the wrong filename (the extension says it is 'Guncho Mockup by Guncho Cabal')<br>
-Food.i7x~ by Helga - title contains a full stop<br>
-Animals.i7x~ by Helga - title contains a full stop<br>
 Save And Restore.i7x~ by Adri - title contains a full stop<br>
 Ur.i7x - non-folder found where author folders should be<br>
 Croppery.i7x by Zzybzfrx - appears not to be an extension (its first line does not end 'begin(s) here', as extension titling lines must)<br>

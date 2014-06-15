@@ -5,6 +5,7 @@ Use authorial modesty.
 Volume - Food
 
 A food is a kind of thing. A food is edible. Some kinds of foods are defined by the Table of Food Items.
+A food has a number called energy.
 A crop is a kind of food.
 
 Understand the command "lick" as "taste".
@@ -13,7 +14,7 @@ Understand the command "sniff" as "smell".
 
 After eating a food (called F):
 increase the player's energy by the energy of F;
-say "You ate the [F]. Mmm.[paragraph break][italic type]+[energy of F] Energy[roman type][paragraph break]"
+say "You ate the [F]. Mmm."
 
 Before eating a food for the first time: record "Kept your energy up" as achieved.
 
@@ -26,16 +27,15 @@ common crudite	"Everyday crudites served in an easy-to-carry cup."	5
 flummery	"Few things in this life are as tasty as a masterfully prepared flummery. 'Just like Mom used to make!' you might say. If you had a mom, that is."	5	"flummeries"
 bun	"A nice round bun."	1
 
-A tomato is a kind of crop. The plural of tomato is tomatoes. The description is "A ripe, heirloom-quality tomato.[first time][paragraph break][as the parser]Crop vegetables can be used for cooking, but you can also FEED them TO piggies. Piggies need to eat in order to produce meat.[as normal][only]"
+A tomato is a kind of crop. The plural of tomato is tomatoes. The description is "A ripe, heirloom-quality tomato.[first time][paragraph break][as the parser]Crop vegetables can be used for cooking, but you can also FEED them TO piggies. Piggies need to eat in order to produce meat.[as normal][only]".
+The energy of a tomato is 5.
 
-Six tomatoes are carried by the player.
-
-Instead of drinking a food:
-try eating the noun instead.
+Instead of drinking a food: try eating the noun.
 
 Volume - Drink
 
-A drink is a kind of thing. Some kinds of drinks are defined by the Table of Beverages.
+A drink is a kind of thing. Some kinds of drinks are defined by the Table of Beverages. A drink has a number called mood.
+A drink has a number called energy. Energy is usually 0.
 
 Table of Beverages
 Drink	Description	Mood
@@ -46,21 +46,42 @@ Before drinking a drink for the first time: record "Kept your mood up" as achiev
 
 Instead of drinking a drink (called D):
 increase the player's mood by the mood of D;
-say "You drank [a D]. Yum.[paragraph break][italic type]+[mood of D] Mood[roman type][paragraph break]";
+increase the player's energy by the energy of D;
+say "You drank [a D]. Yum.";
 remove D from play.
 
-Instead of eating a drink:
-try drinking the noun instead.
+Instead of eating a drink: try drinking the noun.
 
-Volume - Dairy Products
+Volume - Animal Resources
+
+Chapter - Meat
+
+A meat is a kind of food. The description is "A simple meat." The energy of meat is 10.
+
+One meat is part of the piggy.
+
+Chapter - Grain
+
+A grain is a kind of food. The description is "Some plain grain." The energy of grain is 1.
+
+One grain is part of the chicken.
 
 Chapter - Butterfly Milk
 
 A milk is a kind of drink. The printed name is "butterfly milk". Understand "butterfly milk" as milk.
 The description is "A vial of butterfly milk. It has the tingly effervescence of a thousand tiny butterfly farts.[first time][paragraph break][as the parser]You can SHAKE butterfly milk to create butter.[as normal][only]".
-Butterfly milk has a number called mood. The mood of butterfly milk is 6.
+The mood of milk is 6.
 
 One milk is part of the butterfly.
+
+Check smelling a milk:
+if player's mood < 41, say "Sniffing butterfly milk only works when you're feeling down." instead.
+
+Instead of smelling a milk:
+say "Butterfly milk smells like perfume from France. You experience a momentary surge of elation.";
+increase player's mood by 12.
+
+Volume - Dairy Products
 
 Shaking is an action applying to one thing.
 Understand "shake [something]" as shaking.
@@ -68,22 +89,17 @@ Carry out shaking: say "You shake it to the right. You shake it to the left. Not
 
 Instead of shaking a milk (called B):
 say "You shake the butterfly milk vigorously. Butterfly butter!";
-decrease player's energy by 5;
+decrease player's energy by 2;
 remove the B from play;
 let C be a random butter that is in staging;
 let the new butter be a new object cloned from C;
 now the player carries the new butter.
 
-["sniffing butterfly milk is advised for curing the blues"]
-
-Instead of smelling a milk:
-say "Butterfly milk smells like perfume from France. You experience a momentary surge of elation.";
-increase player's mood by 12.
-
 Chapter - Butterfly Butter
 
 A butter is a kind of food. The printed name is "butterfly butter". Understand "butterfly butter" as butter.
-The description is "Butterfly butter might seem like an odd thing, but it is used in many delicious cooking recipes.[first time][paragraph break][as the parser]You can COMPRESS butterfly butter into cheese.[as normal][only]"
+The description is "Butterfly butter might seem like an odd thing, but it is used in many delicious cooking recipes.[first time][paragraph break][as the parser]You can COMPRESS butterfly butter into cheese.[as normal][only]".
+The energy of butter is 10.
 
 Understand the command "compress" as "squeeze".
 
@@ -97,7 +113,8 @@ now the player carries the new basic cheese.
 
 Chapter - Cheese
 
-A basic cheese is a kind of food. The printed name is "cheese". The description is "A nice wedge of holey cheese.[first time][paragraph break][as the parser]Cheese can be made from butterfly milk. Cheese can also be [link]AGED[as]AGE cheese[end link].[as normal][only]"
+A basic cheese is a kind of food. The printed name is "cheese". The description is "A nice wedge of holey cheese.[first time][paragraph break][as the parser]Cheese can be made from butterfly milk. Cheese can also be [link]AGED[as]AGE cheese[end link].[as normal][only]".
+The energy of basic cheese is 15.
 
 Aging is an action applying to one thing.
 Understand "age [something]" as aging.
@@ -116,6 +133,7 @@ Book - Stinky Cheese
 
 A stinky cheese 1 is a kind of food. The printed name is "stinky cheese".
 The description is "A lump of cheese that's been left to stand around for a while. It's what the French call 'ripe'. You could age it longer, but glory only knows what the French would call it then."
+The energy of stinky cheese 1 is 21.
 
 Instead of smelling a stinky cheese 1:
 say "Yep. That's a stinky cheese all right."
@@ -139,6 +157,7 @@ Book - Very Stinky Cheese
 
 A stinky cheese 2 is a kind of food. The printed name is "very stinky cheese".
 The description is "Smelling like a manatee bathed in celery juice and old surgical stockings, goodness knows what would happen if you aged this connoisseurial cheese any longer. You could give it a go, though..."
+The energy of stinky cheese 2 is 27.
 
 Instead of aging a stinky cheese 2 (called C):
 say "Wow, is that ever draining. But the cheese [italic type]is[roman type] visibly aged.";
@@ -159,6 +178,7 @@ Book - Very, Very Stinky Cheese
 
 A stinky cheese 3 is a kind of food. The printed name is "very, very stinky cheese".
 The description is "This is the very, very stinkiest cheese you've ever seen, or it would be if you could see through the thick veil of tears it's inducing. You can't make this any stinkier. It wouldn't be fair to everyone else."
+The energy of stinky cheese 3 is 33.
 
 Instead of smelling a stinky cheese 3:
 say "At first sniff, this is one of the worst olfactory experiences of your life. On your second sniff, you experience an epiphany, which you forget almost immediately.";
@@ -241,11 +261,15 @@ A menu question rule (this is the prepare recipe rule):
 	let recipe be entry temp in the current question menu;
 	if recipe matches the text "Nevermind":
 		say "Ok. Maybe later.";
-	otherwise if recipe is a recipe listed in the Table of Recipes:
-		say "[link]PREPARE [recipe][end link][line break]";
+	otherwise if recipe matches the text "Cheezy Sammich":
+		try preparing "cheezy sammich";
+	otherwise if recipe matches the text "Meaty Sammich":
+		try preparing "meaty sammich";
+	otherwise if recipe matches the text "Lazy Salad":
+		try preparing "lazy salad";
 	exit.
-
-[TODO: How can I make this work??]
+        
+[TODO: How can I make this work across the board?]
 
 Check preparing:
 	if the topic understood is a topic listed in the Table of Recipes:

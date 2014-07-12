@@ -12,8 +12,10 @@ Understand the command "lick" as "taste".
 Understand the command "sniff" as something new.
 Understand the command "sniff" as "smell".
 
-After eating a food (called F):
+Before eating a food (called F):
 increase the player's energy by the energy of F;
+
+After eating a food (called F):
 say "You ate the [F]. Mmm."
 
 Before eating a food for the first time: record "Kept your energy up" as achieved.
@@ -205,7 +207,7 @@ Food-count is a number that varies. Food-count is 0.
 
 When EZ Cooking ends:
 record "Completed EZ Cooking" as achieved;
-if sound-allowed is 1, play sound of achievement in foreground;
+if sound-allowed is true, play sound of achievement in foreground;
 say "[as the parser]You have gained the EZ Cooking skill![paragraph break]As you explore the world and gain imagination, you will discover new cooking tools and learn new recipes. Eat a variety of foods to gain energy and imagination.[as normal]".
 
 Book - Requesting Recipes

@@ -95,7 +95,7 @@ Understand the command "place" or "stick" or "shove" or "stuff" as "put".
 
 Section - Extended Grammar for Switch
 
-Understand the command "activate" or "start" as "switch".
+Understand the command "activate" as "switch".
 Understand the command "deactivate" or "stop" as "switch".
 
 Section - Extended Grammar for Take

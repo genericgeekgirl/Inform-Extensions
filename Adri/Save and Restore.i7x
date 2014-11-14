@@ -26,9 +26,11 @@ Before reading a command when roguelike mode is true (this is the automatically 
 	write game data to the file of save data;
 	continue the action.
 
+[
 When play begins when roguelike mode is true (this is the restore when play begins rule):
 	if the file of save data exists:
 		read file of save data into memory.
+]
 
 Section - Default messages
 

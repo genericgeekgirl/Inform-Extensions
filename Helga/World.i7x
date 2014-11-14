@@ -11,14 +11,7 @@ Outside Ur is a region.
 Staging is a room in Outside Ur. "You should not be here. Something is broken." The printed name is "Go away."
 One butter, one basic cheese, one stinky cheese 1, one stinky cheese 2 and one stinky cheese 3 are in staging.
 
-Beginning is a room in Outside Ur. The printed name is "And so it begins...". "[as the parser]'[story title]' is a work of Interactive Fiction. You are the main character in this story, and I am the parser. Think of me as a direct conduit to the Minds of the Giants who are imaginging this whole universe. I'll be giving you some guidance, but it's up to you to do your part to help the world grow and thrive. The > prompt below is my way of asking you what you want to do next. You may respond by typing an instruction, usually an imperative verb. Try it out by typing [link]IMAGINE[end link] now.[as normal]"
-
-After reading a command when the location is Beginning and stage is complete:
-	if the player's command includes "imagine":
-		make no decision;
-	otherwise:
-		say "[as the parser][one of]No, no. 'IMAGINE'[or]'IMAGINE'. Give it a try[cycling].[as normal]";
-		reject the player's command.
+Beginning is a room in Outside Ur. The printed name is "And so it begins...". "[as the parser]'[story title]' is a work of Interactive Fiction. You are the main character in this story, and I am the parser. Think of me as a direct conduit to the Minds of the Giants who are imaginging this whole universe. I'll be giving you some guidance, but it's up to you to do your part to help the world grow and thrive. The > prompt below is my way of asking you what you want to do next. You may respond by typing an instruction, usually an imperative verb.[as normal]"
 
 The player is in Beginning.
 
@@ -32,26 +25,25 @@ Chapter - Next Step
 
 [Next Step needs some stuff to examine and a full description]
 
-Next Step is a street in Gentle_Island. The printed name is "The Next Step". "[one of][or][paragraph break][as the parser]Generally the first thing you want to do when starting a new game is to acquaint yourself with your surroundings and find out who you are. [link]LOOK[end link] around the room you are in. Sometimes getting a new look at your surroundings can help you figure out what you need to do next. Notice where the exits are and what objects are described.[as normal][or][if we have examined the player][otherwise][paragraph break][as the parser]If any items catch your interest, you can [link]EXAMINE[as]X ME[end link] (or X) them further. You can examine yourself ([link]X me[end link]) to get a better idea of who you are.[as normal][end if][stopping]"
+Next Step is a street in Gentle_Island. The printed name is "The Next Step". "[one of][or]DESCRIPTION[stopping]."
 
 After examining the player for the first time:
 now the bag is in the location.
 
 After taking the bag for the first time:
-say "Taken.[paragraph break][as the parser]You can [link]DROP[as]DROP bag[end link] anything you no longer wish to carry.[paragraph break][navigation][as normal]";
 record "Mastered the basic skills" as achieved;
 change the south exit of Next Step to Nylon Phool;
 change the southwest exit of Next Step to Ortolana;
 change the southeast exit of Next Step to May Soup.
 
 A bag is an open, openable and wearable container. A bag is a player's holdall.
-The description is "An honest, unpretentious burlap sack. You can put things in it.[first time][paragraph break][as the parser]You can [link]TAKE[as]TAKE bag[end link] some items to put them into your inventory[if side-window is g-present]. The list of items you are carrying is in the panel to the right[otherwise]. You can type [link]INVENTORY[end link] (or I) to see the list of items you are carrying[end if]. Try taking the bag.[as normal][only]"
+The description is "An honest, unpretentious burlap sack. You can put things in it."
 
-To say navigation: say "There are no compass directions in Ur. A list of adjacent streets (if any) is in the status line above. You can travel to any street simply by typing the name of the street. (Hint: In most cases, just the first word is enough.) Why don't you try going to [one of][link]Nylon Phool[end link][or][link]Ortolana[end link][or][link]May Soup[end link][at random]?"
+To say navigation: say "There are no compass directions in Ur. A list of adjacent streets (if any) is in the status line above. You can travel to any street simply by typing the name of the street."
 
 Chapter - Nylon Phool
 
-Nylon Phool is a street in Gentle_Island. "A twisty river flows next to this street and mushrooms grow on the rock walls.[first time][paragraph break][as the parser]There are animals all over and they can really help you out. But you usually have to be nice to them first. Why don't you [link]EXAMINE[as]EXAMINE butterfly[end link] one of the animals?[as normal][only]"
+Nylon Phool is a street in Gentle_Island. "A twisty river flows next to this street and mushrooms grow on the rock walls.[first time][paragraph break][as the parser]There are animals all over and they can really help you out. But you usually have to be nice to them first. Why don't you EXAMINE one of the animals?[as normal][only]"
 
 The skulls are scenery in Nylon Phool. The description is "A collection of skulls, just chilling on a mushroom. On closer look, you realize they're a strange species of mushroom. Whew."
 
@@ -155,7 +147,6 @@ Book - Dying
 To kill the player:
 now the player's energy is 0;
 now the player's mood is 0;
-clear the screen;
 say "Uh oh. You croaked! Bummer! Just find some hellish grapes on the ground in here and give them some good squashing. Keep going until you get out!";
 now the most recent location of the player is the location;
 move the graveside marker to the location;
@@ -199,8 +190,7 @@ now the item illustration of the player is Figure Player;
 if sound-allowed is true, stop the background sound;
 if sound-allowed is true, play sound of forest in background with loop;
 move the player to the most recent location of the player;
-depict figure blank;
-clear the screen;
+depict figure blank.
   
 Does the player mean attacking the grapes: it is very likely.
 

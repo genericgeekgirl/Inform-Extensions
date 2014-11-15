@@ -25,19 +25,25 @@ Chapter - Next Step
 
 [Next Step needs some stuff to examine and a full description]
 
-Next Step is a street in Gentle_Island. The printed name is "The Next Step". "DESCRIPTION."
+Next Step is a street in Gentle_Island. The printed name is "The Next Step". "DESCRIPTION.[one of][or][paragraph break][as the parser]There are no compass directions in Ur. A list of adjacent streets (if any) is in the status line above. You can travel to any street simply by typing the name of the street. Why don't you try going to [link]Nylon Phool[end link]?[as normal][or][stopping]"
 
-After examining the player for the first time:
-now the bag is in the location.
-
-After taking the bag for the first time:
-record "Mastered the basic skills" as achieved;
+When play begins:
 change the south exit of Next Step to Nylon Phool;
 change the southwest exit of Next Step to Ortolana;
 change the southeast exit of Next Step to May Soup.
 
+After examining the player for the first time:
+now the bag is in the location.
+
 A bag is an open, openable and wearable container. A bag is a player's holdall.
 The description is "An honest, unpretentious burlap sack. You can put things in it."
+
+Before going from Next Step:
+	if the bag is not enclosed by the player:
+		say "You pause to pick up the bag.";
+		move the bag to the player;
+	record "Mastered the basic skills" as achieved;
+	now tutorial mode is false.
 
 To say navigation: say "There are no compass directions in Ur. A list of adjacent streets (if any) is in the status line above. You can travel to any street simply by typing the name of the street."
 

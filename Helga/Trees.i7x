@@ -69,7 +69,7 @@ Carry out tree (called T) increasing maturity:
 if maturity of T < 10, increase the maturity of T by 1.
 
 After examining a tree for the first time:
-say "Regular watering and petting keeps trees happy and healthy.[paragraph break]The fruit tree says, 'Cough, cough. My, but I am thirsty. If you could [link]WATER[as]water cherry tree[end link] me, I would be very grateful.'"
+say "Regular watering and petting keeps trees happy and healthy.[paragraph break]The fruit tree says, 'Cough, cough. My, but I am thirsty. If you could water me, I would be very grateful.'"
 
 Volume - Watering
 

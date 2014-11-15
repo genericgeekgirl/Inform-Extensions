@@ -11,7 +11,7 @@ Outside Ur is a region.
 Staging is a room in Outside Ur. "You should not be here. Something is broken." The printed name is "Go away."
 One butter, one basic cheese, one stinky cheese 1, one stinky cheese 2 and one stinky cheese 3 are in staging.
 
-Beginning is a room in Outside Ur. The printed name is "And so it begins...". "[as the parser]'[story title]' is a work of Interactive Fiction. You are the main character in this story, and I am the parser. Think of me as a direct conduit to the Minds of the Giants who are imaginging this whole universe. I'll be giving you some guidance, but it's up to you to do your part to help the world grow and thrive. The > prompt below is my way of asking you what you want to do next. You may respond by typing an instruction, usually an imperative verb.[as normal]"
+Beginning is a room in Outside Ur. The printed name is "And so it begins...". "[first time][quotation-two][paragraph break][only][as the parser]'[story title]' is a work of Interactive Fiction. You are the main character in this story, and I am the parser.[paragraph break]Think of me as a direct conduit to the Minds of the Giants who are imaginging this whole universe. I'll be giving you some guidance, but it's up to you to do your part to help the world grow and thrive.[as normal]"
 
 The player is in Beginning.
 
@@ -25,7 +25,7 @@ Chapter - Next Step
 
 [Next Step needs some stuff to examine and a full description]
 
-Next Step is a street in Gentle_Island. The printed name is "The Next Step". "[one of][or]DESCRIPTION[stopping]."
+Next Step is a street in Gentle_Island. The printed name is "The Next Step". "DESCRIPTION."
 
 After examining the player for the first time:
 now the bag is in the location.
@@ -43,7 +43,7 @@ To say navigation: say "There are no compass directions in Ur. A list of adjacen
 
 Chapter - Nylon Phool
 
-Nylon Phool is a street in Gentle_Island. "A twisty river flows next to this street and mushrooms grow on the rock walls.[first time][paragraph break][as the parser]There are animals all over and they can really help you out. But you usually have to be nice to them first. Why don't you EXAMINE one of the animals?[as normal][only]"
+Nylon Phool is a street in Gentle_Island. "A twisty river flows next to this street and mushrooms grow on the rock walls.[first time][paragraph break][as the parser]There are animals all over and they can really help you out. But you usually have to be nice to them first. Why don't you examine one of the animals?[as normal][only]"
 
 The skulls are scenery in Nylon Phool. The description is "A collection of skulls, just chilling on a mushroom. On closer look, you realize they're a strange species of mushroom. Whew."
 
@@ -51,7 +51,7 @@ The butterfly, the piggy, the chicken are in Nylon Phool.
 
 Chapter - Ortolana
 
-Ortolana is a street in Gentle_Island. "The homes on this street are made from hollowed out bottle trees. You can enter one of the huts by going [link]INSIDE[end link]. The local flora consists of groddle plants, bogwillow, firebean plants, cattails and mushrooms. Unripe barnacles are forming on the side of the huts.[first time][paragraph break][as the parser]Eating food gives you energy, and energy keeps you alive. [link]EAT[as]EAT flummery[end link] the flummery and common crudites.[paragraph break]Drinks give you mood. When you're happy, the Giants are happy, and you earn more Imagination. So keep your mood up. [link]DRINK[as]DRINK grog[end link] the spicy grog and fruity juice.[as normal][only]"
+Ortolana is a street in Gentle_Island. "The homes on this street are made from hollowed out bottle trees. You can enter one of the huts by going INSIDE. The local flora consists of groddle plants, bogwillow, firebean plants, cattails and mushrooms. Unripe barnacles are forming on the side of the huts.[first time][paragraph break][as the parser]Eating food gives you energy, and energy keeps you alive. EAT the flummery and common crudites.[paragraph break]Drinks give you mood. When you're happy, the Giants are happy, and you earn more Imagination. So keep your mood up. DRINK the spicy grog and fruity juice.[as normal][only]"
 
 The table is a supporter and scenery in Ortolana. One common crudites, one flummery, one spicy grog and one fruity juice are on the table.
 
@@ -59,7 +59,7 @@ The hut is scenery in Ortolana.
 
 Chapter - Shimla Shack
 
-Shimla Shack is a room in Gentle_Island. "You are inside a firebog house. A stained red rug covers the floor and the walls are adorned with paper talismans, charms and strings of dried lizards. You can go [link]OUT[end link] to return to Ortolana.[first time][paragraph break][as the parser]In Ur, there are lots of things to harvest, craft and eat.[as normal][only]";
+Shimla Shack is a room in Gentle_Island. "You are inside a firebog house. A stained red rug covers the floor and the walls are adorned with paper talismans, charms and strings of dried lizards. You can go OUTSIDE to return to Ortolana.[first time][paragraph break][as the parser]In Ur, there are lots of things to harvest, craft and eat.[as normal][only]";
 
 SSDoor is an open unopenable door and scenery. It is inside from Ortolana and outside from Shimla Shack.
 

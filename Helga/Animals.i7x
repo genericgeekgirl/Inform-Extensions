@@ -20,7 +20,7 @@ Before doing anything to a thing (called T): depict the item illustration of T.
 Volume - Butterfly
 
 A butterfly is an animal. The plural of butterfly is butterflies.
-The description is "A morphously blue butterfly. As any fool knows, butter can't fly, but milk apparently can. Butterflies may need a little kindness before they give up the milk, but milk can always be turned into butter... and cheese... and who knows what else?[first time][paragraph break][as the parser]Butterflies require a [link]MASSAGE[as]massage butterfly[end link] before being milked.[as normal][only]" 
+The description is "A morphously blue butterfly. As any fool knows, butter can't fly, but milk apparently can. Butterflies may need a little kindness before they give up the milk, but milk can always be turned into butter... and cheese... and who knows what else?[first time][paragraph break][as the parser]Butterflies require a MASSAGE before being milked.[as normal][only]" 
 
 The butterfly can be ready to milk. The butterfly is not ready to milk.
 
@@ -37,7 +37,7 @@ Check touching a butterfly (this is the massages require lotion rule):
 		say "The butterfly says, '[one of]Ow! Why not just rub me with gravel?!'[or]OMFG! 2 DRY! UR rubbish.'[or]Ooo, ow, no, bad, stoppit.'[or]Jeez, if you can’t do it properly...'[or]Git ur dry hands off! Yow!'[in random order][line break]Massaging a butterfly without lotion? That's not nice. It's too dry." instead.
 
 Carry out touching the butterfly:
-say "You massaged a butterfly.[paragraph break]The butterfly says, '[one of]Thnx, Bigthing.'[or]OMG ur like, gr8'[line break][or]AWSUM msrg.'[or]i <3 u + ur msrgs'[line break][or]K thnx ttyl :)'[line break][or]Msrg! I <3 msrgs! \o/'[line break][or]LOL! Ur, like, all msrgy!'[or]i <333 u!!!!1!'[or]Thnx!'[or]K THNX 4 MSRG BAI!'[or]Ur nice 4 msrgin me. xoxo'[line break][or]OMG UR AWSM! \o/'[line break][or]<333 msrgs'[line break][in random order][first time][line break][as the parser]There you go. Now you can [link]MILK[as]MILK butterfly[end link] the butterfly.[as normal][only]";
+say "You massaged a butterfly.[paragraph break]The butterfly says, '[one of]Thnx, Bigthing.'[or]OMG ur like, gr8'[line break][or]AWSUM msrg.'[or]i <3 u + ur msrgs'[line break][or]K thnx ttyl :)'[line break][or]Msrg! I <3 msrgs! \o/'[line break][or]LOL! Ur, like, all msrgy!'[or]i <333 u!!!!1!'[or]Thnx!'[or]K THNX 4 MSRG BAI!'[or]Ur nice 4 msrgin me. xoxo'[line break][or]OMG UR AWSM! \o/'[line break][or]<333 msrgs'[line break][in random order][first time][line break][as the parser]There you go. Now you can milk the butterfly.[as normal][only]";
 if sound-allowed is true, play sound of massage butterfly in foreground.
 
 After touching the butterfly:
@@ -120,7 +120,7 @@ After milking the butterfly:
 Volume - Chicken
 
 A chicken is an animal.
-The description is "An easily agitated member of the poultry classes. Given to flights of fearful fantasy, high-pitched paranoia and, frankly, short distances, chickens are a reliable source of grain (it's said that they keep it in the hot pockets under their wings).[first time][paragraph break][as the parser]Chickens give up grain with a simple [link]SQUEEZE[as]SQUEEZE chicken[end link].[as normal][only]"
+The description is "An easily agitated member of the poultry classes. Given to flights of fearful fantasy, high-pitched paranoia and, frankly, short distances, chickens are a reliable source of grain (it's said that they keep it in the hot pockets under their wings).[first time][paragraph break][as the parser]Chickens give up grain with a simple SQUEEZE.[as normal][only]"
 
 The chicken can be incubating. The chicken is not incubating.
 
@@ -180,7 +180,7 @@ say "What kind of weirdo squeezes an incubating chicken?" instead.
 Volume - Piggy
 
 The piggy is an animal. Understand "pig" as a piggy. The plural of piggy is piggies.
-The description is "One happy little porcine with a laidback attitude to life and a lot of love to give. Whether wild or domestic, the piggy gives wisdom from one end, useful gardening supplies from the other, and delicious meat from everywhere inbetween.[first time][paragraph break][as the parser]Piggies can be nibbled to gain meat. But they prefer to be [link]PET[as]PET piggy[end link] first.[as normal][only]"
+The description is "One happy little porcine with a laidback attitude to life and a lot of love to give. Whether wild or domestic, the piggy gives wisdom from one end, useful gardening supplies from the other, and delicious meat from everywhere inbetween.[first time][paragraph break][as the parser]Piggies can be nibbled to gain meat. But they prefer to be PET first.[as normal][only]"
 
 The piggy can be ready to nibble. The piggy is not ready to nibble.
 The piggy has a number called meat count. Meat count is 5.
@@ -198,7 +198,7 @@ Carry out touching the piggy:
 say "You petted a piggy.[paragraph break]The piggy says, '[one of]Duuuuude. I'm, like super-relaxed[or]You pet like a pro, bro[or]I don't think any pig has ever been this relaxed[or]So relaxed. You should probably know I fart when I'm relaxed[or]Super-sick petting action, pal[or]Dude, you literally could not suck less at this[or]Sweet, dude. Sweet[or]You're some handy dandler, I'll give you that[or]A firm hand cures all gnarliness. Yes[in random order].'";
 if sound-allowed is true, play sound of pet piggy in foreground;
 
-Before touching the piggy for the first time: say "[as the parser]That's the stuff. Now, having petted the piggy, you might give it a little [link]NIBBLE[as]NIBBLE piggy[end link].[as normal]"
+Before touching the piggy for the first time: say "[as the parser]That's the stuff. Now, having petted the piggy, you might give it a little NIBBLE.[as normal]"
 
 After touching the piggy:
 decrease player's energy by 4;

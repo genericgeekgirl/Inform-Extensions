@@ -115,7 +115,7 @@ now the player carries the new basic cheese.
 
 Chapter - Cheese
 
-A basic cheese is a kind of food. The printed name is "cheese". The description is "A nice wedge of holey cheese.[first time][paragraph break][as the parser]Cheese can be made from butterfly milk. Cheese can also be [link]AGED[as]AGE cheese[end link].[as normal][only]".
+A basic cheese is a kind of food. The printed name is "cheese". The description is "A nice wedge of holey cheese.[first time][paragraph break][as the parser]Cheese can be made from butterfly milk. Cheese can also be AGED.[as normal][only]".
 The energy of basic cheese is 15.
 
 Aging is an action applying to one thing.
@@ -236,7 +236,7 @@ Carry out requesting recipes:
 		repeat through the Table of Recipes:
 			if the known entry is 1 and the tool entry is Knifen Board:
 				say "[line break][recipe entry] ([ingredients entry])";
-		say "[first time][paragraph break][as the parser]Now [link]PREPARE[as]PREPARE salad[end link] a lazy salad.[as normal][only][line break]".
+		say "[first time][paragraph break][as the parser]Now PREPARE a lazy salad.[as normal][only][line break]".
 
 Book - Preparing Food
 

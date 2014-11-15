@@ -1,4 +1,4 @@
-Save and Restore (for Glulx only) by Adri begins here.
+Save and Restore (for Glulx only) by Helga begins here.
 
 [Note: This extension has been adapted ever-so-slightly from Victor Gijsbers' Kerkerkruip Permadeath]
 
@@ -37,7 +37,7 @@ Section - Default messages
 Restoring from a saved game is an activity.
 
 For restoring from a saved game (this is the default roguelike restore rule):
-	say "[bracket][bold type]Game successfully restored.[roman type][close bracket][line break]";
+	say "[as the parser]Welcome back.[as normal][line break]";
 	try looking.
 
 Section - Blocking SAVE and RESTORE commands

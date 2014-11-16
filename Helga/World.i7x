@@ -27,10 +27,11 @@ Chapter - Next Step
 
 Next Step is a street in Gentle_Island. The printed name is "The Next Step". "DESCRIPTION.[one of][or][paragraph break][as the parser]There are no compass directions in Ur. A list of adjacent streets (if any) is in the status line above. You can travel to any street simply by typing the name of the street. Why don't you try going to [link]Nylon Phool[end link]?[as normal][or][stopping]"
 
+[one-way directions]
 When play begins:
-change the south exit of Next Step to Nylon Phool;
-change the southwest exit of Next Step to Ortolana;
-change the southeast exit of Next Step to May Soup.
+	change the south exit of Next Step to Nylon Phool;
+	change the southwest exit of Next Step to Ortolana;
+	change the southeast exit of Next Step to May Soup.
 
 [ DEBUG
 After examining the player for the first time:
@@ -40,8 +41,9 @@ now the bag is in the location.
 A bag is an open, openable and wearable container. A bag is a player's holdall.
 The description is "An honest, unpretentious burlap sack. You can put things in it."
 
+[DEBUG]
 The player carries the bag.
-The player is in Nylon Phool.
+The player is in Ortolana.
 
 Before going from Next Step:
 	if the bag is not enclosed by the player:
@@ -54,7 +56,7 @@ To say navigation: say "There are no compass directions in Ur. A list of adjacen
 
 Chapter - Nylon Phool
 
-Nylon Phool is a street in Gentle_Island. "A twisty river flows next to this street and mushrooms grow on the rock walls.[first time][paragraph break][as the parser]There are animals all over and they can really help you out. But you usually have to be nice to them first. Why don't you examine one of the animals?[as normal][only]"
+Nylon Phool is a street in Gentle_Island. "A twisty river flows next to this street and mushrooms grow on the rock walls.[first time][paragraph break][as the parser]There are animals all over and they can really help you out. But you usually have to be nice to them first.[as normal][only]"
 
 The skulls are scenery in Nylon Phool. The description is "A collection of skulls, just chilling on a mushroom. On closer look, you realize they're a strange species of mushroom. Whew."
 
@@ -62,7 +64,7 @@ One butterfly, one piggy and one chicken are in Nylon Phool.
 
 Chapter - Ortolana
 
-Ortolana is a street in Gentle_Island. "The homes on this street are made from hollowed out bottle trees. You can enter one of the huts by going INSIDE. The local flora consists of groddle plants, bogwillow, firebean plants, cattails and mushrooms. Unripe barnacles are forming on the side of the huts.[first time][paragraph break][as the parser]Eating food gives you energy, and energy keeps you alive. EAT the flummery and common crudites.[paragraph break]Drinks give you mood. When you're happy, the Giants are happy, and you earn more Imagination. So keep your mood up. DRINK the spicy grog and fruity juice.[as normal][only]"
+Ortolana is a street in Gentle_Island. "The homes on this street are made from hollowed out bottle trees. You can enter one of the huts by going INSIDE. The local flora consists of groddle plants, bogwillow, firebean plants, cattails and mushrooms. Unripe barnacles are forming on the side of the huts."
 
 The table is a supporter and scenery in Ortolana. One common crudites, one flummery, one spicy grog and one fruity juice are on the table.
 

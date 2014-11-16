@@ -11,7 +11,7 @@ Animal Kinship ends when a milk has been handled and a meat has been handled and
 When Animal Kinship ends:
 	record "Completed Animal Kinship" as achieved;
 	if sound-allowed is true, play sound of achievement in foreground;
-	say "[as the parser]You have gained the Animal Kinship skill![as normal]".
+	say "[italic type]You have gained the Animal Kinship skill![roman type]".
 
 Volume - Animals
         
@@ -85,7 +85,9 @@ Check using a lotion on something:
 		say "Nuh-uh. This lotion doesn't work on [printed plural name of second noun]. Only butterflies." instead.
 
 Before using a lotion (called L):
-	if the player does not enclose L, try silently taking L.
+	if the player does not enclose L:
+		try silently taking L;
+		say "You pick up a bottle of lotion.[paragraph break]"
          
 Book - Singing
 
@@ -119,6 +121,10 @@ Book - Milking
 
 Milking is an action applying to one thing.
 Understand "milk [something]" as milking.
+
+Before doing anything except taking to a milk (called M):
+	if M is part of a butterfly:
+		say "You can't see any such thing." instead.
 
 Before taking a milk (called M):
 	if M is part of a butterfly:
@@ -202,6 +208,10 @@ The innuendo about squeezing people rule is not listed in any rulebook.
 Instead of touching a chicken:
 	say "You give the chicken a nice pat. It clucks in surprise."
 
+Before doing anything except taking to a grain (called G):
+	if G is part of a chicken:
+		say "You can't see any such thing." instead.
+
 Before taking a grain (called G):
 	if G is part of a chicken:
 		let C be a random chicken in the location;
@@ -242,6 +252,10 @@ Understand the command "pet" and "love" as "touch".
 
 Before squeezing a piggy:
 	say "Piggies do not enjoy being squeezed. Try petting it instead." instead.
+
+Before doing anything except taking to a meat (called M):
+	if M is part of a piggy:
+		say "You can't see any such thing." instead.
 
 Before taking a meat (called M):
 	if M is part of a piggy:

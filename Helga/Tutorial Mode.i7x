@@ -2,7 +2,7 @@ Tutorial Mode by Helga begins here.
 
 "Modified from Tutorial Mode, Version 2, by Emily Short, for use specifically with Discover a World."
 
-Tutorial mode is a truth state that varies. Tutorial mode is true;
+Tutorial mode is a truth state that varies. Tutorial mode is false;
 
 Section - Making Suggestions
 

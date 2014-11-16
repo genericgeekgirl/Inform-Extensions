@@ -2,6 +2,10 @@
 
 Use authorial modesty.
 
+Book - Rules
+
+Before doing anything to a thing (called T): depict the item illustration of T.
+
 Book - Title Page
 
 Figure Banner is the file "banner.png".

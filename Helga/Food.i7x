@@ -60,13 +60,13 @@ Chapter - Meat
 
 A meat is a kind of food. The description is "A simple meat." The energy of meat is 10.
 
-One meat is part of the piggy.
+One meat is part of every piggy.
 
 Chapter - Grain
 
 A grain is a kind of food. The description is "Some plain grain." The energy of grain is 1.
 
-One grain is part of the chicken.
+One grain is part of every chicken.
 
 Chapter - Butterfly Milk
 
@@ -74,7 +74,7 @@ A milk is a kind of drink. The printed name is "butterfly milk". Understand "but
 The description is "A vial of butterfly milk. It has the tingly effervescence of a thousand tiny butterfly farts.[first time][paragraph break][as the parser]You can SHAKE butterfly milk to create butter.[as normal][only]".
 The mood of milk is 6.
 
-One milk is part of the butterfly.
+One milk is part of every butterfly.
 
 Check smelling a milk:
 if player's mood < 41, say "Sniffing butterfly milk only works when you're feeling down." instead.
@@ -217,13 +217,19 @@ Understand "RECIPES" and "RECIPE" as requesting recipes.
 
 A utensil is a kind of thing.
 
-A knifen board is a utensil. The description is "A good knife and cutting board. They can be used to make simple foods.[first time][paragraph break][as the parser]You can type RECIPES at any time to see what recipes you know.[as normal][only]"
+A knifen board is a utensil. The description is "A good knife and cutting board. They can be used to make simple foods[first time].[paragraph break][as the parser]You can type RECIPES at any time to see what recipes you know[as normal][only]." Understand "cutting board" as knifen board.
+
+Instead of using the knifen board: try requesting recipes.
+Before using the knifen board when the knifen board is not enclosed by the player: try taking the knifen board.
 
 Table of Recipes
 Topic	Recipe	Known	Tool	Ingredients
 "meaty sammich" or "meaty"	"Meaty Sammich"	1	Knifen Board	{"a bun", "a meat"}
 "cheezy sammich" or "cheezy" or "cheesy" or "cheesy sammich"	"Cheezy Sammich"	1	Knifen Board	{"a bun", "a cheese"}
 "lazy salad" or "lazy"	"Lazy Salad"	1	Knifen Board	{"a tomato", "a cheese"}
+
+Understand the command "cut" as something new.
+Understand "cut [something]" as a mistake ("You don't need to do that.")
 
 One lazy salad, one meaty sammich and one cheezy sammich are part of the knifen board.
 

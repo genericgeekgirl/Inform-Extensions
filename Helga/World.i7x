@@ -13,7 +13,7 @@ One butter, one basic cheese, one stinky cheese 1, one stinky cheese 2 and one s
 
 Beginning is a room in Outside Ur. The printed name is "And so it begins...". "[first time][quotation-two][paragraph break][only][as the parser]'[story title]' is a work of Interactive Fiction. You are the main character in this story, and I am the parser.[paragraph break]Think of me as a direct conduit to the Minds of the Giants who are imaginging this whole universe. I'll be giving you some guidance, but it's up to you to do your part to help the world grow and thrive.[as normal]"
 
-The player is in Beginning.
+[The player is in Beginning. DEBUG]
 
 Volume - Gentle Island
 
@@ -32,11 +32,16 @@ change the south exit of Next Step to Nylon Phool;
 change the southwest exit of Next Step to Ortolana;
 change the southeast exit of Next Step to May Soup.
 
+[ DEBUG
 After examining the player for the first time:
 now the bag is in the location.
+]
 
 A bag is an open, openable and wearable container. A bag is a player's holdall.
 The description is "An honest, unpretentious burlap sack. You can put things in it."
+
+The player carries the bag.
+The player is in Nylon Phool.
 
 Before going from Next Step:
 	if the bag is not enclosed by the player:
@@ -53,7 +58,7 @@ Nylon Phool is a street in Gentle_Island. "A twisty river flows next to this str
 
 The skulls are scenery in Nylon Phool. The description is "A collection of skulls, just chilling on a mushroom. On closer look, you realize they're a strange species of mushroom. Whew."
 
-The butterfly, the piggy, the chicken are in Nylon Phool.
+One butterfly, one piggy and one chicken are in Nylon Phool.
 
 Chapter - Ortolana
 

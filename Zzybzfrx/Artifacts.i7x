@@ -10,7 +10,9 @@ Book - Butterfly Bone Hair Clip
 A butterfly bone hair clip is an artifact.
 The description is "This hair-clip belonged to Gwendolyn, but was lost when a strong wind from a quick-approaching storm swept belongings out her open window. Originally given to her by her cousin, Earnest, on the occasion of her memorization of the 137 verses of the first Book of Cosma, the clip is made of hand carved butterfly bones and encrusted with the dust of shiny elements."
 
-A piece of butterfly bone hair clip is a kind of artifact-piece.
+A butterfly_bone_hair_clip_piece is a kind of artifact.
+
+A piece of butterfly bone hair clip is a kind of butterfly_bone_hair_clip_piece.
 The description is "One of four fragments that make up Gwendolyn's long-forgotten hair-clip. Acquire them all to remember it again."
 The plural of piece of butterfly bone hair clip is pieces of butterfly bone hair clip.
 
@@ -19,7 +21,9 @@ Book - Chicken-Shaped Brick
 A chicken-shaped brick is an artifact.
 The description is "Children of the houses of Friendly got used at a young age to their special skill of squeezing chickens. Partly because they were taught at night, when chickens are notoriously easier to sneak up on, and partly because, once they went to bed, they were put down with a heated brick in the shape of poultry. This is one of those."
 
-A piece of chicken-shaped brick is a kind of artifact-piece.
+A chicken_shaped_brick_piece is a kind of artifact.
+
+A piece of chicken-shaped brick is a kind of chicken_shaped_brick_piece.
 The description is "A piece of brick that resembles one fifth of a chicken and is warm to the touch. All of them will likely combine to make a whole fowl."
 The plural of piece of chicken-shaped brick is pieces of chicken-shaped brick.
 
@@ -28,7 +32,9 @@ Book - Woolly Glove Darned with a Metal Finger
 A woolly glove darned with a metal finger is an artifact.
 The description is "Brother and sister, Tanu and Sitha, once each had a pair of gloves. When one glove was lost, Tanu and Sitha used the three remaining gloves between them, holding hands inside the third wherever they went out. When another glove was lost, they only went out in snow one at a time. But down to one glove, they simply sat at home making sure the remaining glove would never be lost. The metal finger on this one may look harmless, but is unbreakable, the weight of an elephant and once on, refuses to leave the finger of whomsoever it has been placed upon."
 
-A piece of woolly glove darned with a metal finger is a kind of artifact-piece.
+A wooly_glove_piece is a kind of artifact.
+
+A piece of woolly glove darned with a metal finger is a kind of wooly_glove_piece.
 The description is "A shred of wool and a chunk of metal that look remarkably like one third of a glove."
 The plural of piece of woolly glove darned with a metal finger is pieces of woolly glove darned with a metal finger.
 

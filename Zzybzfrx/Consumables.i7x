@@ -1,21 +1,4 @@
-﻿Consumables by Zzybzfrx begins here.
-
-Use authorial modesty.
-
-Include Items by Zzybzfrx.
-Include Player by Zzybzfrx.
-
-Volume - Food
-
-A food is a kind of thing. A food is edible.
-
-A food has a number called energy. Energy is usually 1.
-A food has a number called base_cost. Base_cost is usually 0.
-
-Understand the command "lick" as "taste".
-Understand the command "sniff" as something new.
-Understand the command "sniff" as "smell".
-
+﻿A food has a number called energy. Energy is usually 1.
 Understand the command "poke" and "prod" and "palpitate" as "touch".
 
 Chapter - Abbasid Ribs
@@ -28,41 +11,13 @@ Chapter - Applejack
 An applejack is a kind of food.
 The description is "A bowl of apple-y, oat-y, cinnamon-y applejack. Yummy hot or cold."
 
-Chapter - Apple
-
-An apple is a kind of food.
-The description is "A boldly red and brazenly juicy apple."
-The energy of an apple is 10.
-
-After eating an apple:
-say "An apple a day keeps the plague doctor away.".
-
-Instead of tasting an apple:
-say "You licked an Apple. Mmmm, 'Appley'!".
-
 Chapter - Awesome Stew
 
 An awesome stew is a kind of food.
 The description is "Chunky awesome stew, so thick you can eat it with a spork."
 
-Chapter - Rasher of Bacon
 
-A rasher of bacon is a kind of food.
-The description is "A delicious, greasy, surprise Piggy treat from the Piggy's newly discovered Orthogonal Meat Generator (OMG)."
-The plural of rasher of bacon is rashers of bacon.
-The energy of rasher of bacon is 5.
 
-Instead of smelling a rasher of bacon:
-say "Something smells delicious.";
-increase player's mood by 5.
-
-Chapter - Banana
-
-A banana is a kind of food.
-The description is "A bright yellow, potassium-rich banana."
-
-[caress: "Oops, you squashed it! You can't just go to town on a Banana like that; you have to be delicate."]
-[with 1/3 chance; otherwise: mood +5 "Feels so smooth"]
 
 Chapter - Banana No-Names
 
@@ -89,14 +44,7 @@ Chapter - Big Salad
 A big salad is a kind of food.
 The description is "It's bigger than small. It's a big salad."
 
-Chapter - Birch Candy
 
-A birch candy is a kind of food.
-The description is "Candy made of boiled birch syrup so concentrated and so sweet that one too many and you may see god. Or at least the tooth fairy. And they'll be crying."
-The plural of birch candy is birch candies.
-
-[sugar rush: "OMGiant! Harder Faster Better Stronger Sugar Sugar Sugar Sugar!"; lasts 2 minutes; +28 mood; then sugar crash]
-[Sugar crash: mood -40, energy -20]
 
 Chapter - Birch Syrup
 
@@ -126,107 +74,14 @@ The description is "Butterfly butter might seem like an odd thing, but it is use
 
 [compress: "You squeeze the butterfly butter with all your might and cheese appears!", -5 energy, turns into cheese]
 
-Chapter - Raw Bio-Organic Carob-ish Treat
 
-A raw bio-organic carob-ish treat is a kind of food.
-The description is "A chewy, crunchy, apparently ethically-sourced, gritty 'candy-alternative' with a whiff of winter. Leaves a unique chocolatey aftertang you can't quite put your finger on."
 
-[sugar rush, followed by sugar crash]
+
 
 Chapter - Cheese Plate
 
 A cheese plate is a kind of food.
 The description is "An assortment of fine cheeses."
-
-Chapter - Cheese
-
-A basic cheese is a kind of food. The printed name is "cheese".
-The description is "A nice wedge of holey cheese."
-The energy of a basic cheese is 15.
-
-Aging is an action applying to one thing.
-Understand "age" as aging.
-Carry out aging: say "You can't age that!"
-
-Instead of aging a basic cheese (called C):
-say "You put the cheese in your pocket for a while and it ages nicely. It left a bit of a smell in your pocket though.";
-decrease player's energy by 5;
-decrease player's mood by 5;
-[remove the C from play;]
-[now the player carries a random stinky cheese 1 that is off-stage.]
-
-Instead of smelling a basic cheese:
-increase player's mood by 10;
-decrease player's energy by 5;
-say "It smells fairly nice. It might smell nicer if you aged it." 
-
-Book - Stinky Cheese
-
-A stinky cheese 1 is a kind of food. The printed name is "stinky cheese".
-The description is "A lump of cheese that's been left to stand around for a while. It's what the French call 'ripe'. You could age it longer, but glory only knows what the French would call it then."
-
-Instead of smelling a stinky cheese 1:
-say "Yep. That's a stinky cheese all right."
-
-Instead of aging a stinky cheese 1 (called C):
-say "If you concentrate really hard on it, the cheese does indeed age.";
-decrease player's energy by 10;
-[remove C from play;]
-[now the player carries a random stinky cheese 2 that is off-stage.]
-
-Instead of tasting a stinky cheese 1:
-say "Awesome. Now you have stink-tongue.";
-decrease player's mood by 20.
-
-After eating a stinky cheese 1: 
-say "Stinky Cheese? Not bad. Would have been better with some stinky crackers, though.";
-increase the player's energy by 21.
-
-Book - Very Stinky Cheese
-
-A stinky cheese 2 is a kind of food. The printed name is "very stinky cheese".
-The description is "Smelling like a manatee bathed in celery juice and old surgical stockings, goodness knows what would happen if you aged this connoisseurial cheese any longer. You could give it a go, though..."
-
-Instead of aging a stinky cheese 2 (called C):
-say "Wow, is that ever draining. But the cheese [italic type]is[roman type] visibly aged.";
-decrease player's mood by 20;
-decrease player's energy by 20;
-[remove C from play;]
-[now the player carries a random stinky cheese 3 that is off-stage.]
-
-Instead of smelling a stinky cheese 2:
-say "Phew. That [italic type]is[roman type] very stinky."
-
-After eating a stinky cheese 2:
-say "After all the hubbub about the very stinky cheese, its actual stinkiness is a little anti-climactic.";
-increase the player's energy by 27.
-
-Instead of touching a stinky cheese 2:
-say "After sticking an investigatory pinkie in the soft, gooey cheese, you encounter a hard object. You pull it out. It's a small shiny object with no intrinsic value!";
-decrease player's energy by 10;
-[now the player carries a random small shiny object that is off-stage.]
-
-Book - Very, Very Stinky Cheese
-
-A stinky cheese 3 is a kind of food. The printed name is "very, very stinky cheese".
-The description is "This is the very, very stinkiest cheese you've ever seen, or it would be if you could see through the thick veil of tears it's inducing. You can't make this any stinkier. It wouldn't be fair to everyone else."
-
-Instead of smelling a stinky cheese 3:
-say "At first sniff, this is one of the worst olfactory experiences of your life. On your second sniff, you experience an epiphany, which you forget almost immediately. The cheese was destroyed by your intense sniffing.";
-increase player's mood by 50;
-decrease player's energy by 50;
-remove the stinky cheese 3 from play.
-
-Instead of aging a stinky cheese 3:
-say "You couldn't possibly age this cheese any more."
-
-After eating stinky cheese 3:
-say "In addition to dazzling your friends with your intestinal fortitude, you also reap the very, very stinky cheese's bounteous nutritional benefits.";
-increase player's energy by 33.
-
-Instead of touching the stinky cheese 3:
-say "That was not a good idea. It's going to take a while for that finger-stink to wear off.";
-decrease player's mood by 50.
 
 Book - Fancy Cheese
 
@@ -279,12 +134,6 @@ Chapter - Corn-off-the-Cob
 A corn-off-the-cob is a kind of food.
 The description is "All the goodness of corn-on-the-cob, without the cob."
 
-Chapter - Hi-Sucrose Corn Syrup Square
-
-A hi-sucrose corn syrup square is a kind of food.
-The description is "Densely-packed brick of pure brain-melting sweetness, proving that sometimes the sum of many food items is either something that is only fit for use as building material in a fairy unicorn happy-palace, or a candy."
-
-[sugar rush, followed by sugar crash]
 
 Chapter - Corny Fritter
 
@@ -410,21 +259,6 @@ Chapter - Hash
 A hash is a kind of food.
 The description is "A serving of oddly satisfying hash."
 The plural of hash is hashes.
-
-Chapter - Hearty Groddle Sammich
-
-A hearty groddle sammich is a kind of food.
-The description is "A meaty Groddle sammich with extra hot in fizzy sauce for extra hot in fizzy energy."
-The plural of hearty groddle sammich is hearty groddle sammiches.
-
-[Hearty Feeling: "You feel like you can weather anything. Even bad weather." (immune from ill effects of cold for 1 minute)]
-
-Chapter - Hearty Omelet
-
-A hearty omelet is a kind of food.
-The description is "An unusually nourishing hearty omelet."
-
-[Hearty Feeling]
 
 Chapter - Heston Mash
 
@@ -620,16 +454,9 @@ Chapter - Pickle
 A pickle is a kind of food.
 The description is "A seriously crunchy pickle."
 
-Chapter - Pi
 
-A pi is a kind of food.
-The description is "The recipe for Pi was described in ancient times by Alphimedes of Salatu, who also purportedly invented a heat ray for attacking the Rook. (If the heat ray ever existed, it has long since been lost.) It was later improved upon by Ludolph the Cerulean, named for his bright blue skin. Ludolph gave a Pi to several of the giants. Tii immediately stated that Pi was irrational. Pot, on the other hand, declared this to be the best pie he’d ever eaten - transcendental, in fact."
 
-[square pi => "Pi aren't square! Pies are round!"]
-[eat pi => "You suddenly feel as though you have 3141 digits, and yet, you feel strangely incomplete." ]
-[estimate pi => random number, estimate that many digits and grant favor that is the sum of those digits. 
-"Estimate pi. You get 3,1,4,1,5,9, and 2 favor with Tii, for a total of 25 favor.
-digits: 3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9, 7, 9, 3]
+
 
 Chapter - Pineapple
 
@@ -678,14 +505,13 @@ Chapter - Proper Rice
 A proper rice is a kind of food.
 The description is "A steaming bowl of slightly sticky rice."
 
-Chapter - Pumpkin Pie
 
-A pumpkin pie is a kind of food.
-The description is "When people use the phrase 'as nice as pie', they are, in fact, talking about this pie. What goes into it? Fresh pumpkin, crispy pastry, spicy spices, and a big dollop of love. (That's an attitude rather than a hidden ingredient, before you start feeling nauseous)."
 
-["Who ate all the pie? You did, and it was awesome."
-increase player's energy by 120;
-increase player's mood by 120.]
+
+
+
+
+
 
 Chapter - Red
 
@@ -707,13 +533,27 @@ Chapter - Salmon Jaella
 A salmon jaella is a kind of food.
 The description is "An assortment of fresh Salmon from Jal, Rice, Legumes and veggies thrown together into a dish Jal-loving Glitchen identified themselves by."
 
-Chapter - Pocket Salmon
 
-A pocket salmon is a kind of food.
-The description is "It's like salmon, but in your pocket! Pocket Salmon! The handy friendly fish-at-your-fingertips that's always ready to go! Why settle for boring old underwater catch-me-if-you-calmon-salmon when you could have the ever-accessible, always-dependable, never-stinky always-yummy Pocket Salmon instead! POCKET SALMON! [bracket]TM. Always read the label. Terms and conditions apply[close bracket]".
-The plural of pocket salmon is pocket salmen.
 
-[release salmon]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Chapter - Sammich
 
@@ -912,10 +752,135 @@ Chapter - Wicked Bolognese Sauce
 A wicked bolognese sauce is a kind of food.
 The description is "A small jar of wicked bolognese sauce, on spaghetti or on its own for a meaty treat."
 
+
+
 Chapter - Yummy Gruel
 
 A yummy gruel is a kind of food.
 The description is "Somewhat-fizzy-but-still-yummy gruel."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------
+
+
+
+Chapter - Apple
+
+An apple is a kind of food.
+The description is "A boldly red and brazenly juicy apple."
+The energy of an apple is 10.
+
+After eating an apple:
+say "An apple a day keeps the plague doctor away.".
+
+Instead of tasting an apple:
+say "You licked an Apple. Mmmm, 'Appley'!".
+
+Chapter - Hearty Groddle Sammich
+
+A hearty groddle sammich is a kind of food.
+The description is "A meaty Groddle sammich with extra hot in fizzy sauce for extra hot in fizzy energy."
+The plural of hearty groddle sammich is hearty groddle sammiches.
+
+[Hearty Feeling: "You feel like you can weather anything. Even bad weather." (immune from ill effects of cold for 1 minute)]
+
+Chapter - Hearty Omelet
+
+A hearty omelet is a kind of food.
+The description is "An unusually nourishing hearty omelet."
+
+[Hearty Feeling]
+
+Chapter - Rasher of Bacon
+
+A rasher of bacon is a kind of food.
+The description is "A delicious, greasy, surprise Piggy treat from the Piggy's newly discovered Orthogonal Meat Generator (OMG)."
+The plural of rasher of bacon is rashers of bacon.
+The energy of rasher of bacon is 5.
+
+Instead of smelling a rasher of bacon:
+say "Something smells delicious.";
+increase player's mood by 5.
+
+Chapter - Banana
+
+A banana is a kind of food.
+The description is "A bright yellow, potassium-rich banana."
+
+[caress: "Oops, you squashed it! You can't just go to town on a Banana like that; you have to be delicate."]
+[with 1/3 chance; otherwise: mood +5 "Feels so smooth"]
+
+Chapter - Birch Candy
+
+A birch candy is a kind of food.
+The description is "Candy made of boiled birch syrup so concentrated and so sweet that one too many and you may see god. Or at least the tooth fairy. And they'll be crying."
+The plural of birch candy is birch candies.
+
+[sugar rush: "OMGiant! Harder Faster Better Stronger Sugar Sugar Sugar Sugar!"; lasts 2 minutes; +28 mood; then sugar crash]
+[Sugar crash: mood -40, energy -20]
+
+Chapter - Raw Bio-Organic Carob-ish Treat
+
+A raw bio-organic carob-ish treat is a kind of food.
+The description is "A chewy, crunchy, apparently ethically-sourced, gritty 'candy-alternative' with a whiff of winter. Leaves a unique chocolatey aftertang you can't quite put your finger on."
+
+[sugar rush, followed by sugar crash]
+
+Chapter - Hi-Sucrose Corn Syrup Square
+
+A hi-sucrose corn syrup square is a kind of food.
+The description is "Densely-packed brick of pure brain-melting sweetness, proving that sometimes the sum of many food items is either something that is only fit for use as building material in a fairy unicorn happy-palace, or a candy."
+
+[sugar rush, followed by sugar crash]
+
+Chapter - Pi
+
+A pi is a kind of food.
+The description is "The recipe for Pi was described in ancient times by Alphimedes of Salatu, who also purportedly invented a heat ray for attacking the Rook. (If the heat ray ever existed, it has long since been lost.) It was later improved upon by Ludolph the Cerulean, named for his bright blue skin. Ludolph gave a Pi to several of the giants. Tii immediately stated that Pi was irrational. Pot, on the other hand, declared this to be the best pie he’d ever eaten - transcendental, in fact."
+
+[square pi => "Pi aren't square! Pies are round!"]
+[eat pi => "You suddenly feel as though you have 3141 digits, and yet, you feel strangely incomplete." ]
+[estimate pi => random number, estimate that many digits and grant favor that is the sum of those digits. 
+"Estimate pi. You get 3,1,4,1,5,9, and 2 favor with Tii, for a total of 25 favor.
+digits: 3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8, 9, 7, 9, 3]
+
+Chapter - Pumpkin Pie
+
+A pumpkin pie is a kind of food.
+The description is "When people use the phrase 'as nice as pie', they are, in fact, talking about this pie. What goes into it? Fresh pumpkin, crispy pastry, spicy spices, and a big dollop of love. (That's an attitude rather than a hidden ingredient, before you start feeling nauseous)."
+
+["Who ate all the pie? You did, and it was awesome."
+increase player's energy by 120;
+increase player's mood by 120.]
+
+Chapter - Pocket Salmon
+
+A pocket salmon is a kind of food.
+The description is "It's like salmon, but in your pocket! Pocket Salmon! The handy friendly fish-at-your-fingertips that's always ready to go! Why settle for boring old underwater catch-me-if-you-calmon-salmon when you could have the ever-accessible, always-dependable, never-stinky always-yummy Pocket Salmon instead! POCKET SALMON! [bracket]TM. Always read the label. Terms and conditions apply[close bracket]".
+The plural of pocket salmon is pocket salmen.
+
+[release salmon]
 
 [unused buff: chocolate high; lasts 6 minutes; +90 mood, +60 energy; followed by a sugar crash.]
 

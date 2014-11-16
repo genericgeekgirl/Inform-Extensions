@@ -193,6 +193,15 @@ Instead of smelling a stinky cheese 2:
 After eating a stinky cheese 2:
 	say "After all the hubbub about the very stinky cheese, its actual stinkiness is a little anti-climactic."
 
+[        
+Instead of touching a stinky cheese 2:
+say "After sticking an investigatory pinkie in the soft, gooey cheese, you encounter a hard object. You pull it out. It's a small shiny object with
+no intrinsic value!";
+decrease player's energy by 10;
+[now the player carries a random small shiny object that is off-stage.]
+]
+
+        
 Book - Very, Very Stinky Cheese
 
 A stinky cheese 3 is a kind of food. The printed name is "very, very stinky cheese".

@@ -43,7 +43,7 @@ The description is "An honest, unpretentious burlap sack. You can put things in 
 
 [DEBUG]
 The player carries the bag.
-The player is in Ortolana.
+The player is in May Soup.
 
 Before going from Next Step:
 	if the bag is not enclosed by the player:
@@ -80,8 +80,6 @@ The counter is a supporter and scenery in Shimla Shack. Six tomatoes, one basic 
 
 Chapter - May Soup
 
-Before going to May Soup, say "That area isn't ready yet! Sorry." instead.
-
 May Soup is a street in Gentle_Island.
 
 The fruit tree, the spice plant and the watering can are in May Soup.
@@ -91,13 +89,15 @@ Chapter - Namaste
 Namaste is a street in Gentle_Island. "This street is home to red, blue and purple trees, various ferns, a cluster of Grass Guys and a strange Purple Creature[if the teleporter is unlocked]. There is a large wooden sign here[end if]."
 
 When leaving begins:
-Now the room illustration of Namaste is Figure Namaste Sign;
-move the sign to Namaste;
-change the south exit of Namaste to Savanna Sunset.
+	Now the room illustration of Namaste is Figure Namaste Sign;
+	move the sign to Namaste;
+	change the south exit of Namaste to Savanna Sunset.
 
-The purple creature is a person and scenery in Namaste. Understand "strange" and "strange purple creature" as purple creature. The description is "It looks a bit like a ghost. Less scary, though, what with being purple."
+The purple creature is a person and scenery in Namaste. Understand "strange" and "strange purple creature" as purple creature.
+The description is "It looks a bit like a ghost. Less scary, though, what with being purple."
 
-The grass guys is a person and scenery in Namaste. The description is "Someone has painted faces on these rocks. Or maybe they're alive. You're not quite sure."
+The grass guys is a person and scenery in Namaste.
+The description is "Someone has painted faces on these rocks. Or maybe they're alive. You're not quite sure."
 
 A sign is a thing. The description is "The sign reads 'This way to leave Gentle Island'. The arrow points towards [link]Savanna Sunset[end link]." Understand "arrow" as the sign. Understand "wooden sign" and "wooden" and "large wooden sign" as sign.
 
@@ -116,13 +116,14 @@ Every turn while the teleporter is locked:
 		now the teleporter is unlocked;
 		say "[as the parser]You are about ready to see what the world has to offer: plumb the depths of Ilmenskie Caverns, ascend the heights of Rasana and fly through the trees of Roobrik... there's a lot to explore! The way off Gentle Island is pretty easy to find. Find it. Take it. Do it!![as normal]".
 
+                
 [if EZ Cooking has happened and Animal Kinship has happened and Light Green Thumb has happened, now the teleporter is unlocked.]
 
 Instead of entering the teleporter:
-record "Found your way off the island" as achieved;
-now player's mood is maximum mood;
-now player's energy is maximum energy;
-end the story finally saying "You have finished the tutorial!"
+	record "Found your way off the island" as achieved;
+	now player's mood is maximum mood;
+	now player's energy is maximum energy;
+	end the story finally saying "You have finished the tutorial!"
 
 Leaving is a scene. Leaving begins when the teleporter is unlocked.
 
@@ -150,24 +151,27 @@ Trisor is scenery in Hell One. The description is "It's a giant floating stone w
 
 Hole to Hell is an open unopenable door and scenery. It is down from Hell One. Through Hole to Hell is Hell One. "This hole leads to the rest of Naraka."
 
-Before going down from Hell One: say "Naraka may not be suitable for those with a sensitive disposition. Also, you have a tutorial to complete." instead.
-instead of entering Hole to Hell: try going down.
+Before going down from Hell One:
+	say "Naraka may not be suitable for those with a sensitive disposition. Also, you have a tutorial to complete." instead.
+
+Instead of entering Hole to Hell:
+	try going down.
 
 Understand "complete tutorial" as a mistake ("Haha, no. It's not that easy.").
 
 Book - Dying
 
 To kill the player:
-now the player's energy is 0;
-now the player's mood is 0;
-say "Uh oh. You croaked! Bummer! Just find some hellish grapes on the ground in here and give them some good squashing. Keep going until you get out!";
-now the most recent location of the player is the location;
-move the graveside marker to the location;
-move the player to Hell One;
-depict Figure blank;
-if sound-allowed is true, stop the background sound;
-if sound-allowed is true, play sound of hell in background with loop;
-now the item illustration of the player is Figure Dead.
+	now the player's energy is 0;
+	now the player's mood is 0;
+	say "Uh oh. You croaked! Bummer! Just find some hellish grapes on the ground in here and give them some good squashing. Keep going until you get out!";
+	now the most recent location of the player is the location;
+	move the graveside marker to the location;
+	move the player to Hell One;
+	depict Figure blank;
+	if sound-allowed is true, stop the background sound;
+	if sound-allowed is true, play sound of hell in background with loop;
+	now the item illustration of the player is Figure Dead.
 
 Book - Resurrection
 
@@ -183,44 +187,46 @@ The description is "A deceptively innocuous-looking bunch of hellish grapes."
 The plural of bunch of hellish grapes is bunches of hellish grapes.
 
 Instead of taking the bunch of hellish grapes:
-say "You need to squash the grapes. You cannot have them."
+	say "You need to squash the grapes. You cannot have them."
 
 Grapes-squished is a number that varies. Grapes-squished is 0.
 
+[
 Before eating the bunch of hellish grapes:
-say "I said 'squash'. Not 'eat'." instead.
-
+	say "I said 'squash'. Not 'eat'." instead.
+]
+        
 Understand the command "squish" and "crush" as attack.
 Instead of squeezing the grapes: try attacking the grapes.
 
 To revive the player:
-say "[paragraph break]You have been revived.";
-record "Died... and resurrected yourself" as achieved;
-now the player's energy is maximum energy / 2;
-now the player's mood is maximum mood / 2;
-now grapes-squished is 0;
-now the item illustration of the player is Figure Player;
-if sound-allowed is true, stop the background sound;
-if sound-allowed is true, play sound of forest in background with loop;
-move the player to the most recent location of the player;
-depict figure blank.
+	say "[paragraph break]You have been revived.";
+	record "Died... and resurrected yourself" as achieved;
+	now the player's energy is maximum energy / 2;
+	now the player's mood is maximum mood / 2;
+	now grapes-squished is 0;
+	now the item illustration of the player is Figure Player;
+	if sound-allowed is true, stop the background sound;
+	if sound-allowed is true, play sound of forest in background with loop;
+	move the player to the most recent location of the player;
+	depict figure blank.
   
 Does the player mean attacking the grapes: it is very likely.
 
 Instead of attacking the bunch of hellish grapes:
-say "You [one of]squish[or]squash[or]crush[at random] a bunch of hellish grapes. Another bunch of grapes appears immediately.";
-increase grapes-squished by 1;
-if sound-allowed is true, play sound of squishing grapes in foreground;
-if grapes-squished is 4, revive the player.
+	say "You [one of]squish[or]squash[or]crush[at random] a bunch of hellish grapes. Another bunch of grapes appears immediately.";
+	increase grapes-squished by 1;
+	if sound-allowed is true, play sound of squishing grapes in foreground;
+	if grapes-squished is 4, revive the player.
 
 Instead of dropping something when the location is Hell One:
-say "You cannot drop that here."
+	say "You cannot drop that here."
 
 Instead of eating something when the location is Hell One:
-say "You are dead. You have no need for food."
+	say "You are dead. You have no need for food."
 
 Instead of drinking something when the location is Hell One:
-say "You are dead. You have no need for drink."
-[exception: wine of the dead]
+	say "You are dead. You have no need for drink."
+	[exception: wine of the dead]
 
 World ends here.

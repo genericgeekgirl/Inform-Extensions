@@ -25,8 +25,13 @@ The description is "A morphously blue butterfly. As any fool knows, butter can't
 
 A butterfly can be ready to milk. A butterfly is usually not ready to milk.
 
-Check taking a butterfly:
-	say "You'll never catch it with your bare hands." instead.
+A butterfly has a number called lifepoints. Lifepoints is usually 400.
+
+Book - Capture
+
+Check taking a butterfly: say "You'll never catch it with your bare hands." instead.
+
+A butterfly net is a kind of thing. The description is "It sure makes catching Butterflies easier, but at what cost?"
 
 Book - Massaging
 
@@ -162,6 +167,8 @@ The description of a chicken is "An easily agitated member of the poultry classe
 Check taking a chicken:
 	say "You try to scoop the chicken up in your arms, but it squawks loudly and flutters away." instead.
 
+A chicken has a number called lifepoints. Lifepoints is usually 2000.
+        
 Book - Incubation (TODO)
 
 A chicken can be incubating. A chicken is usually not incubating.
@@ -241,11 +248,19 @@ The description of a piggy is "One happy little porcine with a laidback attitude
 A piggy can be ready to nibble. A piggy is usually not ready to nibble.
 A piggy has a number called meat count. Meat count is usually 5.
 
-Check taking a piggy:
-	say "The piggy says, [piggy-capture-fail]" instead.
+A piggy has a number called hungerpoints. Hungerpoints is usually 0.
+[0 is satiated, 10 is about to die; base-cost of at least 5 resets hunger to 0; nibbling increases hunger; hunger over 4 cannot be nibbled.]
+[If there is a Tree on the street, they will feed off the tree instead (shrinking the tree one growth level)]
+[Dead pigs leave 10 meet and a plop containing random seeds]
 
-To say piggy-capture-fail: say "'[one of]No way, dude! I'm not a one-Glitch piggy[or]Man, I'm totally not ready to settle down[or]I like to think of myself as a free spirit[or]Not today, friend. I'm happy chewing on this gnarly patch[or]No, dude. I'm dandy just hangin' out here. Mañana[at random].'".
+Book - Capture
+
+Check taking a piggy: say "The piggy says, [piggy-capture-fail]" instead.
         
+To say piggy-capture-fail: say "'[one of]No way, dude! I'm not a one-Glitch piggy[or]Man, I'm totally not ready to settle down[or]I like to think of myself as a free spirit[or]Not today, friend. I'm happy chewing on this gnarly patch[or]No, dude. I'm dandy just hangin' out here. Mañana[at random].'".
+
+A pig bait is a kind of thing. The description is "A sack of tempting pig bait. It can be used to try to capture wild piggies."
+
 Book - Petting
 
 Understand the command "pet" and "love" as "touch".
@@ -357,7 +372,7 @@ After a piggy (called P) eating something:
 
 Check feeding something to a sad piggy:
 	say "This pig is too upset by its surroundings to think about food." instead.
-                        
+
 Chapter - Piggy Plops (TODO)
 
 A plop is a kind of thing. The printed name is "piggy plop". Understand "piggy plop" as plop.
@@ -398,10 +413,224 @@ Instead of eating or tasting a plop:
 
 Volume - Crab (TODO)
 
-The crab is an animal. The description is "Anyone knows music makes crabs happy, but it takes an expert DJ to satiate both the appetite for variety and yen for classic tunes it desires. The tunesmith who can play a full array of songs will be richly rewarded."
+The crab is an animal.
+The description is "Anyone knows music makes crabs happy, but it takes an expert DJ to satiate both the appetite for variety and yen for classic tunes it desires. The tunesmith who can play a full array of songs will be richly rewarded."
 
 A crab can be flattered. The crab is not flattered.
 
 [verbs: hug, flatter, pinch, insult]
 
+Volume - Fox (TODO)
+
+A fox is a kind of animal. The plural of fox is foxes.
+The description is "The sly, cunning, quick brown fox has a tail full of fibers perfect for spinning. Shifting position quickly, you can rely on a fox to be fast-paced, slippery and hard to pin down, they care deeply about some things (getting as much bait as they can, giving up as few tail hairs as possible to society) but interact very little with the real world."
+
+To say brushed: say "[one of]Oof! You got me![or]I was quick, you were quicker![at random]"
+
+A fox bait is a kind of thing.
+The description is "A nugget of fox-pleasing goodness, filled with every fox's favourite flavours. Proof positive that you catch more foxes with Fox Bait than you do with vinegar (just in case anyone suggested the alternative, which on reflection seems unlikely)."
+
+Volume - Salmon (TODO)
+
+A salmon fish is a kind of animal. The printed name is "salmon". The plural of salmon fish is salmen.
+The description is "One fresh, wild, slinky, slippery salmon. Some say there is a soul of a Glitch contained within each salmon. In which case,
+souls taste delicious when stuffed in your pocket then grilled up on a nice rustic plank."
+
+A boot is a kind of thing.
+A pocket salmon is a kind of thing.
+
+Pocketing is an action applying to one thing.
+Understand "pocket [something]" as pocketing.
+Carry out pocketing: say "I'm sorry. I don't know what you mean by that."
+
+Instead of pocketing a salmon fish:
+	let N be a random number between 1 and 10;
+	if N is 1:
+		say "You have caught a... boot?!?";
+		now the player carries a random boot that is off-stage;
+	otherwise:
+		say "You pocket the salmon.";
+		now the player carries a random pocket salmon that is off-stage.
+
+Volume - Batterfly (TODO)
+
+A batterfly is a kind of animal. The plural of batterfly is batterflies.
+The description is "Found in caverns (where the perpetual darkness may account for their pissy mood) it has been shown that Batterflies, when fed at one end, produce useful agricultural materials from the other."
+
+Volume - Guano Production
+
+Understand "feed [something] to [batterfly]" as feeding it to.
+
+A batterfly has a number called BC_Counter. BC_Counter is usually 0.
+
+Instead of feeding something to a batterfly (called B):
+	Increase the BC_Counter of B by the energy of the noun;
+	if the BC_Counter of B is less than 15:
+		say "The batterfly says, [batterfly_guano_0]";
+	otherwise:
+		now the BC_Counter of B is 0;
+		if the BC_Counter of B is less than 50:
+			say "The batterfly says, [batterfly_guano_1]";
+		otherwise if the BC_Counter of B is less than 100:
+			say "The batterfly says, [batterfly_guano_2]";
+		otherwise:
+			say "The batterfly says, [batterfly_guano_3]".
+
+To say batterfly_guano_0: say "[one of]Nope. No poop.[or]*Unnngh* Nope.[or]For that? nothing.[or]My stomach is not even full.[or]I don't really need to go yet.[at random]"
+
+To say batterfly_guano_1: say "[one of]poop[or]*heaving sigh*[or]this is all you deserve[or]small comfort for you[or]a little gift from the darkness[at random]"
+
+To say batterfly_guano_2: say "[one of]poop poop[or]*deep sigh*[or]this is all you're getting[or]a measure of comfort for your trouble, yes?[or]a Glitch-sized guanoparcel from the deep[at random]"
+
+To say batterfly_guano_3: say "[one of]happy poopday. poop poop poop.[or]*sigh*[or]this is all i have[or]make yourself comfortable with this[or]giant guanogifts for your dungeonic overkindness[at random]";
+
+Book - Batterfly Bounty Booster Bar
+
+A batterfly bounty booster bar is a kind of thing.
+The description is "An extremely potent concoction which is rumored to produce a prodigious amount of Guano from a Batterfly."
+
 Animals ends here.
+
+[TODO: Talk to animals.]
+
+[butterflies, chickens and piggys: Revive, Apply Balm, Apply Youth, Name, Rename]
+["Revive this $animal with some Rook Balm."
+"Make this $animal young again."
+"Give this $animal a name."
+"Change this $animal's name."
+"Help this $animal escape the effects of The Rook."
+"Release this $animal into the wilderness."
+"You need to know Herdkeeping to set animals free."
+"Are you sure you want to let your $animal out into the wilderness?"
+"Your $animal has gone to enjoy its life in the wilderness."]
+
+To say wisdom: say "[one of]A pig in the hand is worth two in the poke.[or]After you tend a weedy patch, plant something quickly, or all your efforts will be for naught.[or]Cherries are the root of all fruits[or]Cosma does not remember the butterflies, but we remember her.[or]Don't sweat the petty things. Also, don't pet the sweaty things.[or]Don't take any wooden coins.[or]Have you been hoeing weedy patches to no avail? Soil Appreciation will help you.[or]If a plant isn't hungry, don't feed it, silly.[or]If you want to choose what kinds of beans to plant, you're going to need a Bean Seasoner.[or]Now is the Kukubee Winter of our discontent.[or]Of course the chicken came before the egg. That's why it crossed the road.[or]What is the sound of one piggy napping?[or]You'll have more luck nibbling piggies if you pet and feed them first.[cycling]"
+
+Volume - Seasoned Eggs
+
+A seasoned egg is a kind of thing.
+
+Book - Butterfly Egg
+
+A butterfly egg is a kind of seasoned egg.
+The description is "An egg seasoned with the specific mix of lepidopteral herbs and spices to hatch a Caterpillar."
+
+Book - Piggy Egg
+
+A piggy egg is a kind of seasoned egg.
+The description is "An egg seasoned with special porcine spices to hatch a Piglet."
+
+Book - Chicken Egg
+
+A chicken egg is a kind of seasoned egg.
+The description is "An egg treated with special poultry seasoning to hatch a Chick."
+
+Volume - Baby Animals
+
+to say sad_baby_animal: say "'[one of]Don't like it here. It's smelly.[or]I don't like this. You promised me fun. This isn't fun.[or]I don't wanna be here.[or]I'm BORED.[or]Take me away from here, it's lame. I hate it.[or]This is boring, why did you bring me here? It's lame.[or]What is this place anyway, it's rubbish, take me somewhere else.[or]Where ARE we? It's Lame-o. LAME-O.[at random]'"
+
+[TODO: if fed in the inventory, a fully-fed animal will automatically drop to the ground]
+
+Book - Caterpillar
+
+A caterpillar is a kind of animal.
+The description is "A proto-Butterfly. It needs to be fed to blossom into a full-Butterfly."
+
+One butterfly is part of every caterpillar.
+
+Chapter - Feeding
+
+A bubble is a kind of thing.
+A green leaf is a kind of thing.
+
+Check feeding something to a caterpillar:
+	if the noun is not a bubble and the noun is not a green leaf:
+		say "Caterpillars like leaves and things that pop." instead.
+
+Carry out feeding something to a caterpillar (called C):
+	say "You feed [a noun] to the caterpillar.";
+	say "It grew into a Butterfly!";
+	[replace caterpillar with butterfly]
+
+Check feeding something to a sad caterpillar:
+	say "The caterpillar is too busy complaining to eat." instead.
+
+Book - Chick
+
+A chick is a kind of animal.
+The description is "A wide-eyed chick, fresh from the egg. It needs grain in order to reach full chickenhood."
+
+One chicken is part of every chick.
+
+Chapter - Feeding
+
+A chick has a number called feed_count.
+
+Check feeding something to a chick:
+	if the noun is not a grain:
+		say "Chicks need to eat grain to grow." instead.
+
+Carry out feeding something to a chick (called C):
+	say "You feed [a noun] to the chick.";
+	increase feed_count of C by 1;
+	if feed_count is 10:
+		say "It grew into a Chicken!"
+		[replace chick with chicken]
+
+Check feeding something to a sad chick:
+	say "This chick is off its food in these uncomfortable surroundings!" instead.
+
+Chapter - Smiling
+
+Smiling at is an action applying to one thing.
+Understand "smile at [something]" as smiling at.
+
+Carry out smiling at: say "You smile at [the noun]."
+
+Instead of smiling at a chick: 
+	say "You smiled at a Chick. The chick stares back at you with its unblinking little eyes. For such a small creature, this is surprisingly unnerving.";
+	decrease player's mood by 3.
+
+Instead of smiling at a sad chick:
+	say "The chick's unblinking gaze conveys its extreme distaste for its surroundings. You feel embarrassed for smiling at it.";
+	decrease player's mood by 5.
+
+Book - Piglet
+
+A piglet is a kind of animal.
+The description is "One wiggly little piggly. He wants to turn into a big pig. Feed him nourishing plant-y food to help him grow."
+
+One piggy is part of every piglet.
+
+Chapter - Feeding
+
+A piglet has a number called feed_count.
+
+Check feeding something to a sad piglet:
+	say "This place seems to give this piglet the howling fantods, and it refuses food." instead.
+
+Check feeding something to a piglet:
+	if the noun is not a crop, say "Piggies will eat just about anything that grows in the ground." instead.
+
+Carry out feeding something to a piglet (called P):
+	say "You feed [a noun] to the piglet.";
+	increase feed_count of P by 1;
+	if feed_count is 3:
+		say "It grew into a Piggy!"
+		[replace piglet with piggy]
+
+Chapter - Humming
+
+Understand the command "hum" as "sing".
+
+Carry out singing to a piglet:
+	say "You hum an off-key hum. Fortunately, piggies are tone deaf. The piglet squirms delightedly. You squirm a little bit, too."
+
+After singing to a piglet:
+	decrease player's energy by 2;
+	increase player's mood by 2.
+
+Instead of singing to a sad piglet:
+	say "You hum an off-key hum, but the piglet is too unhappy here to notice. Its misery is contagious.";
+	decrease the player's mood by 2;
+	decrease the player's energy by 2.

@@ -152,37 +152,10 @@ Volume - Basic Resources
 
 A basic resource is a kind of resource.
 
-Book - Allspice
-
-An allspice is a kind of basic resource.
-The description is "Some basic spice, freshly harvested from a Spice Plant."
-The base_cost of Allspice is 3.
-
-Considering allspice is an action applying to one thing.
-Understand "consider [allspice]" as considering allspice.
-
-Carry out considering allspice:
-say "Allspice may be the most basic of spices, but it deserves some consideration, too. Together you share a moment of mutual contemplation.";
-increase score by 2;
-decrease energy by 5.
-
 Book - Mortar Barnacle
 
 A mortar barnacle is a kind of basic resource.
 The description is "If clinging to things is a skill, this little fella was a champion. Once prised from a cluster (or 'Blister') of pals, Barnacles can be introduced to the Grinder to find a new purpose."
-
-Book - Bean
-
-A bean is a kind of basic resource.
-The description is "A bean."
-The base_cost of a bean is 1.
-
-Book - Cherry
-
-A cherry is a kind of basic resource.
-The description is "A basic cherry, freshly picked from a Fruit Tree."
-The plural of cherry is cherries.
-The base_cost of Cherry is 1.
 
 Book - Lump of Earth
 
@@ -191,41 +164,11 @@ The description is "Many have tried to sum up the wonder of Earth, with superlat
 The plural of lump of earth is lumps of earth.
 The base_cost of a lump of earth is 3.
 
-Book - Egg
-
-A plain egg is a kind of basic resource. The printed name is "egg".
-The description is "A plain, unseasoned egg, newly harvested from an Egg Plant."
-The base_cost of an egg is 5.
-
-Nogging is an action applying to one thing.
-Understand "nog [something]" as nogging.
-Carry out nogging: say "I am uncertain how to do that."
-Instead of nogging an egg: say "You nogged an egg. It was a creamy, but ultimately unsatisfying experience."
-
-[Seasoning is an action.]
-
 Book - Fiber
 
 A fiber is a kind of basic resource.
 The description is "A patch of downy hair brushed from the tail of a fox, perfect for spinning into thread or stuffing into furniture for padding.  Also might be perfect for gluing to your face as a moustache, but due to its origin (the underside of a fox tail), no one does."
 The base_cost of a fiber is 1.
-
-Book - General Vapour
-
-A general vapour is a kind of basic resource.
-The description is "A flask of all-purpose general vapour, harvested from a Gas Plant."
-The base_cost of a general vapour is 5.
-
-Understand "shake [general vapour]" as shaking.
-
-Instead of shaking general vapour:
-say "What?!? Didn't your mother ever warn you not to shake your gases? You're lucky general vapor isn't volatile."
-
-Book - Grain
-
-A grain is a kind of basic resource.
-The description is "Some plain grain."
-The base_cost of a grain is 1.
 
 Book - Guano
 
@@ -246,32 +189,13 @@ The description is "Ah, loam sweet loam. Moist and fertile, and leagues above pl
 The plural of lump of loam is lumps of loam.
 The base_cost of a lump of loam is 10.
 
-Book - Meat
-
-A meat is a kind of basic resource.
-The description is "A simple meat."
-The base_cost of a meat is 10.
-
-Book - Paper
-
-A paper is a kind of basic resource.
-The description is "A blank piece of paper."
-The plural of paper is sheets of paper.
-The base_cost of a paper is 2.
-
 Book - Block of Peat
 
 A block of peat is a kind of basic resource.
 The description is "After eons of sitting in the bog -- condensing, compacting and quietly conducting Peaty business -- this dense stinky block should be used to boost building projects."
 The plural of block of peat is blocks of peat.
 The base_cost of a peat is 12.
-
-Book - Plain Bubble
-
-A plain bubble is a kind of basic resource.
-The description is "A common, ordinary, plain bubble harvested from a Bubble Tree."
-The base_cost of a plain bubble is 2.
-
+ 
 Book - Plank
 
 A plank is a kind of basic resource.

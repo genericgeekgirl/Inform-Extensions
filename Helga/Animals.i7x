@@ -9,9 +9,9 @@ Animal Kinship begins when the location is Nylon Phool for the first time.
 Animal Kinship ends when a milk has been handled and a meat has been handled and a grain has been handled.
 
 When Animal Kinship ends:
-	record "Completed Animal Kinship" as achieved;
+	record "A L'il Animal Kinship" as achieved;
 	if sound-allowed is true, play sound of achievement in foreground;
-	say "[italic type]You have gained the Animal Kinship skill![roman type]".
+	say "[as the parser]Petting? Nibbling? You're well on your way now, kid.[as normal]"
 
 Volume - Animals
         
@@ -156,8 +156,7 @@ After milking a butterfly (called B):
 	now the player carries the new milk;
 	decrease player's energy by 5;
 	increase player's mood by 1;
-	now B is not ready to milk;
-	record "Milked a butterfly" as achieved.
+	now B is not ready to milk.
                 
 Volume - Chicken
 
@@ -179,6 +178,7 @@ Incubation is an action applying to one thing.
 [say "Only chickens can incubate eggs!"]
 [say "Chickens incubate eggs. You don't have any."]
 [say "The chicken says, 'Sorry, I've already got a bun in the oven. Come back when I have free space for more eggs.'"]
+[You asked the chicken to incubate an egg.]
 
 To say incubation_complete: say "[one of]Ping![or]Done! What were you expecting, 3 1/2 minutes?[or]Buk! It bit my butt! You owe me a beer.[or]Here.
 Another new life. A miracle. Thank me later.[or]Ta DA![at random]"
@@ -196,7 +196,7 @@ Understand "butter up [something]" as complimenting.
 Carry out complimenting: say "Aw, that's sweet."
 
 Instead of complimenting a chicken:
-	say "The chicken says, 'That's the nicest thing I've ever heard. Thank you!'";
+	say "You tell the chicken how wonderful it is.[paragraph break]The chicken says, 'That's the nicest thing I've ever heard. Thank you!'";
 	increase the player's mood by 10;
 	decrease the player's energy by 4;
 	if sound-allowed is true, play sound of happy chicken in foreground.
@@ -234,8 +234,7 @@ After squeezing a chicken:
 	decrease player's energy by 1;
 	let G be a random grain that is part of the chicken;
 	let the new grain be a new object cloned from G;
-	now the player carries the new grain;
-	record "Squoze a chicken" as achieved.
+	now the player carries the new grain.
 
 Check squeezing an incubating chicken:
 	say "What kind of weirdo squeezes an incubating chicken?" instead.
@@ -263,7 +262,7 @@ A pig bait is a kind of thing. The description is "A sack of tempting pig bait. 
 
 Book - Petting
 
-Understand the command "pet" and "love" as "touch".
+Understand the command "pet" as "touch".
 
 Before squeezing a piggy:
 	say "Piggies do not enjoy being squeezed. Try petting it instead." instead.
@@ -328,8 +327,7 @@ After nibbling a piggy (called P):
 	now the player carries the new meat;
 	decrease player's energy by 2;
 	now P is not ready to nibble;
-	decrease meat count of P by 1;
-	record "Nibbled a piggy" as achieved.
+	decrease meat count of P by 1.
 
 Check nibbling a sad piggy:
 	say "This pig is too upset by its surroundings to want to be nibbled." instead.
@@ -418,6 +416,11 @@ The description is "Anyone knows music makes crabs happy, but it takes an expert
 
 A crab can be flattered. The crab is not flattered.
 
+Book - CrabPod Headphones
+
+A crabpod headphones is a kind of thing.
+The description is "These appear to be the kind of headphones only a crab could love. The sound quality is fabulous, but they really pinch your earlobes."
+
 [verbs: hug, flatter, pinch, insult]
 
 Volume - Fox (TODO)
@@ -429,6 +432,10 @@ To say brushed: say "[one of]Oof! You got me![or]I was quick, you were quicker![
 
 A fox bait is a kind of thing.
 The description is "A nugget of fox-pleasing goodness, filled with every fox's favourite flavours. Proof positive that you catch more foxes with Fox Bait than you do with vinegar (just in case anyone suggested the alternative, which on reflection seems unlikely)."
+
+A fox brush is a kind of thing.
+The description is "One finely crafted Brush for the grooming of fantastic foxes and removing fine Fibers from their bushy tails."
+The plural of fox brush is fox brushes.
 
 Volume - Salmon (TODO)
 

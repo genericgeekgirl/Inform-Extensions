@@ -10,7 +10,7 @@ Understand "study [something]" as requesting actions for.
 Carry out requesting actions for something (called item):
 	try examining the item;
 	let L be a list of texts;
-	if item is a food:
+	if item is edible:
 		add "EAT" to L;
 	otherwise if item is a drink:
 		add "DRINK" to L;
@@ -42,6 +42,7 @@ chicken	{"SQUEEZE"}
 
 Volume - Hyperlinked Objects
 
+[
 Rule for printing the name of a thing (called item) while looking or taking inventory:
 	let string be the printed name of item;
 	if item is scenery:
@@ -60,5 +61,7 @@ Rule for printing the plural name of a thing (called item) while looking or taki
 		say "[stringp]";
 	otherwise:
 		say "[link][stringp][as]study [string][end link]".
-                
+  
+]
+              
 Actions ends here.

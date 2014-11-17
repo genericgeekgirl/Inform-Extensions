@@ -49,7 +49,7 @@ Before going from Next Step:
 	if the bag is not enclosed by the player:
 		say "You pause to pick up the bag.";
 		move the bag to the player;
-	record "Mastered the basic skills" as achieved;
+	record "IF Master" as achieved;
 	now tutorial mode is false.
 
 To say navigation: say "There are no compass directions in Ur. A list of adjacent streets (if any) is in the status line above. You can travel to any street simply by typing the name of the street."
@@ -78,11 +78,15 @@ SSDoor is an open unopenable door and scenery. It is inside from Ortolana and ou
 
 The counter is a supporter and scenery in Shimla Shack. Six tomatoes, one basic cheese, six buns, and the knifen board are on the counter.
 
+Chapter - Briarset Croft
+
+Briarset Croft is a street in Gentle_Island.
+
 Chapter - May Soup
 
 May Soup is a street in Gentle_Island.
 
-The fruit tree, the spice plant and the watering can are in May Soup.
+One fruit tree, one spice plant, one bean tree, one egg plant, one bubble tree, one gas plant, and the watering can are in May Soup.
 
 Chapter - Namaste
 
@@ -120,7 +124,7 @@ Every turn while the teleporter is locked:
 [if EZ Cooking has happened and Animal Kinship has happened and Light Green Thumb has happened, now the teleporter is unlocked.]
 
 Instead of entering the teleporter:
-	record "Found your way off the island" as achieved;
+	record "Escaped" as achieved;
 	now player's mood is maximum mood;
 	now player's energy is maximum energy;
 	end the story finally saying "You have finished the tutorial!"
@@ -130,7 +134,8 @@ Leaving is a scene. Leaving begins when the teleporter is unlocked.
 Book - Mapping
 
 Nylon Phool is east of Ortolana and west of May Soup.
-Namaste is south of Nylon Phool, southeast of Ortolana and southwest of May Soup.
+Namaste is southeast of Ortolana and southwest of May Soup.
+Briarset Croft is southeast of Nylon Phool.
 
 Volume - Hell One
 
@@ -186,22 +191,17 @@ A bunch of hellish grapes is a thing. Understand "grape" as grapes.
 The description is "A deceptively innocuous-looking bunch of hellish grapes."
 The plural of bunch of hellish grapes is bunches of hellish grapes.
 
-Instead of taking the bunch of hellish grapes:
-	say "You need to squash the grapes. You cannot have them."
+Instead of doing anything except examining or attacking to the grapes:
+say "Do your purgatory duty and squish those grapes."
 
 Grapes-squished is a number that varies. Grapes-squished is 0.
 
-[
-Before eating the bunch of hellish grapes:
-	say "I said 'squash'. Not 'eat'." instead.
-]
-        
 Understand the command "squish" and "crush" as attack.
 Instead of squeezing the grapes: try attacking the grapes.
 
 To revive the player:
-	say "[paragraph break]You have been revived.";
-	record "Died... and resurrected yourself" as achieved;
+	say "[paragraph break]You have been revived. You are seriously pooped, though. You need energy to get out of it.";
+	record "Zombie" as achieved;
 	now the player's energy is maximum energy / 2;
 	now the player's mood is maximum mood / 2;
 	now grapes-squished is 0;

@@ -37,6 +37,7 @@ When play ends: if sound-allowed is true, play sound of questcomplete in foregro
 Sound-allowed is a truth state that varies. 
 [Sound-allowed is true.]
 Sound-allowed is false.
+[DEBUG]
 
 Turning off sound is an action out of world.
 Understand "sound off" as turning off sound.

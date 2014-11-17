@@ -167,15 +167,15 @@ Understand "complete tutorial" as a mistake ("Haha, no. It's not that easy.").
 Book - Dying
 
 To kill the player:
+	clear the screen;
 	now the player's energy is 0;
 	now the player's mood is 0;
 	say "Uh oh. You croaked! Bummer! Just find some hellish grapes on the ground in here and give them some good squashing. Keep going until you get out!";
 	now the most recent location of the player is the location;
 	move the graveside marker to the location;
 	move the player to Hell One;
+	play the room sound for Hell One;
 	depict Figure blank;
-	if sound-allowed is true, stop the background sound;
-	if sound-allowed is true, play sound of hell in background with loop;
 	now the item illustration of the player is Figure Dead.
 
 Book - Resurrection
@@ -210,6 +210,7 @@ To revive the player:
 	if sound-allowed is true, stop the background sound;
 	if sound-allowed is true, play sound of forest in background with loop;
 	move the player to the most recent location of the player;
+	play the room sound for the most recent location of the player;
 	depict figure blank.
   
 Does the player mean attacking the grapes: it is very likely.

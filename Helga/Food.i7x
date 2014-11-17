@@ -15,7 +15,8 @@ Instead of drinking a drink (called D):
 	increase the player's energy by the energy of D;
 	say "You drank [a D]. Yum.";
 	remove D from play;
-	record "Glutton for Nourishment" as achieved.
+	record "Glutton for Nourishment" as achieved;
+	if sound-allowed is true, play sound of drinking in foreground;
 
 Instead of eating a drink:
 	try drinking the noun.
@@ -147,7 +148,8 @@ Before eating a food (called F):
 	increase the player's energy by the energy of F;
 
 After eating a food (called F):
-	say "You ate the [F]. Mmm.".
+	say "You ate the [F]. Mmm.";
+	if sound-allowed is true, play sound of eating in foreground;
 
 Before eating a food for the first time:
 	say "[as the parser]Eating food gives you energy, and energy keeps you alive.[as normal]"
@@ -718,6 +720,7 @@ Carry out preparing:
 			if "[recipe]" matches the text "[recipe entry]", case insensitively:
 				let the new item be a new object cloned from the recipe;
 				now the player carries the new item;
-		say "Nice! You made a [recipe entry]. You used [ingredients entry]."
+		say "Nice! You made a [recipe entry]. You used [ingredients entry].";
+		if sound-allowed is true, play sound of chopping in foreground; [TODO]
 
 Food ends here.

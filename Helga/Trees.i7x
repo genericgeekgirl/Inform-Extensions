@@ -42,7 +42,8 @@ Check watering a tree (called T):
 		say "[The T] says, 'I don't want to be watered right now.'" instead.
 
 Carry out watering a tree (called T):
-	say "[one of][The T] says, 'Oh, that hit the spot.'[paragraph break][as the parser]Trees can also be petted. Everything needs a little love.[as normal][or]You watered [a T].[paragraph break][The T] says '[water response of T]'[line break][stopping]".
+	say "[one of][The T] says, 'Oh, that hit the spot.'[paragraph break][as the parser]Trees can also be petted. Everything needs a little love.[as normal][or]You watered [a T].[paragraph break][The T] says '[water response of T]'[line break][stopping]";
+        if sound-allowed is true, play sound of watering in foreground;
 
 After watering a tree (called T):
 	now T is not thirsty;
@@ -58,7 +59,8 @@ Check touching a tree (called T):
 		say "[The T] says, 'I don't want to be petted right now.'" instead.
 
 Carry out touching a tree (called T):
-	say "[one of][The T] says, 'Mmm, thanks for that. Do you want some [printed plural name of random trant_fruit that is part of T]? You can harvest them from me. They're quite yummy, even if I do say so myself.'[or]You pet [a T].[paragraph break][The T] says '[pet response of T]'[line break][stopping]".
+	say "[one of][The T] says, 'Mmm, thanks for that. Do you want some [printed plural name of random trant_fruit that is part of T]? You can harvest them from me. They're quite yummy, even if I do say so myself.'[or]You pet [a T].[paragraph break][The T] says '[pet response of T]'[line break][stopping]";
+	if sound-allowed is true, play sound of tree pet in foreground;
 
 After touching a tree (called T):
 	now T is not lonely;
@@ -87,7 +89,8 @@ Check harvesting a tree (called T) (this is the nothing to pick rule):
 	if the fruit count of T is 0, say "There's nothing to pick, cowboy." instead.
 
 Carry out harvesting a tree (called T):
-	say "You harvested [a T] and received [fruit count of T] [printed plural name of random trant_fruit that is part of T].[paragraph break][The T] says '[harvest response of T]'[line break]"
+	say "You harvested [a T] and received [fruit count of T] [printed plural name of random trant_fruit that is part of T].[paragraph break][The T] says '[harvest response of T]'[line break]";
+	if sound-allowed is true, play harvest sound of T in foreground;        
 
 After harvesting a tree (called T):
 	while fruit count of T > 0:
@@ -98,8 +101,6 @@ After harvesting a tree (called T):
 	now T is lonely;
 	now T is thirsty;
 	decrease the player's energy by 5.
-
-[sound: BEEN_TREE, BUBBLE_TREE, EGG_TREE, FRUIT_TREE, GAS_TREE, SPICE_TREE, default is HARVEST]
 
 Volume - Trees
 
@@ -223,6 +224,19 @@ The harvest response of gas plant is "[one of]You want gas? Dude, sure.[or]Alway
 The pet response of gas plant is "[one of]Groovy. Yes. Hang loose, kid.[or]Ahhhh. In the zone now, friend. Yeah.[or]When we touch, I feel like our energies meld. You get that? No?[or]Ah yes. Mellow now.[or]As ever, it's been a gas.[at random]".
 
 The water response of gas plant is "[one of]You're quenching the thirst of the cosmos, y'hear?[or]Dibs on your next full watercan, friend. This stuff is good.[or]Feels real groovy, friend.[or]Ahh, falling water, it sounds like music, don't you think?[or]Water's just so awesome. So awesome.[at random]".
+
+Volume - Harvest Sounds
+
+A tree has a sound-name called the harvest sound.
+
+The harvest sound of bean tree is sound of bean_harvest.
+The harvest sound of fruit tree is sound of fruit_harvest.
+The harvest sound of bubble tree is sound of bubble_harvest.
+The harvest sound of spice plant is sound of spice_harvest.
+The harvest sound of egg plant is sound of egg_harvest.
+The harvest sound of gas plant is sound of gas_harvest.
+
+
 
 Volume - Tree Resources
 

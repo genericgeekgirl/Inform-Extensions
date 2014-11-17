@@ -8,7 +8,6 @@ Requesting actions for is an action applying to one thing.
 Understand "study [something]" as requesting actions for.
 
 Carry out requesting actions for something (called item):
-	try examining the item;
 	let L be a list of texts;
 	if item is edible:
 		add "EAT" to L;
@@ -24,7 +23,7 @@ Carry out requesting actions for something (called item):
 		let count be the number of entries in L;
 		say "You can ";
 		repeat with x running through L:
-			say "[link][x][as][x] [item][end link]";
+			say "[x]";
 			decrease count by 1;
 			if count > 1:
 				say ", ";
@@ -37,12 +36,19 @@ Item	Actions
 piggy	{"PET", "NIBBLE", "FEED"}
 butterfly	{"MASSAGE", "MILK", "SING TO"}
 chicken	{"SQUEEZE"}
+bunch of hellish grapes	{"SQUISH"}
 
-[TODO: knifen board, lotion, plop]
+Volume - Hyperlinks
+
+Making it easy is an action applying to one thing.
+Understand "> [something]" as making it easy.
+
+Carry out making it easy:
+try examining the noun;
+try requesting actions for the noun.
 
 Volume - Hyperlinked Objects
 
-[
 Rule for printing the name of a thing (called item) while looking or taking inventory:
 	let string be the printed name of item;
 	if item is scenery:
@@ -50,7 +56,7 @@ Rule for printing the name of a thing (called item) while looking or taking inve
 	otherwise if item is not visible:
 		say "[string]";
 	otherwise:
-		say "[link][string][as]study [string][end link]".
+		say "[link][string][as]> [string][end link]".
 
 Rule for printing the plural name of a thing (called item) while looking or taking inventory:
 	let string be the printed name of item;
@@ -60,8 +66,6 @@ Rule for printing the plural name of a thing (called item) while looking or taki
 	otherwise if item is not visible:
 		say "[stringp]";
 	otherwise:
-		say "[link][stringp][as]study [string][end link]".
-  
-]
+		say "[link][stringp][as]> [string][end link]".
               
 Actions ends here.

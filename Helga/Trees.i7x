@@ -6,7 +6,7 @@ Volume - Light Green Thumb
 
 Light Green Thumb is a scene.
 Light Green Thumb begins when the location is May Soup for the first time.
-Light Green Thumb ends when an allspice has been handled and a cherry has been handled and a bean has been handled and a plain bubble has been handled and a plain egg has been handled and a general vapour has been handled.
+Light Green Thumb ends when an allspice has been handled and a cherry has been handled and a bean has been handled and a plain bubble has been handled and an unseasoned egg has been handled and a general vapour has been handled.
 
 When Light Green Thumb ends:
 	record "Lift Your Light Green Thumb" as achieved;
@@ -110,7 +110,7 @@ A cave tree is a kind of tree.
 
 A tree can be thirsty. A tree is usually thirsty.
 A tree can be lonely. A tree is usually lonely.
-A tree can be living. A tree is usually living.
+A tree can be dead. A tree is usually not dead.
 
 A tree has a number called fruit count. Fruit count is usually 0.
 
@@ -691,21 +691,20 @@ Chapter - Writing (TODO)
 A quill is a kind of thing. 
 The description is "This fancy quill will let you write messages and notes. And maybe give yourself inky fingers."
 
-
 Chapter - Folding (TODO)
 
 Book - Eggs
 
-A plain egg is a kind of trant_fruit. The printed name is "egg".
+A unseasoned egg is a kind of trant_fruit. The printed name is "egg".
 The description is "A plain, unseasoned egg, newly harvested from an Egg Plant. It can be used for all kinds of cooking, or it can be hatched into different animals."
 
-One plain egg is part of every egg plant.
+One unseasoned egg is part of every egg plant.
 
 Nogging is an action applying to one thing.
 Understand "nog [something]" as nogging.
 Carry out nogging: say "I am uncertain how to do that."
 
-Instead of nogging a plain egg (called E):
+Instead of nogging a unseasoned egg (called E):
 say "You nogged an egg. It was a creamy, but ultimately unsatisfying experience.";
 remove the E from play.
 
@@ -788,34 +787,32 @@ Volume - Dead Trees
 
 Book - Clearing Dead Trees
 
-Clearing is an action applying to one thing.
-Understand "clear [something]" or "remove [something]" as clearing.
+[Clear => Push or Pull; Remove => as in clothing]
 
-Check clearing (this is the clearing requires an axe rule):
-	if an axe is not enclosed by the player, say "You need a hatchet to do that." instead.
-
-Check clearing (this is the only trees can be cleared rule):
-	if the noun is not a tree, say "I don't know what you mean by that." instead.
- 
-Check clearing (this is the only dead trees can be cleared rule):       
-	if the noun is a living tree, say "Only dead trees can be cleared in this manner." instead.
-                
-Carry out clearing a tree (called T):
-	say "[The T] says, '[clear response of T]'."
+Instead of pulling a tree: try pushing the noun.
+Before taking off a tree: try pushing the noun instead.
         
-After clearing a tree (called T):
+Instead of pushing a tree (called T):
+	if T is not dead:
+		say "Only dead trees can be cleared in this manner.";
+		stop the action;
+	if the player does not enclose an axe:
+		say "You need a hatchet to do that.";
+		stop the action;
+	say "[The T] says, '[clear response of T]'.";
 	let P be a random patch that is part of T;
-	let the new patch be a new object cloned from P;
-	now the new patch is in the location;
-	let W be a random plank that is part of T;
-	let the new plank be a new object cloned from W;
-	now the player carries the new plank;
-        remove T from play;
+	now P is in the location;
+	repeat with wood running through planks that are part of T:
+		now the player carries wood;
+	remove T from play;
+
+
+Section - Planks
 
 A plank is a kind of thing.
 The description is "A plain wooden plank with many uses."
 
-One plank is part of every tre.
+Three planks are part of every tree.
 
 Section - Axes
 
@@ -854,16 +851,16 @@ When Soil Appreciation ends:
 
 Volume - Patches
 
-A patch is a kind of thing.
+A patch is a kind of thing. A patch is fixed in place.
 
 A patch can be dug. A patch is usually not dug.
 A patch can be tended. A patch is usually not tended.
 
-A regular patch is a kind of patch. The printed name is "patch".
+A basic patch is a kind of patch. The printed name is "patch".
 The description is "A humble, weedy patch. With a spade you can dig it, a hoe you can tend it, and, with a bean, even grow a tree in it. (NB: Trees are delicate organisms, and beans will only consent to being planted in the correct region.)"
-The plural of regular patch is patches.
+The plural of basic patch is patches.
 
-One regular patch is part of every light tree.
+One basic patch is part of every light tree.
 
 An underground patch is a kind of patch. The printed name is "dark patch".
 The description is "An underground patch. As in 'subterranean', rather than 'clandestine'. Perfect for planting anything that flourishes in the shade. Or rather 'the one thing that flourishes in the shade'."

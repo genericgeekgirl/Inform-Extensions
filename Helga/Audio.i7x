@@ -35,9 +35,7 @@ if sound-allowed is true, play sound of forest in background with loop.
 When play ends: if sound-allowed is true, play sound of questcomplete in foreground.
 
 Sound-allowed is a truth state that varies. 
-[Sound-allowed is true.]
-Sound-allowed is false.
-[DEBUG]
+Sound-allowed is true.
 
 Turning off sound is an action out of world.
 Understand "sound off" as turning off sound.

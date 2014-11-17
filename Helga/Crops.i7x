@@ -15,14 +15,74 @@ When Crops a Planty ends:
 
 Volume - Seeds
 
-A crop seed is a kind of thing.
-A crop seed has a text called type of seed.
+A crop seed is a kind of thing. Understand "seeds" and "packet of seeds" and "packet" as a crop seed.
+A crop seed has a text called produce.
 
-Rule for printing the name of a crop seed (called S):
-say "packet of [type of seed of S] seeds".
+Book - Broccoli Seed
 
-Instead of examining a crop seed (called S):
-say "It's just a packet of [type of seed of S] seeds."
+A packet of broccoli seeds is a kind of crop seed.
+The description is "It's just a packet of broccoli seeds, but it has the potential to become something amazing. Namely, broccoli."
+
+Book - Cabbage Seed
+
+A packet of cabbage seeds is a kind of crop seed.
+The description is "It's just a packet of cabbage seeds, but it has the potential to become something amazing. Namely, cabbage."
+
+Book - Carrot Seed
+
+A packet of carrot seeds is a kind of crop seed.
+The description is "It's just a packet of carrot seeds, but it has the potential to become something amazing. Namely, carrots."
+
+Book - Corn Seed
+
+A packet of corn seeds is a kind of crop seed.
+The description is "It's just a packet of corn seeds, but it has the potential to become something amazing. Namely, ears of corn."
+
+Book - Cucumber Seed
+
+A packet of cucumber seeds is a kind of crop seed.
+The description is "It's just a packet of cucumber seeds, but it has the potential to become something amazing. Namely, cucumbers."
+
+Book - Onion Seed
+
+A packet of onion seeds is a kind of crop seed. The printed name is "packet of black onion seeds".
+The description is "It's a packet of black onion seeds, but it has the potential to become something amazing. Namely, onions."
+
+Book - Parsnip Seed
+
+A packet of parsnip seeds is a kind of crop seed.
+The description is "It's just a packet of parsnip seeds, but it has the potential to become something amazing. Namely, parsnips."
+
+Book - Potato Seed
+
+A packet of potato seeds is a kind of crop seed. The printed name is "packet of tiny potatoes".
+The description is "It's a packet of tiny potatoes, which will presumably grow into bigger potatoes."
+
+Book - Pumpkin Seed
+
+A packet of pumpkin seeds is a kind of crop seed.
+The produce is "a pumpkin".
+The description is "It's a packet containing a single pumpkin seed."
+
+Book - Rice Seed
+
+A packet of rice seeds is a kind of crop seed.
+The description is "It's just a packet of rice seeds, but it has the potential to become something amazing. Namely, rice."
+
+Book - Spinach Seed
+
+A packet of spinach seeds is a kind of crop seed.
+The description is "It's just a packet of spinach seeds, but it has the potential to become something amazing. Namely, spinach."
+
+Book - Tomato Seed
+
+A packet of tomato seeds is a kind of crop seed.
+The description is "It's a packet of heirloom-quality tomato seeds."
+
+Book - Zucchini Seed
+
+A packet of zucchini seeds is a kind of crop seed.
+The description is "It's a packet of zucchini seeds, but it has the potential to become something amazing. Namely zucchini."
 
 Volume - Crops
 
@@ -36,77 +96,77 @@ Book - Broccoli
 A broccoli is a kind of crop.
 The description is "One floret of unabashedly healthy broccoli."
 
-One crop seed with type of seed of "broccoli" is part of every broccoli.
+One packet of broccoli seeds is part of every broccoli.
 
 Book - Cabbage
 
 A cabbage is a kind of crop.
 The description is "A head of tender, delicately pungent cabbage."
 
-One crop seed with type of seed of "cabbage" is part of every cabbage.
+One packet of cabbage seeds is part of every cabbage.
 
 Book - Carrot
 
 A carrot is a kind of crop.
 The description is "A fresh, firm carrot."
 
-One crop seed with type of seed of "carrot" is part of every carrot.
+One packet of carrot seeds is part of every carrot.
 
 Book - Corn
 
 A corn is a kind of crop.
 The description is "Many kernels of sweet corn, conveniently located on a sturdy cob."
 
-One crop seed with type of seed of "corn" is part of every corn.
+One packet of corn seeds is part of every corn.
 
 Book - Cucumber
 
 A cucumber is a kind of crop.
 The description is "An innocuous cucumber."
 
-One crop seed with type of seed of "cucumber" is part of every cucumber.
+One packet of cucumber seeds is part of every cucumber.
 
 Book - Onion
 
 An onion is a kind of crop.
 The description is "A patented no-tears onion."
 
-One crop seed with type of seed of "onion" is part of every onion.
+One packet of onion seeds is part of every onion.
 
 Book - Parsnip
 
 A parsnip is a kind of crop.
 The description is "A pungent parsnip."
 
-One crop seed with type of seed of "parsnip" is part of every parsnip.
+One packet of parsnip seeds is part of every parsnip.
 
 Book - Potato
 
 A potato is a kind of crop. The plural of potato is potatoes.
 The description is "A humble potato."
 
-One crop seed with type of seed of "potato" is part of every potato.
+One packet of potato seeds is part of every potato.
 
 Book - Pumpkin
 
 A pumpkin is a kind of crop.
 The description is "One plump and thick-skinned pumpkin. Perfect for carving, mulching, munching, and, in times of need, for using as a carriage drawn by tamed gerbils."
 
-One crop seed with type of seed of "pumpkin" is part of every pumpkin.
+One packet of pumpkin seeds is part of every pumpkin.
 
 Book - Rice
 
 A pot of rice is a kind of crop.
 The description is "A pot of freshly made rice."
 
-One crop seed with type of seed of "pot of rice" is part of every pot of rice.
+One packet of rice seeds is part of every rice.
 
 Book - Spinach
 
 A spinach is a kind of crop.
 The description is "Hearty green spinach. It's strong to the finich."
 
-One crop seed with type of seed of "spinach" is part of every spinach.
+One packet of spinach seeds is part of every spinach.
 
 ["You can jump really, really high"]
 [High Jumper: Eating spinach allows you to jump higher and move more quickly for 7 seconds]
@@ -116,14 +176,24 @@ Book - Tomato
 A tomato is a kind of crop. The plural of tomato is tomatoes.
 The description is "A ripe, heirloom-quality tomato."
 
-One crop seed with type of seed of "tomato" is part of every tomato.
+One packet of tomato seeds is part of every tomato.
+
+Understand the command "throw" as something new.
+Throwing is an action applying to one thing.
+Understand "throw [something]" as throwing.
+
+Instead of throwing something: try dropping the noun.
+
+Instead of throwing a tomato (called T):
+say "You throw the tomato. It smashes into [the random visible non-player thing].";
+remove T from play.
 
 Book - Zucchini
 
 A zucchini is a kind of crop.
 The description is "A teeny-weeny green zucchini."
 
-One crop seed with type of seed of "zucchini" is part of every zucchini.
+One packet of zucchini seeds is part of every zucchini.
 
 Volume - Herbs
 

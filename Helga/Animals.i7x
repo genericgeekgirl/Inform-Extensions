@@ -376,6 +376,9 @@ Chapter - Piggy Plops (TODO)
 A plop is a kind of thing. The printed name is "piggy plop". Understand "piggy plop" as plop.
 The description is "Piggy plop is the delicately scented excrescence of a healthy piggy. Round, brown, and mysterious, it may contain presents."
 
+After examining a plop for the first time:
+say "[as the parser]Sometimes you have to search items to find out what's hiding in them.[as normal]"
+
 One plop is part of every piggy.
 
 Creating a plop is an action applying to nothing.
@@ -390,13 +393,21 @@ Carry out a piggy (called P) creating a plop:
 	while number of crops that are part of P > 0:
 		let V be a random crop that is part of P;
 		remove V from play;
-	if sound-allowed is true, play sound of piggy plop in foreground.
+	if sound-allowed is true, play sound of piggy plop in foreground;
+	say "The piggy plopped on the ground.";
+	say "[as the parser]You can make a Piggy plop by feeding it any crop products.[as normal]"
+
+Instead of searching a plop (called P):
+	let seed be a random crop seeds that is enclosed by P;
+	say "You found [a seed]!";
+	now the player carries seed;
+	remove P from play.        
+        
+Before doing anything to a plop (called P):
+	if P is part of a piggy:
+		say "You can't see any such thing." instead.
 
 [Technically you need three crops of a kind to produce a seed packet, but gah.]
-
-[hint about searching plop]
-["You found a packet of type seeds in that plop!"]
-["you can make a Piggy plop by feeding it any crop products (like potatoes, onions, broccoli, cabbage, corn, etc.)"]
 
 Instead of smelling a plop:
 	say "Not bad, actually. You've smelled worse. Indeed you have."

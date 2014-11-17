@@ -13,7 +13,7 @@ One butter, one basic cheese, one stinky cheese 1, one stinky cheese 2 and one s
 
 Beginning is a room in Outside Ur. The printed name is "And so it begins...". "[first time][quotation-two][paragraph break][only][as the parser]'[story title]' is a work of Interactive Fiction. You are the main character in this story, and I am the parser.[paragraph break]Think of me as a direct conduit to the Minds of the Giants who are imaginging this whole universe. I'll be giving you some guidance, but it's up to you to do your part to help the world grow and thrive.[as normal]"
 
-[The player is in Beginning. DEBUG]
+The player is in Beginning.
 
 Volume - Gentle Island
 
@@ -25,7 +25,7 @@ Chapter - Next Step
 
 [Next Step needs some stuff to examine and a full description]
 
-Next Step is a street in Gentle_Island. The printed name is "The Next Step". "DESCRIPTION.[one of][or][paragraph break][as the parser]There are no compass directions in Ur. A list of adjacent streets (if any) is in the status line above. You can travel to any street simply by typing the name of the street. Why don't you try going to [link]Nylon Phool[end link]?[as normal][or][stopping]"
+Next Step is a street in Gentle_Island. The printed name is "The Next Step". "Description of Next Step." [TODO]
 
 [one-way directions]
 When play begins:
@@ -33,17 +33,11 @@ When play begins:
 	change the southwest exit of Next Step to Ortolana;
 	change the southeast exit of Next Step to May Soup.
 
-[ DEBUG
 After examining the player for the first time:
 now the bag is in the location.
-]
 
 A bag is an open, openable and wearable container. A bag is a player's holdall.
 The description is "An honest, unpretentious burlap sack. You can put things in it."
-
-[DEBUG]
-The player carries the bag.
-The player is in May Soup.
 
 Before going from Next Step:
 	if the bag is not enclosed by the player:
@@ -64,27 +58,33 @@ One butterfly, one piggy and one chicken are in Nylon Phool.
 
 Chapter - Ortolana
 
-Ortolana is a street in Gentle_Island. "The homes on this street are made from hollowed out bottle trees. You can enter one of the huts by going INSIDE. The local flora consists of groddle plants, bogwillow, firebean plants, cattails and mushrooms. Unripe barnacles are forming on the side of the huts."
+Ortolana is a street in Gentle_Island. "The homes on this street are made from hollowed out bottle trees. You can [link]enter[as]enter hut[end link] one of the huts. The local flora consists of groddle plants, bogwillow, firebean plants, cattails and mushrooms. Unripe barnacles are forming on the side of the huts.[paragraph break]You can see a table here[if the number of things on the table is not zero], on which is [a list of things on the table][end if]."
 
-The table is a supporter and scenery in Ortolana. One common crudites, one flummery, one spicy grog and one fruity juice are on the table.
+The table is a supporter and scenery in Ortolana.
+The description is "It's a simple wooden table."
 
-The hut is scenery in Ortolana.
+One common crudites, one flummery, one spicy grog and one fruity juice are on the table.
+
+The hut is an open unopenable door and scenery in Ortolana. It is inside from Ortolana and outside from Shimla Shack.
 
 Chapter - Shimla Shack
 
-Shimla Shack is a room in Gentle_Island. "You are inside a firebog house. A stained red rug covers the floor and the walls are adorned with paper talismans, charms and strings of dried lizards. You can go OUTSIDE to return to Ortolana.[first time][paragraph break][as the parser]In Ur, there are lots of things to harvest, craft and eat.[as normal][only]";
+Shimla Shack is a room in Gentle_Island. "You are inside a firebog house. A stained red rug covers the floor and the walls are adorned with paper talismans, charms and strings of dried lizards. You can [link]exit[as]exit hut[end link] the hut to return to Ortolana.[first time][paragraph break][as the parser]In Ur, there are lots of things to harvest, craft and eat.[as normal][only][paragraph break]You can see a table here[if the number of things on the counter is not zero], on which is [a list of things on the counter][end if]."
 
-SSDoor is an open unopenable door and scenery. It is inside from Ortolana and outside from Shimla Shack.
+The describe what's on scenery supporters in room descriptions rule is not listed in any rulebook.
 
-The counter is a supporter and scenery in Shimla Shack. Six tomatoes, one basic cheese, six buns, and the knifen board are on the counter.
+The counter is a supporter and scenery in Shimla Shack. The printed name is "the table". Understand "table" as counter.
+The description is "It's a rather nice kitchen table."
+
+Six tomatoes, one basic cheese, six buns, and the knifen board are on the counter.
 
 Chapter - Briarset Croft
 
-Briarset Croft is a street in Gentle_Island.
+Briarset Croft is a street in Gentle_Island. "Description of Briarset Croft." [TODO]
 
 Chapter - May Soup
 
-May Soup is a street in Gentle_Island.
+May Soup is a street in Gentle_Island. "Description of May Soup." [TODO]
 
 One fruit tree, one spice plant, one bean tree, one egg plant, one bubble tree, one gas plant, and the watering can are in May Soup.
 
@@ -97,13 +97,13 @@ When leaving begins:
 	move the sign to Namaste;
 	change the south exit of Namaste to Savanna Sunset.
 
-The purple creature is a person and scenery in Namaste. Understand "strange" and "strange purple creature" as purple creature.
+The strange purple creature is a person and scenery in Namaste. Understand "ghost" as purple creature.
 The description is "It looks a bit like a ghost. Less scary, though, what with being purple."
 
 The grass guys is a person and scenery in Namaste.
 The description is "Someone has painted faces on these rocks. Or maybe they're alive. You're not quite sure."
 
-A sign is a thing. The description is "The sign reads 'This way to leave Gentle Island'. The arrow points towards [link]Savanna Sunset[end link]." Understand "arrow" as the sign. Understand "wooden sign" and "wooden" and "large wooden sign" as sign.
+A sign is scenery. The description is "The sign reads 'This way to leave Gentle Island'. The arrow points towards [link]Savanna Sunset[end link]." Understand "arrow" as the sign. Understand "wooden sign" and "wooden" and "large wooden sign" as sign.
 
 Reading is an action applying to one thing.
 Understand "read [sign]" as reading.
@@ -116,7 +116,7 @@ Savanna Sunset is a street in Gentle_Island. "At one end of this street lined wi
 The teleporter is a locked door. It is south from Savanna Sunset. The description is "This teleporter will take you off Gentle Island so you can explore the rest of the world. When you are ready to go, you may [link]ENTER[as]ENTER teleporter[end link] it."
 
 Every turn while the teleporter is locked:
-	if EZ Cooking has ended and Animal Kinship has ended:
+	if EZ Cooking has ended and Animal Kinship has ended and Light Green Thumb has ended:
 		now the teleporter is unlocked;
 		say "[as the parser]You are about ready to see what the world has to offer: plumb the depths of Ilmenskie Caverns, ascend the heights of Rasana and fly through the trees of Roobrik... there's a lot to explore! The way off Gentle Island is pretty easy to find. Find it. Take it. Do it!![as normal]".
 
@@ -191,7 +191,7 @@ A bunch of hellish grapes is a thing. Understand "grape" as grapes.
 The description is "A deceptively innocuous-looking bunch of hellish grapes."
 The plural of bunch of hellish grapes is bunches of hellish grapes.
 
-Instead of doing anything except examining or attacking to the grapes:
+Instead of doing anything except examining or attacking or requesting actions for the grapes:
 say "Do your purgatory duty and squish those grapes."
 
 Grapes-squished is a number that varies. Grapes-squished is 0.
@@ -200,6 +200,7 @@ Understand the command "squish" and "crush" as attack.
 Instead of squeezing the grapes: try attacking the grapes.
 
 To revive the player:
+	clear the screen;
 	say "[paragraph break]You have been revived. You are seriously pooped, though. You need energy to get out of it.";
 	record "Zombie" as achieved;
 	now the player's energy is maximum energy / 2;

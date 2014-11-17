@@ -21,9 +21,6 @@ Instead of entering a shrine: say "You jump into the shrine. It immediately spit
 
 Rule for printing room description details of a shrine: omit contents in listing.
 
-Rule for printing the name of a shrine (called S):
-say "shrine dedicated to [giant of S]".
-
 After examining a shrine:
 say "All donations deposited into a shrine will, through the gigantic grapevine, result in favor being paid to the donator."
 
@@ -31,40 +28,40 @@ Does the player mean examining a shrine: it is likely.
 
 Book - Shrines
 
-A Shrine Alph is a shrine.
+A shrine dedicated to Alph is a shrine.
 The description is "This shrine bears the ancient symbol of Alph, the giant of creation. If you've ever wondered 'Why do Piggies make meat?' or 'Which came first: the chicken or the egg plant?' chances are Alph has the answer."
 
-A Shrine Cosma is a shrine.
+A shrine dedicated to Cosma is a shrine.
 The description is "This shrine bears the ancient symbol of Cosma. As the giant who governs the sky, Cosma is also the giant of levity and meditation. She is, also, the only giant capable of herding butterflies."
 
-A Shrine Friendly is a shrine.
+A shrine dedicated to Friendly is a shrine.
 The description is "This shrine bears the ancient symbol of Friendly, the giant who oversees all things celestial, nocturnal, lunar, stygian and murky. Despite this, he is, as his name implies, considered by many to be the nicest of the giants and the one most likely to loan you twenty currants till payday."
 
-A Shrine Grendaline is a shrine.
+A shrine dedicated to Grendaline is a shrine.
 The description is "This shrine bears the ancient symbol of Grendaline. Quietly loyal and fierce, Grendaline is the giant who governs all things watery, from clouds and fogs to mountain streams and oceans. As a sideline, she is also influential in the sphere of big, fluffy towels."
 
-A Shrine Humbaba is a shrine.
+A shrine dedicated to Humbaba is a shrine.
 The description is "This shrine bears the ancient symbol of Humbaba, the giant who rules both two-legged and four-legged beasts. Actually, she rules all the beasts with even-numbered quantities of legs. The odd-numbered ones are on their own."
 
-A Shrine Lem is a shrine.
+A shrine dedicated to Lem is a shrine.
 The description is "This shrine bears the ancient symbol of Lem, the giant of travel and navigation. If you've ever found yourself somewhere you didn't plan to be, chances are it was a Lemish practical joke, for which he is utterly unrepentant. "
 
-A Shrine Mab is a shrine.
+A shrine dedicated to Mab is a shrine.
 The description is "This shrine bears the ancient symbol of Mab, the giant who holds sway over the harvest. She honors industriousness, and rightfully so. Sometimes, however, industriousness can turn to greed. This is a problem."
 
-A Shrine Pot is a shrine.
+A shrine dedicated to Pot is a shrine.
 The description is "This shrine bears the ancient symbol of Pot. Big-hearted and generous, Pot is the giant who dispenses prosperity and good fortune. Which is all well and good if you can keep sloth and indolence at bay. Tricky."
 
-A Shrine Spriggan is a shrine.
+A shrine dedicated to Spriggan is a shrine.
 The description is "This shrine bears the ancient symbol of Spriggan. Sure, Spriggan is the most taciturn and humorless of all the giants. You would be, too, if you had sole dominion over the trees. Trees are serious business, you know."
 
-A Shrine Tii is a shrine.
+A shrine dedicated to Tii is a shrine.
 The description is "This shrine bears the ancient symbol of Tii, the overseer of elements, and the giant who manipulates all matters alchemical. Unlike the other giants, Tii is neither male nor female. Or both male and female. It's either really simple or really confusing, depending how you look at it. Some reckon this is why Tii seems cold and distant. They are incorrect. Tii is merely calculating and combining. It's distracting."
 
 Figure shrine tii is the file "shrine tii.png".
 The item illustration of shrine tii is figure shrine tii.
 
-A Shrine Zille is a shrine.
+A shrine dedicated to Zille is a shrine.
 The description is "This shrine bears the ancient symbol of Zille, the giant whose domain is the mountains. Hills, too. Also hillocks, pingos, drumlins and buttes. It's safe to consider that any bump in the ground is Zille's turf. She takes no responsibility, however, for volcanoes."
 
 Book - Ancient Symbols
@@ -85,17 +82,17 @@ Volume - Giant-Shrine Relations
 
 Every shrine has a giant.
 
-The giant of Shrine Humbaba is Humbaba.
-The giant of Shrine Lem is Lem.
-The giant of Shrine Friendly is Friendly.
-The giant of Shrine Spriggan is Spriggan.
-The giant of Shrine Cosma is Cosma.
-The giant of Shrine Mab is Mab.
-The giant of Shrine Tii is Tii.
-The giant of Shrine Grendaline is Grendaline.
-The giant of Shrine Zille is Zille.
-The giant of Shrine Alph is Alph.
-The giant of Shrine Pot is Pot.
+The giant of Shrine Dedicated To Humbaba is Humbaba.
+The giant of Shrine Dedicated To Lem is Lem.
+The giant of Shrine Dedicated To Friendly is Friendly.
+The giant of Shrine Dedicated To Spriggan is Spriggan.
+The giant of Shrine Dedicated To Cosma is Cosma.
+The giant of Shrine Dedicated To Mab is Mab.
+The giant of Shrine Dedicated To Tii is Tii.
+The giant of Shrine Dedicated To Grendaline is Grendaline.
+The giant of Shrine Dedicated To Zille is Zille.
+The giant of Shrine Dedicated To Alph is Alph.
+The giant of Shrine Dedicated To Pot is Pot.
 
 Volume - Information about the Giants
 
@@ -165,7 +162,7 @@ Instead of inserting something into a shrine: try donating the noun to the secon
 Carry out donating something (called I) to a shrine (called S):
 let G be the giant of S;
 let F be 5; [TODO]
-say "You donated to a shrine of [G].[paragraph break]";
+say "You donated to a shrine of [G]![paragraph break]";
 increase favor of G by F;
 increase donations of G by 1;
 increase total donations by 1;

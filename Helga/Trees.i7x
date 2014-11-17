@@ -2,47 +2,6 @@
 
 Use authorial modesty.
 
-A tree is a kind of thing.
-A tree is fixed in place.
-
-A tree can be finished. A tree is usually not finished.
-A tree can be thirsty. A tree is usually thirsty.
-A tree can be lonely. A tree is usually lonely.
-A tree can be dead. A tree is usually not dead.
-
-A tree has a number called health. Health is usually 7. [Max 10]
-A tree has a number called maturity. Maturity is usually 7. [Max 10]
-A tree has a number called fruit count. Fruit count is usually 0.
-A tree has a number called fruit capacity. Fruit capacity is usually 0.
-
-A tree has a text called pet response.
-A tree has a text called water response.
-A tree has a text called harvest response.
-A tree has a text called clear response.
-
-[maturity is time-based, assuming proper care]                                              
-[water + pet increases health]
-[trees are really fucking confusing]
-
-[trees can be rooked or poisoned, in which case they cannot be harvested, petted or watered]
-
-Increasing health is an action applying to nothing.
-
-Carry out a tree (called T) increasing health:
-	if T is not lonely and T is not thirsty:
-		if health of T < 10, increase the health of T by 5.
-[		now T is lonely;
-		now T is thirsty.
-]
-
-Increasing maturity is an action applying to nothing.
-
-Carry out tree (called T) increasing maturity:
-	if maturity of T < 10, increase the maturity of T by 1.
-
-After examining a tree for the first time:
-say "[as the parser]Regular watering and petting keeps trees happy and healthy.[as normal][line break]The fruit tree says, 'Cough, cough. My, but I am thirsty. If you could water me, I would be very grateful.'"
-
 Volume - Light Green Thumb
 
 Light Green Thumb is a scene.
@@ -55,20 +14,17 @@ When Light Green Thumb ends:
 	if sound-allowed is true, play sound of achievement in foreground;
 	say "[as the parser]What’s that? I think you got a little green on your thumb![as normal]".
 
-Volume - Soil Appreciation
-
-Soil Appreciation is a scene.
-
-When Soil Appreciation ends:
-	record "Talking 'bout Soil Appreciation" as achieved;
-	if sound-allowed is true, play sound of achievement in foreground;
-	say "[as the parser]You're on your way now, digster![as normal]".
-
 Volume - Watering
 
 [sound: WATERING_CAN ??? possibly only on failure/breakage]
 
-A watering can is a thing. The description is "A stainless-steel 5-gallon watering can. It can be used to water plants, trees, and crops."
+A watering-can is a kind of thing.
+
+A watering can is a watering-can.
+The description is "A stainless-steel 5-gallon watering can. It can be used to water plants, trees, and crops."
+
+The irrigator 9000 is a watering-can.
+The description is "Galvanised for your pleasure, the Irrigator 9000 offers unparalleled waterability for the constant gardener."
 
 Watering is an action applying to one thing.
 Understand "water [something]" as watering.
@@ -78,7 +34,7 @@ Check watering something:
 		say "Now [the noun] is soaking wet."
 
 Check watering something (this is the needs a watering can rule):
-	if the player does not enclose the watering can:
+	if the player does not enclose a watering-can:
 		say "That's going to be tough without a watering can." instead.
 
 Check watering a tree (called T):
@@ -147,9 +103,52 @@ After harvesting a tree (called T):
 
 Volume - Trees
 
+A tree is a kind of thing. A tree is fixed in place.
+
+A light tree is a kind of tree.
+A cave tree is a kind of tree.
+
+A tree can be thirsty. A tree is usually thirsty.
+A tree can be lonely. A tree is usually lonely.
+A tree can be living. A tree is usually living.
+
+A tree has a number called fruit count. Fruit count is usually 0.
+
+A tree has a text called pet response.
+A tree has a text called water response.
+A tree has a text called harvest response.
+
+After examining a tree for the first time:
+say "[as the parser]Regular watering and petting keeps trees happy and healthy.[as normal][line break]The fruit tree says, 'Cough, cough. My, but I am thirsty. If you could water me, I would be very grateful.'"
+
+Chapter - Health & Maturity (TODO)
+        
+[maturity is time-based, assuming proper care]                                              
+[water + pet increases health]
+
+[trees can be rooked or poisoned, in which case they cannot be harvested, petted or watered]
+
+Increasing health is an action applying to nothing.
+
+Carry out a tree (called T) increasing health:
+	if T is not lonely and T is not thirsty:
+		if health of T < 10, increase the health of T by 5.
+[		now T is lonely;
+		now T is thirsty.
+]
+
+Increasing maturity is an action applying to nothing.
+
+Carry out tree (called T) increasing maturity:
+	if maturity of T < 10, increase the maturity of T by 1.
+
+A tree has a number called health. Health is usually 7. [Max 10]
+A tree has a number called maturity. Maturity is usually 7. [Max 10]
+A tree has a number called fruit capacity. Fruit capacity is usually 0.
+        
 Book - Fruit Tree
 
-A fruit tree is a kind of tree.
+A fruit tree is a kind of light tree.
 The description is "The glorious Fruit Tree. Thick with tasty cherries ripe to be converted into other delicious fruits, these venerable plants may not be chatty, but they're indispensable for fine edibles and quaffables of all sorts."
 
 The harvest response of a fruit tree is "[one of]Yup.[or]Mhm.[or]Frooo?[or]Wannit?[at random]".
@@ -160,7 +159,7 @@ The water response of a fruit tree is "[one of]Sluuuurp.[or]Glug-glug.[or]Mmm.[o
 
 Book - Spice Plants
 
-A spice plant is a kind of tree.
+A spice plant is a kind of light tree.
 The description is "The delectable Spice Plant. Seductively dangling with Allspice, the millability of this simple brown seed means that everyone's favorite varietal of spice can be found bounded in one shell if you look hard enough."
 
 The harvest response of spice plant is "[one of]Ooooo! Easy there, little grabbyhands...[or]Careful what you're yanking, little friend.[or]Well now. It's a little spice you're after, is it?[or]My... you're a little handsy. Have we been introduced?[or]Oooh! I say! Goosed by a Glitch.[at random]".
@@ -171,7 +170,7 @@ The water response of spice plant is "[one of]Now now, young'un, not too much wa
 
 Book - Bean Tree
 
-A bean tree is a kind of tree.
+A bean tree is a kind of light tree.
 
 The description of the Bean Tree is "The good old Tree of Bean. Laden with 57 varieties of identical-looking legume, these protein-machines provide the raw ingredients for hearty chow and base material for new trees."
 
@@ -183,7 +182,7 @@ The water response of bean tree is "[one of]Nice watering action, bud.[or]Your a
 
 Book - Bubble Tree
 
-A bubble tree is a kind of tree.
+A bubble tree is a kind of light tree.
 The description of the Bubble Tree is "The delicate Bubble Tree. Bursting with plain bubbles waiting to be tuned, these somewhat unstable specimens harbor fruit of perfect transparency - and thoughts of bizarre conspiracy."
 
 The harvest response of bubble tree is "[one of]Hey! Pssst. You like bubbles? Here.[or]What? Bubbles? Mine? Why? Well, ok...[or]...Fine. Take them. Don't let it get back to The Man...[or]Here! But shh... Don't tell anyone they're from me.[or]Bubbles! Now move along before anyone sees you.[at random]".
@@ -205,7 +204,7 @@ The harvest response of paper tree is "[one of]Take these sheets away.[line brea
 
 Book - Egg Plants
 
-An egg plant is a kind of tree.
+An egg plant is a kind of cave tree.
 The description of the Egg Plant is "The noble Egg Plant. As is fitting to a fruit as ovoidly perfect as a prolate moon, Egg Plants (of course) can only be found underground in cool, dark places."
 
 The harvest response of egg plant is "[one of]This. For you.[or]We grew this. You take.[or]This harvest good. Have it.[or]Ooooof. Take harvest. Heavy.[or]We made this. You can have.[at random]".
@@ -216,7 +215,7 @@ The water response of egg plant is "[one of]Excellent we needed that.[or]Little 
 
 Book - Gas Plants
 
-A gas plant is a kind of tree.
+A gas plant is a kind of light tree.
 The description of the Gas Plant is "The ever-mellow Gas Plant. Packed with a stash of General Vapour that's just begging to be gassified. With a love of the murky and mystical, Gas Plants can often be found in totally far out spaces."
 
 The harvest response of gas plant is "[one of]You want gas? Dude, sure.[or]Always happy to share, friend.[or]Yeah, harvest away. Gas is a social thing, friend.[or]Gas? For you? Yeah, man.[or]You sure that's enough? Come back for a re-up anytime.[at random]".
@@ -572,8 +571,6 @@ Chapter - Seasoning (TODO)
 A bean seasoner is a thing.
 The description is "A Bean Seasoner seasons beans. You probably guessed that already."
 
-
-
 Chapter - Seasoned Beans
 
 A seasoned-bean is a kind of thing.
@@ -777,7 +774,50 @@ Instead of attacking a white gas (called G):
 
 Volume - Dead Trees
 
-[TODO: The verb is remove; dead trees become patches]
+Book - Clearing Dead Trees
+
+Clearing is an action applying to one thing.
+Understand "clear [something]" or "remove [something]" as clearing.
+
+Check clearing (this is the clearing requires an axe rule):
+	if an axe is not enclosed by the player, say "You need a hatchet to do that." instead.
+
+Check clearing (this is the only trees can be cleared rule):
+	if the noun is not a tree, say "I don't know what you mean by that." instead.
+ 
+Check clearing (this is the only dead trees can be cleared rule):       
+	if the noun is a living tree, say "Only dead trees can be cleared in this manner." instead.
+                
+Carry out clearing a tree (called T):
+	say "[The T] says, '[clear response of T]'."
+        
+After clearing a tree (called T):
+	let P be a random patch that is part of T;
+	let the new patch be a new object cloned from P;
+	now the new patch is in the location;
+	let W be a random plank that is part of T;
+	let the new plank be a new object cloned from W;
+	now the player carries the new plank;
+        remove T from play;
+
+A plank is a kind of thing.
+The description is "A plain wooden plank with many uses."
+
+One plank is part of every tre.
+
+Section - Axes
+
+An axe is a kind of thing.
+
+A hatchet is an axe.
+The description is "A slightly dull hatchet, useful for both dead tree-clearing and showy beard-shaving."
+
+A class axe is an axe.
+The description is "Vibrating with raw power far beyond the realm of the basic Hatchet, the Class Axe is perfect for wielding by anyone who really loves to whack their wood."
+
+Section - Clear Responses
+
+A tree has a text called clear response.
 
 The clear response of a bean tree is "[one of]Bean there - done now. A ha ha h...[or]Toodle pip, old Bean, eh? Heh heh *croak*...[or]Die, my dear? Why, that's the last thing I'll d...[or]Phew. I'm so tired of being the funniest person in the yard...[or]Dying is easy. Comedy is hard.[at random]".
 
@@ -791,30 +831,64 @@ The clear response of a gas plant is "[one of]Ahhh: beautiful day. Beautiful.[or
 
 The clear response of a spice plant is "[one of]Nonsense! I've never felt bett...eugh.[or]Well, I've had a happy life. Also, spicy![or]Drink to me!...[or]I never should have switched from scotch to martinis...[or]Oh you young people act like old men. You have no fun...[at random]".
 
+Volume - Soil Appreciation
+
+Soil Appreciation is a scene.
+
+When Soil Appreciation ends:
+	record "Talking 'bout Soil Appreciation" as achieved;
+	if sound-allowed is true, play sound of achievement in foreground;
+	say "[as the parser]You're on your way now, digster![as normal]".
+
 Volume - Patches
 
 A patch is a kind of thing.
+
+A patch can be dug. A patch is usually not dug.
+A patch can be tended. A patch is usually not tended.
 
 A regular patch is a kind of patch. The printed name is "patch".
 The description is "A humble, weedy patch. With a spade you can dig it, a hoe you can tend it, and, with a bean, even grow a tree in it. (NB: Trees are delicate organisms, and beans will only consent to being planted in the correct region.)"
 The plural of regular patch is patches.
 
+One regular patch is part of every light tree.
+
 An underground patch is a kind of patch. The printed name is "dark patch".
 The description is "An underground patch. As in 'subterranean', rather than 'clandestine'. Perfect for planting anything that flourishes in the shade. Or rather 'the one thing that flourishes in the shade'."
 The plural of underground patch is dark patches.
 
-Book - Digging
+One underground patch is part of every cave tree.
 
+Book - Digging (TODO)
+ 
 To say patch_dig: say "[one of]Is dugged! Here! Urths![or]O looks! You dugged me. An' I mades this.[or]O what is this you did dug? It done be stuff, yeah?[or]I is pull this out of that hole you dugged.[or]Please be patient. I am newthing. Thanky for digs![or]Look! Urths and stuffs! Dugged it you did![at random]".
 
-Book - Tending
+A shovel is a kind of thing.
+
+A basic shovel is a shovel. The printed name is "shovel".
+The description is "An essential for anyone that calls a spade a shovel, this simple tool masterpiece can be used to harvest Peat, dig for dirt (well, Urth), and occasionally land a juicy piece of Loam."
+
+An ace of spades is a shovel.
+The description is "Finely honed from old metal, the Ace of Spades is made for the heavy digger."
+
+Book - Tending (TODO)
 
 To say patch_tend: say "[one of]So fresh! So clean! So ready for a bean! OMG that rhymes![or]Ah, cleansed. Now plant me up, I say, PLANT ME UP![or]Much better. And much better for gardening, non?[or]Nice and tidy. And superfertile. Got any beans?[or]Great. Now: tended patches need beans. You dig?[at random]".
 
-Book - Planting
+A hoe is a kind of thing.
 
-[TODO: a seasoned bean can be PLANTED in a patch. Only eggplants grow in dark patches, and cannot grow in regular patches.]
+A basic hoe is a hoe. The printed name is "hoe".
+The description is "A garden-variety hoe. It can be used to tend weedy patches."
 
-A seeding is a kind of tree.
+A high class hoe is a hoe. The printed name is "high-class hoe". Understand "high-class" and "high-class hoe" as high class hoe.
+The description is "More refined than your average hoe, the High-Class Hoe is a hoe you'll be proud to be seen with."
+
+Book - Planting (TODO)
+
+[A seasoned bean can be planted in a patch.]
+
+[Egg plants can only grow in dark patches; Only egg plants can grow in dark patches.]
+
+A seedling is a kind of tree.
                 
 Trees ends here.

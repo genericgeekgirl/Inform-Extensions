@@ -1,6 +1,5 @@
-Giants.i7x~ by Helga - title contains a full stop<br>
+Rocks.i7x~ by Helga - title contains a full stop<br>
 Guncho Mockup (for Glulx only).i7x by Guncho Cabal - an extension stored in the correct author's folder, but with the wrong filename (the extension says it is 'Guncho Mockup by Guncho Cabal')<br>
-Player_Name.i7x by Zzybzfrx - appears not to be an extension (its first line does not end 'begin(s) here', as extension titling lines must)<br>
 Alchemy.i7x by Zzybzfrx - appears not to be an extension (its first line does not end 'begin(s) here', as extension titling lines must)<br>
 Time.i7x by Zzybzfrx - an extension with the right filename but in the wrong author's folder (the extension says it is 'Time by Zzybzfrz')<br>
 Potions.i7x by Zzybzfrx - an extension with the right filename but in the wrong author's folder (the extension says it is 'Potions by Zzbzfrx')<br>

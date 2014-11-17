@@ -15,70 +15,14 @@ When Crops a Planty ends:
 
 Volume - Seeds
 
-Book - Broccoli Seed
+A crop seed is a kind of thing.
+A crop seed has a text called type of seed.
 
-A broccoli seed is a kind of thing.
-The description is "A packet of broccoli seeds."
+Rule for printing the name of a crop seed (called S):
+say "packet of [type of seed of S] seeds".
 
-Book - Cabbage Seed
-
-A cabbage seed is a kind of thing.
-The description is "A packet of cabbage seeds."
-
-Book - Carrot Seed
-
-A carrot seed is a kind of thing.
-The description is "A packet of carrot seeds."
-
-Book - Corn Seed
-
-A corn seed is a kind of thing.
-The description is "A packet of corn seeds."
-
-Book - Cucumber Seed
-
-A cucumber seed is a kind of thing.
-The description is "A packet of cucumber seeds."
-
-Book - Onion Seed
-
-An onion seed is a kind of thing.
-The description is "A packet of black onion seeds."
-
-Book - Parsnip Seed
-
-A parsnip seed is a kind of thing.
-The description is "A packet of parsnip seeds."
-
-Book - Potato Seed
-
-A potato seed is a kind of thing.
-The description is "A packet of tiny potatoes."
-
-Book - Pumpkin Seed
-
-A pumpkin seed is a kind of thing.
-The description is "A packet of Pumpkin seeds."
-
-Book - Rice Seed
-
-A rice seed is a kind of thing.
-The description is "A packet of rice seeds."
-
-Book - Spinach Seed
-
-A spinach seed is a kind of thing.
-The description is "A packet of spinach seeds."
-
-Book - Tomato Seed
-
-A tomato seed is a kind of thing.
-The description is "A packet of heirloom-quality tomato seeds."
-
-Book - Zucchini Seed
-
-A zucchini seed is a kind of thing.
-The description is "A packet of zucchini seeds."
+Instead of examining a crop seed (called S):
+say "It's just a packet of [type of seed of S] seeds."
 
 Volume - Crops
 
@@ -92,55 +36,77 @@ Book - Broccoli
 A broccoli is a kind of crop.
 The description is "One floret of unabashedly healthy broccoli."
 
+One crop seed with type of seed of "broccoli" is part of every broccoli.
+
 Book - Cabbage
 
 A cabbage is a kind of crop.
 The description is "A head of tender, delicately pungent cabbage."
+
+One crop seed with type of seed of "cabbage" is part of every cabbage.
 
 Book - Carrot
 
 A carrot is a kind of crop.
 The description is "A fresh, firm carrot."
 
+One crop seed with type of seed of "carrot" is part of every carrot.
+
 Book - Corn
 
 A corn is a kind of crop.
 The description is "Many kernels of sweet corn, conveniently located on a sturdy cob."
+
+One crop seed with type of seed of "corn" is part of every corn.
 
 Book - Cucumber
 
 A cucumber is a kind of crop.
 The description is "An innocuous cucumber."
 
+One crop seed with type of seed of "cucumber" is part of every cucumber.
+
 Book - Onion
 
 An onion is a kind of crop.
 The description is "A patented no-tears onion."
+
+One crop seed with type of seed of "onion" is part of every onion.
 
 Book - Parsnip
 
 A parsnip is a kind of crop.
 The description is "A pungent parsnip."
 
+One crop seed with type of seed of "parsnip" is part of every parsnip.
+
 Book - Potato
 
 A potato is a kind of crop. The plural of potato is potatoes.
 The description is "A humble potato."
+
+One crop seed with type of seed of "potato" is part of every potato.
 
 Book - Pumpkin
 
 A pumpkin is a kind of crop.
 The description is "One plump and thick-skinned pumpkin. Perfect for carving, mulching, munching, and, in times of need, for using as a carriage drawn by tamed gerbils."
 
+One crop seed with type of seed of "pumpkin" is part of every pumpkin.
+
 Book - Rice
 
-A rice is a kind of crop.
+A pot of rice is a kind of crop.
 The description is "A pot of freshly made rice."
+
+One crop seed with type of seed of "pot of rice" is part of every pot of rice.
 
 Book - Spinach
 
 A spinach is a kind of crop.
 The description is "Hearty green spinach. It's strong to the finich."
+
+One crop seed with type of seed of "spinach" is part of every spinach.
 
 ["You can jump really, really high"]
 [High Jumper: Eating spinach allows you to jump higher and move more quickly for 7 seconds]
@@ -150,10 +116,14 @@ Book - Tomato
 A tomato is a kind of crop. The plural of tomato is tomatoes.
 The description is "A ripe, heirloom-quality tomato."
 
+One crop seed with type of seed of "tomato" is part of every tomato.
+
 Book - Zucchini
 
 A zucchini is a kind of crop.
 The description is "A teeny-weeny green zucchini."
+
+One crop seed with type of seed of "zucchini" is part of every zucchini.
 
 Volume - Herbs
 

@@ -580,30 +580,42 @@ Book - Bean Tree Bean
 A bean tree bean is a kind of seasoned-bean.
 The description is "A plain, non-magical bean tree bean. It can grow even more beans!"
 
+One bean tree is part of every bean tree bean.
+
 Book - Bubble Tree Bean
 
 A bubble tree bean is a kind of seasoned-bean.
 The description is "A fizzy bubble tree bean. It can be planted to grow a bubble tree."
+
+One bubble tree is part of every bubble tree bean.
 
 Book - Egg Plant Bean
 
 An egg plant bean is a kind of seasoned-bean.
 The description is "A smooth, round egg plant bean. It can grow egg plants. Then the fun really starts!"
 
+One egg plant is part of every egg plant bean.
+
 Book - Fruit Tree Bean
 
 A fruit tree bean is a kind of seasoned-bean.
 The description is "An ordinary fruit tree bean. It can be used to grow a fruit tree."
+
+One fruit tree is part of every fruit tree bean.
 
 Book - Gas Plant Bean
 
 A gas plant bean is a kind of seasoned-bean.
 The description is "A vapourous gas plant bean. It can be used to grow a gas plant."
 
+One gas plant is part of every gas plant bean.
+
 Book - Spice Plant Bean
 
 A spice plant bean is a kind of seasoned-bean.
 The description is "A small spicy bean. It can be used to plant a spice plant."
+
+One spice plant is part of every spice plant bean.
 
 [
 "Find a suitable patch to plant it in!"

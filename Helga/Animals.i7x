@@ -383,23 +383,18 @@ Creating a plop is an action applying to nothing.
 Carry out a piggy (called P) creating a plop:
 	let Z be a random plop that is part of P;
 	let V be a random crop that is part of P;
+	let S be a random crop seed that is part of V;        
 	let the new plop be a new object cloned from Z;
-	move V to the new plop;
+	move S to the new plop;
 	now the new plop is in the location;
-	let V be a random crop that is part of P;
-	remove V from play;
-	let V be a random crop that is part of P;
-	remove V from play;
+	while number of crops that are part of P > 0:
+		let V be a random crop that is part of P;
+		remove V from play;
 	if sound-allowed is true, play sound of piggy plop in foreground.
 
-[This is ridiculous, but the following stopped working once I made piggy a kind, rather than an animal:
-repeat with vegetable running through the list of crops that are part of the piggy:
-remove vegetable from play.]                
-
 [Technically you need three crops of a kind to produce a seed packet, but gah.]
-[TODO: put *seeds* in the plop, not a crop. Seeds are probably part of a crop.]
 
-[TODO: differentiate between different crops; put seeds inside plop; hint about searching them]
+[hint about searching plop]
 ["You found a packet of type seeds in that plop!"]
 ["you can make a Piggy plop by feeding it any crop products (like potatoes, onions, broccoli, cabbage, corn, etc.)"]
 

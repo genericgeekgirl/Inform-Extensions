@@ -25,28 +25,27 @@ Chapter - Next Step
 
 [Next Step needs some stuff to examine and a full description]
 
-Next Step is a street in Gentle_Island. The printed name is "The Next Step". "Description of Next Step." [TODO]
+Next Step is a street in Gentle_Island. The printed name is "The Next Step". "This room needs a description." [TODO]
 
 [one-way directions]
 When play begins:
 	change the south exit of Next Step to Nylon Phool;
 	change the southwest exit of Next Step to Ortolana;
 	change the southeast exit of Next Step to May Soup.
-
-After examining the player for the first time:
-now the bag is in the location.
-
-A bag is an open, openable and wearable container. A bag is a player's holdall.
-The description is "An honest, unpretentious burlap sack. You can put things in it."
-
+        
 Before going from Next Step:
+	now tutorial mode is false;
 	if the bag is not enclosed by the player:
-		say "You pause to pick up the bag.";
+		say "You pause to pick up [the bag].";
 		move the bag to the player;
-	record "IF Master" as achieved;
-	now tutorial mode is false.
 
-To say navigation: say "There are no compass directions in Ur. A list of adjacent streets (if any) is in the status line above. You can travel to any street simply by typing the name of the street."
+After going from Next Step:
+	say "[as the parser]You catch on quickly, kid. I will continue to give you suggestions, but you are now free to explore the world as you wish. Don't forget to examine everything you see.[as normal]";
+	record "IF Master" as achieved;
+	if sound-allowed is true, play sound of achievement in foreground;
+	continue the action.
+
+To say navigation: say "There are no compass directions in Ur. A list of adjacent streets (if any) is in the status line above. You can travel to any street simply by typing the name of the street"
 
 Chapter - Nylon Phool
 
@@ -80,11 +79,11 @@ Six tomatoes, one basic cheese, six buns, and the knifen board are on the counte
 
 Chapter - Briarset Croft
 
-Briarset Croft is a street in Gentle_Island. "Description of Briarset Croft." [TODO]
+Briarset Croft is a street in Gentle_Island. "This room needs a description." [TODO]
 
 Chapter - May Soup
 
-May Soup is a street in Gentle_Island. "Description of May Soup." [TODO]
+May Soup is a street in Gentle_Island. "This room needs a description." [TODO]
 
 One fruit tree, one spice plant, one bean tree, one egg plant, one bubble tree, one gas plant, and the watering can are in May Soup.
 
@@ -92,7 +91,7 @@ Chapter - Namaste
 
 Namaste is a street in Gentle_Island. "This street is home to red, blue and purple trees, various ferns, a cluster of Grass Guys and a strange Purple Creature[if the teleporter is unlocked]. There is a large wooden sign here[end if]."
 
-When leaving begins:
+When play begins: [TODO]
 	Now the room illustration of Namaste is Figure Namaste Sign;
 	move the sign to Namaste;
 	change the south exit of Namaste to Savanna Sunset.
@@ -119,10 +118,7 @@ Every turn while the teleporter is locked:
 	if EZ Cooking has ended and Animal Kinship has ended and Light Green Thumb has ended:
 		now the teleporter is unlocked;
 		say "[as the parser]You are about ready to see what the world has to offer: plumb the depths of Ilmenskie Caverns, ascend the heights of Rasana and fly through the trees of Roobrik... there's a lot to explore! The way off Gentle Island is pretty easy to find. Find it. Take it. Do it!![as normal]".
-
                 
-[if EZ Cooking has happened and Animal Kinship has happened and Light Green Thumb has happened, now the teleporter is unlocked.]
-
 Instead of entering the teleporter:
 	record "Escaped" as achieved;
 	now player's mood is maximum mood;
@@ -135,7 +131,7 @@ Book - Mapping
 
 Nylon Phool is east of Ortolana and west of May Soup.
 Namaste is southeast of Ortolana and southwest of May Soup.
-Briarset Croft is southeast of Nylon Phool.
+[Briarset Croft is southeast of Nylon Phool.]
 
 Volume - Hell One
 

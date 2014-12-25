@@ -10,7 +10,7 @@ The expected command is indexed text that varies.
 The held rule is a rule that varies. 
 The completed instruction list is a list of rules that varies.
 
-Understand "restore" or "quit" or "save" or "restart" or "version" as "[meta]".
+Understand "restore" or "quit" or "q" or "save" or "restart" or "version" as "[meta]".
 Understand "imagination" or "img" or "about" or "info" or "credits" or "help" or "hint" or "hints" or "menu" or "walkthrough" as "[meta]".
 Understand "transcript" or "panels" or "sound" as "[meta]".
 
@@ -20,13 +20,15 @@ After reading a command when tutorial mode is true (this is the require correct 
 		say "That command is not available right now.";
 		reject the player's command;
 	if the player's command includes "x", replace the matched text with "examine";
+	if the player's command includes "look at", replace the matched text with "examine";
 	if the player's command includes "i", replace the matched text with "inventory";
+	if the player's command includes "inv", replace the matched text with "inventory";
 	if the expected command is "", make no decision;
 	let the translated command be indexed text;
 	let the translated command be "[the player's command in lower case]";
 	replace the text "the " in the expected command with "";
 	replace the text "the " in the translated command with "";
-	if the translated command matches the text "[expected command]":
+	if the translated command matches the text "[expected command in lower case]":
 		now the expected command is "";
 		if the held rule is a selector listed in the Table of Instruction Followups:
 			choose row with a selector of the held rule in the Table of Instruction Followups;
@@ -61,8 +63,8 @@ An instructional rule (this is the first we imagine rule):
 An instructional rule (this is the examine player rule):
 	if examine player rule is listed in the completed instruction list, make no decision;
 	if the first we imagine rule is listed in the completed instruction list:
-		now the expected command is "examine me";
-		say "[as the parser][one of]Now try examining yourself to get a better idea of who you are.[or][or]Hint: '[the expected command in upper case]'.[stopping][as normal]";
+		now the expected command is "examine"; [To get around issues of examine self, etc]
+		say "[as the parser][one of]Now try EXAMINING yourself to get a better idea of who you are.[or][or]Hint: 'EXAMINE ME'.[stopping][as normal]";
 		now the held rule is the examine player rule;
 		rule succeeds;
 	otherwise:
@@ -71,10 +73,8 @@ An instructional rule (this is the examine player rule):
 An instructional rule (this is the teach examining rule):
 	if the teach examining rule is listed in the completed instruction list, make no decision;
 	if the player can see a non-player thing (called target):
-		let N be indexed text;
-		let N be "[target]";
-		now the expected command is "examine [N]";
-		say "[as the parser][one of]Individual objects have descriptions, too. Don't forget to examine each new item you come across.[or]Examine the bag.[or]Hint: '[the expected command in upper case]'.[stopping][as normal]";
+		now the expected command is "examine [target]";
+		say "[as the parser][one of]Individual objects have descriptions, too. Don't forget to EXAMINE each new item you come across.[or]Examine the [target].[or]Hint: '[the expected command in upper case]'.[stopping][as normal]";
 		now the held rule is the teach examining rule;
 		rule succeeds;
 	otherwise:
@@ -82,11 +82,9 @@ An instructional rule (this is the teach examining rule):
 
 An instructional rule (this is the teach taking rule):
 	if the teach taking rule is listed in the completed instruction list, make no decision;
-	if the player can see a portable previously-mentioned non-player thing (called target item):
-		let N be indexed text;
-		let N be "[the target item]";
-		now the expected command is "take [N]";
-		say "[as the parser][one of]Some items can be picked up. Try taking [N].[or]Take the bag.[or]Hint: '[the expected command in upper case]'.[stopping][as normal]";
+	if the player can see a portable previously-mentioned non-player thing (called target):
+		now the expected command is "take [target]";
+		say "[as the parser][one of]Some items can be picked up. Try TAKING the [target].[or]Take the [target].[or]Hint: '[the expected command in upper case]'.[stopping][as normal]";
 		now the held rule is the teach taking rule;
 		rule succeeds;
 	otherwise:
@@ -107,7 +105,7 @@ An instructional rule (this is the teach looking rule):
 	if the teach looking rule is listed in the completed instruction list, make no decision;
 	if a room is adjacent:
 		now the expected command is "look";
-		say "[as the parser][one of]Sometimes getting a new look around your surroundings can help you figure out what you need to do next. Notice where the exits are and what objects are described.[or]Take a look around.[or]Please type LOOK to continue.[stopping][as normal]";
+		say "[as the parser][one of]Sometimes getting a new LOOK around your surroundings can help you figure out what you need to do next. Notice where the exits are and what objects are described.[or]Take a look around.[or]Please type LOOK to continue.[stopping][as normal]";
 		now the held rule is the teach looking rule;
 		rule succeeds.
                 
@@ -116,6 +114,6 @@ selector	followup
 teach examining rule	"Since you will be examining things frequently, you can abbreviate this command as X, as in X [random visible non-player thing].[as normal]"
 teach taking rule	"If you want to get rid of something that you're holding, you can drop it."
 teach inventory rule	"In the future, you can shorten this command to INV or I."
-teach looking rule	"[navigation][line break]Why don't you try going to [link]Nylon Phool[end link]?"
+teach looking rule	"[navigation]. Why don't you try going to [link]Nylon Phool[end link]?"
 
 Tutorial Mode ends here.

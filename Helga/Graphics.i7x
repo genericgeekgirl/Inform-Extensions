@@ -47,7 +47,7 @@ Book - Item Illustrations
 The item illustration of a thing is usually figure blank.
 
 Figure Allspice is the file "allspice.png".
-Figure Bag is the file "bag.png".
+Figure bag is the file "bag.png".
 Figure Basic Cheese is the file "basic cheese.png".
 Figure Bunch of Hellish Grapes is the file "bunch of hellish grapes.png".
 Figure Bun is the file "bun.png".
@@ -88,46 +88,46 @@ Figure bean is the file "bean.png".
 Figure plain bubble is the file "plain bubble.png".
 Figure plop is the file "plop.png".
 
-The item illustration of Lotion is Figure Lotion.
-The item illustration of Allspice is Figure Allspice.
-The item illustration of Bag is Figure Bag.
-The item illustration of Basic Cheese is Figure Basic Cheese.
-The item illustration of Bunch of Hellish Grapes is Figure Bunch of Hellish Grapes.
-The item illustration of Bun is Figure Bun.
-The item illustration of Butter is Figure Butterfly Butter.
-The item illustration of Milk is Figure Butterfly Milk.
-The item illustration of Butterfly is Figure Butterfly.
-The item illustration of Stinky Cheese 1 is Figure Stinky Cheese 1.
-The item illustration of Stinky Cheese 2 is Figure Stinky Cheese 2.
-The item illustration of Stinky Cheese 3 is Figure Stinky Cheese 3.
-The item illustration of Cheezy Sammich is Figure Cheezy Sammich.
-The item illustration of Cherry is Figure Cherry.
-The item illustration of Chicken is Figure Chicken.
-The item illustration of Common Crudites is Figure Common Crudites.
-The item illustration of Flummery is Figure Flummery.
-The item illustration of Fruity Juice is Figure Fruity Juice.
-The item illustration of Grain is Figure Grain.
-The item illustration of Graveside Marker is Figure Graveside Marker.
-The item illustration of Knifen Board is Figure Knifen Board.
-The item illustration of Lazy Salad is Figure Lazy Salad.
-The item illustration of Meat is Figure Meat.
-The item illustration of Piggy is Figure Piggy.
-The item illustration of Player is Figure Player.
-The item illustration of Spicy Grog is Figure Spicy Grog.
-The item illustration of Tomato is Figure Tomato.
-The item illustration of Watering Can is Figure Watering Can.
+The item illustration of lotion is figure lotion.
+The item illustration of allspice is figure allspice.
+The item illustration of bag is figure bag.
+The item illustration of basic cheese is figure basic cheese.
+The item illustration of bunch of hellish grapes is figure bunch of hellish grapes.
+The item illustration of bun is figure bun.
+The item illustration of butter is figure butterfly butter.
+The item illustration of milk is figure butterfly milk.
+The item illustration of butterfly is figure butterfly.
+The item illustration of stinky cheese 1 is figure stinky cheese 1.
+The item illustration of stinky cheese 2 is figure stinky cheese 2.
+The item illustration of stinky cheese 3 is figure stinky cheese 3.
+The item illustration of cheezy sammich is figure cheezy sammich.
+The item illustration of cherry is figure cherry.
+The item illustration of chicken is figure chicken.
+The item illustration of common crudites is figure common crudites.
+The item illustration of flummery is figure flummery.
+The item illustration of fruity juice is figure fruity juice.
+The item illustration of grain is figure grain.
+The item illustration of graveside marker is figure graveside marker.
+The item illustration of knifen board is figure knifen board.
+The item illustration of lazy salad is figure lazy salad.
+The item illustration of meat is figure meat.
+The item illustration of piggy is figure piggy.
+The item illustration of player is figure player.
+The item illustration of spicy grog is figure spicy grog.
+The item illustration of tomato is figure tomato.
+The item illustration of watering can is figure watering can.
 The item illustration of fruit tree is figure fruit tree.
 The item illustration of bubble tree is figure bubble tree.
 The item illustration of egg plant is figure egg plant.
 The item illustration of spice plant is figure spice plant.
 The item illustration of bean tree is figure bean tree.
 The item illustration of gas plant is figure gas plant.
-The item illustration of general vapour is Figure general vapour.
-The item illustration of unseasoned egg is Figure unseasoned egg.
-The item illustration of bean is Figure bean.
-The item illustration of plain bubble is Figure plain bubble.
-The item illustration of plop is Figure plop.
-The item illustration of tomato seeds is Figure Tomato Seeds.
+The item illustration of general vapour is figure general vapour.
+The item illustration of unseasoned egg is figure unseasoned egg.
+The item illustration of bean is figure bean.
+The item illustration of plain bubble is figure plain bubble.
+The item illustration of plop is figure plop.
+The item illustration of tomato seeds is figure tomato seeds.
 
 Chapter - Scenery Illustrations
 

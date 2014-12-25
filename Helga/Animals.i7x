@@ -6,12 +6,15 @@ Volume - Animal Kinship
 
 Animal Kinship is a scene.
 Animal Kinship begins when the location is Nylon Phool for the first time.
-Animal Kinship ends when a milk has been handled and a meat has been handled and a grain has been handled.
+AnimalKinship is a number that varies. AnimalKinship is 0.
+Animal Kinship ends when AnimalKinship is 1.
 
-When Animal Kinship ends:
-	record "A L'il Animal Kinship" as achieved;
-	if sound-allowed is true, play sound of achievement in foreground;
-	say "[as the parser]Petting? Nibbling? You're well on your way now, kid.[as normal]"
+Every turn when Animal Kinship is happening:
+	if a milk has been handled and a meat has been handled and a grain has been handled:
+		now AnimalKinship is 1;
+		record "A L'il Animal Kinship" as achieved;
+		if sound-allowed is true, play sound of achievement in foreground;
+		say "[as the parser]Petting? Nibbling? You're well on your way now, kid.[as normal]"
 
 Volume - Animals
         
@@ -20,7 +23,7 @@ An animal can be sad. An animal is usually not sad.
 
 Volume - Butterfly
 
-A butterfly is a kind of animal. The plural of butterfly is butterflies.
+A butterfly is a kind of animal. The printed name is "butterfly". Understand "butterfly" as butterfly. The plural of butterfly is butterflies. 
 The description is "A morphously blue butterfly. As any fool knows, butter can't fly, but milk apparently can. Butterflies may need a little kindness before they give up the milk, but milk can always be turned into butter... and cheese... and who knows what else?" 
 
 A butterfly can be ready to milk. A butterfly is usually not ready to milk.
@@ -31,7 +34,8 @@ Book - Capture
 
 Check taking a butterfly: say "You'll never catch it with your bare hands." instead.
 
-A butterfly net is a kind of thing. The description is "It sure makes catching Butterflies easier, but at what cost?"
+A net is a kind of thing. The printed name of a net is "butterfly net". Understand "butterfly net" as a net.
+The description is "It sure makes catching Butterflies easier, but at what cost?"
 
 Book - Massaging
 
@@ -55,7 +59,7 @@ After touching a butterfly (called B):
 	decrease the player's energy by 5;
 	increase the player's mood by 2;
 	now B is ready to milk;
-	let L be a random lotion carried by the player;        
+	let L be a random lotion enclosed by the player;        
 	decrease uses of L by 1;
 	if uses of L is 0:
 		say "You've used up the last of the lotion.";
@@ -63,7 +67,7 @@ After touching a butterfly (called B):
 
 Chapter - Butterfly Lotion
 
-A lotion is a kind of thing. A lotion is edible. The printed name of a lotion is "butterfly lotion". Understand "butterfly lotion" as a lotion.
+A lotion is a kind of thing. The printed name of a lotion is "butterfly lotion". Understand "butterfly lotion" as a lotion.
 The description is "A tiny tube of butterfly lotion, without which a butterfly cannot be massaged. Remember: butterflies chafe easily, but they still like it pretty hard."
 
 A lotion has a number called uses. Uses is usually 5.
@@ -153,7 +157,8 @@ To say butterfly-milk-success: say "'[one of]OMG I TOTES DID U MILX!'[or]i got m
 After milking a butterfly (called B):
 	let M be a random milk that is part of B;
 	let the new milk be a new object cloned from M;
-	now the player carries the new milk;
+	now the new milk is in the location;
+	try silently taking the new milk;
 	decrease player's energy by 5;
 	increase player's mood by 1;
 	now B is not ready to milk.
@@ -228,13 +233,14 @@ Carry out squeezing a chicken:
 	say "You squoze a chicken. It gives you one grain.[paragraph break]The chicken says, [chicken-squeeze-success]";
 	if sound-allowed is true, play sound of chicken squeeze in foreground.
 
-To say chicken-squeeze-success: say "[one of]Not so hard, you'll tangle my intestinal noodles.'[or]Yes, because chickens don't need personal space too? Pah.'[or]Consider my feathers ruffled. Buk.'[or]Chicken-ruffler! Alarm! Alarm!'[or]Always with the squeezing!'[or]Do YOU like to be squeezed by random strangers? Hmn?'[in random order]"
+To say chicken-squeeze-success: say "'[one of]Not so hard, you'll tangle my intestinal noodles.'[or]Yes, because chickens don't need personal space too? Pah.'[or]Consider my feathers ruffled. Buk.'[or]Chicken-ruffler! Alarm! Alarm!'[or]Always with the squeezing!'[or]Do YOU like to be squeezed by random strangers? Hmn?'[in random order]"
 
 After squeezing a chicken:
 	decrease player's energy by 1;
 	let G be a random grain that is part of the chicken;
 	let the new grain be a new object cloned from G;
-	now the player carries the new grain.
+	now the new grain is in the location;
+	try silently taking the new grain.
 
 Check squeezing an incubating chicken:
 	say "What kind of weirdo squeezes an incubating chicken?" instead.
@@ -256,7 +262,7 @@ Book - Capture
 
 Check taking a piggy: say "The piggy says, [piggy-capture-fail]" instead.
         
-To say piggy-capture-fail: say "'[one of]No way, dude! I'm not a one-Glitch piggy[or]Man, I'm totally not ready to settle down[or]I like to think of myself as a free spirit[or]Not today, friend. I'm happy chewing on this gnarly patch[or]No, dude. I'm dandy just hangin' out here. Mañana[at random].'".
+To say piggy-capture-fail: say "'[one of]No way, dude! I'm not a one-Glitch piggy[or]Man, I'm totally not ready to settle down[or]I like to think of myself as a free spirit[or]Not today, friend. I'm happy chewing on this gnarly patch[or]No, dude. I'm dandy just hangin['] out here. Mañana[at random].'".
 
 A pig bait is a kind of thing. The description is "A sack of tempting pig bait. It can be used to try to capture wild piggies."
 
@@ -324,7 +330,8 @@ To say piggy-nibble-success: say "'[one of]Here you go, dude - chop chop[or]Your
 After nibbling a piggy (called P):
 	let M be a random meat that is part of P;
 	let the new meat be a new object cloned from M;
-	now the player carries the new meat;
+	now the new meat is in the location;
+	try silently taking the new meat;
 	decrease player's energy by 2;
 	now P is not ready to nibble;
 	decrease meat count of P by 1.
@@ -334,19 +341,24 @@ Check nibbling a sad piggy:
 
 Book - Feeding
 
-Instead of giving something to an animal: try feeding the noun to the second noun.
-
 Feeding it to is an action applying to two things.
 Understand "feed [something] to [something]" as feeding it to.
 
-Check feeding something to a piggy:
-	if the noun is not food, say "The piggy doesn't want to eat that." instead.
+Check feeding something to something:
+	if the second noun is not an animal:
+		say "You can only do that to something animate." instead.
+
+Instead of giving something to an animal: try feeding the noun to the second noun.
+
+Check feeding something to an animal:
+	if the second noun is not a piggy or the noun is not food:
+		say "[The second noun] doesn't want to eat that." instead.
 
 Carry out feeding something to a piggy (called P):
 	say "You feed [a noun] to the piggy.[paragraph break]The piggy says, [piggy-feeding-success]";
 	try P eating the noun.
 
-To say piggy-feeding-success: say "'[one of]Nom nom burp nom excuse me dude nom.'[or]Pigs are omnivores, right? Cuz I'm eatin' ALLa this.'[or]Ahh. Wait, did you want to go halvsies?'[or]That'll do, dude. That'll do.'[or]I like you the most. Well, second-most (after your food).'[or]Can't. Talk. Eating. Laters.'[or]Sweet snackage, chum.'[or]Super-snafflable scran, man.'[or]Wait, Scooby Snacks do direct delivery? Awsum.'[or]So. Full. Well, maybe a *little* more.'[or]Nom nom nom.'[or]You're my favourite, friend. Loves.'[in random order]".
+To say piggy-feeding-success: say "'[one of]Nom nom burp nom excuse me dude nom.'[or]Pigs are omnivores, right? Cuz I'm eatin['] ALLa this.'[or]Ahh. Wait, did you want to go halvsies?'[or]That'll do, dude. That'll do.'[or]I like you the most. Well, second-most (after your food).'[or]Can't. Talk. Eating. Laters.'[or]Sweet snackage, chum.'[or]Super-snafflable scran, man.'[or]Wait, Scooby Snacks do direct delivery? Awsum.'[or]So. Full. Well, maybe a *little* more.'[or]Nom nom nom.'[or]You're my favourite, friend. Loves.'[in random order]".
         
 Every turn:
 	repeat with P running through the list of piggies:
@@ -366,7 +378,7 @@ After a piggy (called P) eating something:
 	now meat count of P is 5;
 	now the noun is part of P;
 	let N be the number of crops that are part of P;
-	if the remainder after dividing N by 3 is 0, try P creating a plop.
+        if N > 1 and the remainder after dividing N by 3 is 0, try P creating a plop.
 
 Check feeding something to a sad piggy:
 	say "This pig is too upset by its surroundings to think about food." instead.
@@ -400,7 +412,8 @@ Carry out a piggy (called P) creating a plop:
 Instead of searching a plop (called P):
 	let seed be a random crop seeds that is enclosed by P;
 	say "You found [a seed]!";
-	now the player carries seed;
+	now seed is in the location;
+	try silently taking seed;
 	remove P from play.        
         
 Before doing anything to a plop (called P):

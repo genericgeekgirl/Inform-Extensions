@@ -157,6 +157,8 @@ A shrine tii is in namaste.
 Donating it to is an action applying to two things.
 Understand "Donate [something] to [shrine]" as donating it to.
 
+Understand "give [something] to [shrine]" as donating it to.
+
 Instead of inserting something into a shrine: try donating the noun to the second noun.
 
 Carry out donating something (called I) to a shrine (called S):

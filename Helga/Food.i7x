@@ -14,9 +14,7 @@ Instead of drinking a drink (called D):
 	increase the player's mood by the mood of D;
 	increase the player's energy by the energy of D;
 	say "You drank [a D]. Yum.";
-	remove D from play;
-	record "Glutton for Nourishment" as achieved;
-	if sound-allowed is true, play sound of drinking in foreground;
+	remove D from play.
 
 Instead of eating a drink:
 	try drinking the noun.
@@ -152,7 +150,9 @@ After eating a food (called F):
 	if sound-allowed is true, play sound of eating in foreground;
 
 Before eating a food for the first time:
-	say "[as the parser]Eating food gives you energy, and energy keeps you alive.[as normal]"
+	say "[as the parser]Eating food gives you energy, and energy keeps you alive.[as normal]";
+	record "Glutton for Nourishment" as achieved;
+	if sound-allowed is true, play sound of drinking in foreground;
 
 Check drinking a food:
 	say "Blenders haven't been implemented yet. You'll need to EAT that instead." instead.
@@ -161,7 +161,7 @@ Book - Food Items
         
 Table of Food Items
 Food	Description	Energy	Plural
-meaty sammich	"A basic bun 'n' meat sammich."	5	"meaty sammiches"
+meaty sammich	"A basic bun [']n['] meat sammich."	5	"meaty sammiches"
 cheezy sammich	"An easy, pleasey, cheezy sammich."	5	"cheezy sammiches"
 lazy salad	"Sliced tomatoes and cheese. It doesn't get much lazier than a lazy salad."	5
 common crudite	"Everyday crudites served in an easy-to-carry cup."	5
@@ -418,7 +418,7 @@ Chapter - Butterfly Milk
 
 A milk is a kind of drink. The printed name is "butterfly milk". Understand "butterfly milk" as milk.
 The description is "A vial of butterfly milk. It has the tingly effervescence of a thousand tiny butterfly farts."
-The mood of milk is 6.
+The mood of milk is 6. [The plural of milk is butterfly milks.]
 
 One milk is part of every butterfly.
 
@@ -442,7 +442,8 @@ Instead of shaking a milk (called B):
 	remove the B from play;
 	let C be a random butter that is in staging;
 	let the new butter be a new object cloned from C;
-	now the player carries the new butter.
+	now the new butter is in the location;
+	try silently taking the new butter.
 
 Chapter - Butterfly Butter
 
@@ -457,7 +458,8 @@ After squeezing a butter (called B):
 	remove the B from play;
 	let C be a random basic cheese that is in staging;
 	let the new basic cheese be a new object cloned from C;
-	now the player carries the new basic cheese.
+	now the new basic cheese is in the location;
+	try silently taking the new basic cheese.
 
 Chapter - Cheese
 
@@ -475,7 +477,8 @@ Instead of aging a basic cheese (called C):
 	remove the C from play;
 	let D be a random stinky cheese 1 that is in staging;
 	let the new stinky cheese 1 be a new object cloned from D;
-	now the player carries the new stinky cheese 1.
+	now the new stinky cheese 1 is in the location;
+	try silently taking the new stinky cheese 1.
 
 Book - Stinky Cheese
 
@@ -492,7 +495,8 @@ Instead of aging a stinky cheese 1 (called C):
 	remove C from play;
 	let D be a random stinky cheese 2 that is in staging;
 	let the new stinky cheese 2 be a new object cloned from D;
-	now the player carries the new stinky cheese 2.
+	now the new stinky cheese 2 is in the location;
+	try silently taking the new stinky cheese 2.
 
 After tasting a stinky cheese 1:
 	say "Awesome. Now you have stink-tongue.";
@@ -514,7 +518,8 @@ Instead of aging a stinky cheese 2 (called C):
 	remove C from play;
 	let D be a random stinky cheese 3 that is in staging;
 	let the new stinky cheese 3 be a new object cloned from D;
-	now the player carries the new stinky cheese 3.
+	now the new stinky cheese 3 is in the location;
+	try silently taking the new stinky cheese 3.
 
 Instead of smelling a stinky cheese 2:
 	say "Phew. That [italic type]is[roman type] very stinky."
@@ -527,7 +532,8 @@ After touching a stinky cheese 2:
 	decrease player's energy by 10;
 	let S be a random small shiny object that is in staging;
 	let the new small shiny object be a new object cloned from S;
-	now the player carries the new small shiny object.
+	now the new small shiny object is in the location;
+	try silently taking the new small shiny object.
 
 Chapter - Small shiny object with no intrinsic value
 
@@ -566,14 +572,15 @@ Volume - Cooking
 
 EZ Cooking is a scene.
 EZ Cooking begins when the location is Shimla Shack for the first time.
-EZ Cooking ends when a lazy salad has been handled and a cheezy sammich has been handled and a meaty sammich has been handled.
+EZCooking is a number that varies. EZCooking is 0.
+EZ Cooking ends when EZCooking is 1.
 
-Food-count is a number that varies. Food-count is 0.
-
-When EZ Cooking ends:
-record "Breezy, EZ Cookin'" as achieved;
-if sound-allowed is true, play sound of achievement in foreground;
-say "[as the parser]Looks like your skills just got a little tastier! Well done, kid.[as normal]".
+Every turn when EZ Cooking is happening:
+	if a lazy salad has been handled and a cheezy sammich has been handled and a meaty sammich has been handled:
+		now EZCooking is 1;
+		record "Breezy, EZ Cookin[']" as achieved;
+		if sound-allowed is true, play sound of achievement in foreground;
+		say "[as the parser]Looks like your skills just got a little tastier! Well done, kid.[as normal]".
 
 Book - Cooking Utensils
 
@@ -719,7 +726,8 @@ Carry out preparing:
 		repeat with recipe running through the list of things that are part of the knifen board:
 			if "[recipe]" matches the text "[recipe entry]", case insensitively:
 				let the new item be a new object cloned from the recipe;
-				now the player carries the new item;
+				now the new item is in the location;
+				try silently taking the new item;
 		say "Nice! You made a [recipe entry]. You used [ingredients entry].";
 		if sound-allowed is true, play sound of chopping in foreground; [TODO]
 

@@ -6,17 +6,18 @@ Volume - Light Green Thumb
 
 Light Green Thumb is a scene.
 Light Green Thumb begins when the location is May Soup for the first time.
-Light Green Thumb ends when an allspice has been handled and a cherry has been handled and a bean has been handled and a plain bubble has been handled and an unseasoned egg has been handled and a general vapour has been handled.
+LightGreenThumb is a number that varies. LightGreenThumb is 0.
+Light Green Thumb ends when LightGreenThumb is 1.
 
-When Light Green Thumb ends:
-	record "Lift Your Light Green Thumb" as achieved;
-	increase energy by 25;
-	if sound-allowed is true, play sound of achievement in foreground;
-	say "[as the parser]What’s that? I think you got a little green on your thumb![as normal]".
+Every turn when Light Green Thumb is happening:
+	if an allspice has been handled and a cherry has been handled and a bean has been handled and a plain bubble has been handled and an unseasoned egg has been handled and a general vapour has been handled:
+		now LightGreenThumb is 1;
+		record "Lift Your Light Green Thumb" as achieved;
+		increase energy by 25;
+		if sound-allowed is true, play sound of achievement in foreground;
+		say "[as the parser]What’s that? I think you got a little green on your thumb![as normal]".
 
 Volume - Watering
-
-[sound: WATERING_CAN ??? possibly only on failure/breakage]
 
 A watering-can is a kind of thing.
 
@@ -29,9 +30,23 @@ The description is "Galvanised for your pleasure, the Irrigator 9000 offers unpa
 Watering is an action applying to one thing.
 Understand "water [something]" as watering.
 
+Instead of using a watering-can:
+	try watering the player.
+
+Instead of using a watering-can on something:
+	try watering the second noun.
+
+Before using a watering-can (called C):
+	if the player does not enclose C:
+		try silently taking C;
+		say "You pick up a [C]."
+
 Check watering something:
 	if the noun is not a tree:
-		say "Now [the noun] is soaking wet."
+		if the noun is the player:
+			say "Now you are soaking wet.";
+		otherwise:
+			say "Now [the noun] is soaking wet."
 
 Check watering something (this is the needs a watering can rule):
 	if the player does not enclose a watering-can:
@@ -39,7 +54,7 @@ Check watering something (this is the needs a watering can rule):
 
 Check watering a tree (called T):
 	if T is not thirsty:
-		say "[The T] says, 'I don't want to be watered right now.'" instead.
+		say "[The T] says, '[water fail response of T]'[line break]" instead.
 
 Carry out watering a tree (called T):
 	say "[one of][The T] says, 'Oh, that hit the spot.'[paragraph break][as the parser]Trees can also be petted. Everything needs a little love.[as normal][or]You watered [a T].[paragraph break][The T] says '[water response of T]'[line break][stopping]";
@@ -56,7 +71,7 @@ Volume - Petting
 
 Check touching a tree (called T):
 	if T is not lonely:
-		say "[The T] says, 'I don't want to be petted right now.'" instead.
+		say "[The T] says, '[pet fail response of T]'[line break]" instead.
 
 Carry out touching a tree (called T):
 	say "[one of][The T] says, 'Mmm, thanks for that. Do you want some [printed plural name of random trant_fruit that is part of T]? You can harvest them from me. They're quite yummy, even if I do say so myself.'[or]You pet [a T].[paragraph break][The T] says '[pet response of T]'[line break][stopping]";
@@ -96,7 +111,8 @@ After harvesting a tree (called T):
 	while fruit count of T > 0:
 		let F be a random trant_fruit that is part of T;
 		let the new fruit be a new object cloned from F;
-		now the player carries the new fruit;
+		now the new fruit is in the location;
+		try silently taking the new fruit;
 		decrease fruit count of T by 1;
 	now T is lonely;
 	now T is thirsty;
@@ -116,7 +132,9 @@ A tree can be dead. A tree is usually not dead.
 A tree has a number called fruit count. Fruit count is usually 0.
 
 A tree has a text called pet response.
+A tree has a text called pet fail response.
 A tree has a text called water response.
+A tree has a text called water fail response.
 A tree has a text called harvest response.
 
 After examining a tree for the first time:
@@ -158,6 +176,10 @@ The pet response of a fruit tree is "[one of]Hm...[or]Rrrr...[or]Aw...[or]Mhm...
 
 The water response of a fruit tree is "[one of]Sluuuurp.[or]Glug-glug.[or]Mmm.[or]Splosh.[or]Psahhh.[at random]".
 
+The pet fail response of a fruit tree is "[one of]Nein[or]Nah[or]Nyet[at random]."
+
+The water fail response of a fruit tree is "[one of]Nup[or]Non[at random]."
+
 Book - Spice Plants
 
 A spice plant is a kind of light tree.
@@ -169,6 +191,10 @@ The pet response of spice plant is "[one of]Eh? What? How nice...[or]My, my: suc
 
 The water response of spice plant is "[one of]Now now, young'un, not too much water...[or]I'd prefer a fine scotch, but if water is all you have...[or]Petting? Watering? My my, we ARE attentive.[or]Such a delicate pour you have, my sweet.[or]You could pour slurry from a bucket and make it refreshing...[at random]".
 
+The pet fail response of a spice plant is "[one of]Stop right now, thank you very much[or]I say! Who do you think you are? No[or]Not tonight, my little petster wannabe[at random]."
+
+The water fail response of a spice plant is "[one of]Thanks, but I'm wet enough already[or]I like to think of myself as dry. Like a good martini[at random]."
+
 Book - Bean Tree
 
 A bean tree is a kind of light tree.
@@ -177,9 +203,13 @@ The description of the Bean Tree is "The good old Tree of Bean. Laden with 57 va
 
 The harvest response of bean tree is "[one of]Is that what you've bean looking for?[or]Cool. Beans. Cool beans![or]Two bean, or not two bean?...[or]You favored us. Now, we fava you. Ha ha. Like \[or]Wassssss-sap! Ha ha ha. Oh just take bean then.[at random]".
 
-The pet response of bean tree is "[one of]Ahh. We have been pining for a hug. Ha ha.[or]Fir the record: this petting is improving.[or]You've spruced yourself up since I saw you. Ha. Spruce.[or]Nice hug, bud.[or]Ahhhhhh, sap's what I'm talkin' about.[at random]".
+The pet response of bean tree is "[one of]Ahh. We have been pining for a hug. Ha ha.[or]Fir the record: this petting is improving.[or]You've spruced yourself up since I saw you. Ha. Spruce.[or]Nice hug, bud.[or]Ahhhhhh, sap's what I'm talkin['] about.[at random]".
 
 The water response of bean tree is "[one of]Nice watering action, bud.[or]Your act is like cool glass of water on a.... oh it IS that. Ha. Ha ha.[or]Little Glitch has improved.[or]You're getting better at this. Ever thought of branching out?[or]Tree is lichen that.[at random]".
+
+The pet fail response of a bean tree is "[one of]Make like a tree and leaf me alone. Haha. Tree is funny[or]Little Glitch is barking up wrong... oh! Ha ha. Tree made joke[or]Leaf me alone. Ha! Laugh at joke, glitch[at random]."
+
+The water fail response of a bean tree is "[one of]Please desist. I am growing a new ring.[or]Stop! Do I look like seaweed to you?![at random]".
 
 Book - Bubble Tree
 
@@ -190,7 +220,11 @@ The harvest response of bubble tree is "[one of]Hey! Pssst. You like bubbles? He
 
 The pet response of bubble tree is "[one of]Who told you where I was? Did they? Oh, well. Thanks, I...[or]...fizzing so loud the mountain popped! Pop![or]...and if you think loud enough, they might hear...[or]Quick! Get the tin! My hole has a hat! No! Hat has hole![or]Shhhh, if you see him, don't tell him I'm here.[at random]".
 
-The water response of bubble tree is "[one of]Say, I don't remember ordering drinks, who sent you?[or]...Did one of Grendaline's send you? Why I oughta...[or]...to the top of my tallest bubble, I swear it, until...[or]You ever get the feeling you're bein' tapped, kid?[or]...even the slightest sniff of a... wait! Who are you?![at random]".
+The water response of bubble tree is "[one of]Say, I don't remember ordering drinks, who sent you?[or]...Did one of Grendaline's send you? Why I oughta...[or]...to the top of my tallest bubble, I swear it, until...[or]You ever get the feeling you're bein['] tapped, kid?[or]...even the slightest sniff of a... wait! Who are you?![at random]".
+
+The pet fail response of a bubble tree is "[one of]No, gerroff...[or]Don't touch! Are you radioactive? Badgers![or]The radio signal is telling me not to accept your advances.[at random]".
+
+The water fail response of a bubble tree is "[one of]No water today! I am trying out a new wiretapping system.[or]No, thank YOU, I mean, is that water? How do I know?[at random]".
 
 Book - Paper Tree
 
@@ -214,6 +248,10 @@ The pet response of egg plant is "[one of]We feel mighty and bountiful after goo
 
 The water response of egg plant is "[one of]Excellent we needed that.[or]Little Glitch is becoming agronomist! Is that a word?[or]We lack superlatives for this watering. Hm: 'nicewet'?[or]Ahh, we fear we will be forgotten, down here, in the dark.[or]This watering exceeds expectation. Excellent.[at random]".
 
+The pet fail response of a egg plant is "[one of]Away with you, pesky mite[or]Pet me not. I am contemplating the cosmos[or]None of that thanks. My mind is on higher things[at random]."
+
+The water fail response of a egg plant is "[one of]Not now. I am translating obscure Greek drama in my head[or]Be off with you, I am composing odes in my noggin[at random]."
+
 Book - Gas Plants
 
 A gas plant is a kind of light tree.
@@ -224,6 +262,10 @@ The harvest response of gas plant is "[one of]You want gas? Dude, sure.[or]Alway
 The pet response of gas plant is "[one of]Groovy. Yes. Hang loose, kid.[or]Ahhhh. In the zone now, friend. Yeah.[or]When we touch, I feel like our energies meld. You get that? No?[or]Ah yes. Mellow now.[or]As ever, it's been a gas.[at random]".
 
 The water response of gas plant is "[one of]You're quenching the thirst of the cosmos, y'hear?[or]Dibs on your next full watercan, friend. This stuff is good.[or]Feels real groovy, friend.[or]Ahh, falling water, it sounds like music, don't you think?[or]Water's just so awesome. So awesome.[at random]".
+
+The pet fail response of a gas plant is "[one of]Not cool right now, friend.[or]You're harshing my mood. Maybe later on, yeah?[or]What? Wait? What? Now? No, friend, no.[at random]".
+
+The water fail response of a gas plant is "[one of]No, man. Not cool. Not today[or]Stop that noise, man. I'm listening to the cosmos here[at random]."
 
 Volume - Harvest Sounds
 
@@ -242,7 +284,7 @@ Volume - Tree Resources
 
 A trant_fruit is a kind of food. A trant_fruit can be edible. A trant_fruit is usually edible.
 
-Before doing anything except taking to a trant_fruit (called F):
+Before doing anything except taking or harvesting to a trant_fruit (called F):
 	if F is part of a tree:
 		say "You can't see any such thing." instead.
 
@@ -303,7 +345,7 @@ A cloudberry is a kind of fruit. The description is "A pleasingly tart cloudberr
 
 A whortleberry is a kind of fruit. The description is "A single delectable whortleberry." The plural of whortleberry is whortleberries.
 
-An orange fruit is a kind of fruit. The printed name is "orange". The description is "A very orange orange."
+An orange fruit is a kind of fruit. The printed name is "orange". The plural of orange fruit is oranges. The description is "A very orange orange."
 
 A plum is a kind of fruit. The description is "A plummy plum."
 
@@ -496,6 +538,7 @@ Instead of rubbing or touching the nutmeg:
 Chapter - Old(er) Spice
 
 An older spice is a kind of spice. The printed name is "old(er) spice". Understand "old(er) spice" and "old(er)" as older spice.
+The plural is "old(er) spices".
 The description is "A handful of colorful older spice."
 
 After examining an older spice for the second time:
@@ -709,7 +752,7 @@ Chapter - Folding (TODO)
 
 Book - Eggs
 
-A unseasoned egg is a kind of trant_fruit. The printed name is "egg".
+A unseasoned egg is a kind of trant_fruit. The printed name is "egg". The plural is "eggs".
 The description is "A plain, unseasoned egg, newly harvested from an Egg Plant. It can be used for all kinds of cooking, or it can be hatched into different animals."
 
 One unseasoned egg is part of every egg plant.
@@ -817,9 +860,9 @@ Instead of pushing a tree (called T):
 	let P be a random patch that is part of T;
 	now P is in the location;
 	repeat with wood running through planks that are part of T:
-		now the player carries wood;
+		now the wood is in the location;
+		try silently taking the wood;
 	remove T from play;
-
 
 Section - Planks
 
@@ -870,25 +913,23 @@ A patch is a kind of thing. A patch is fixed in place.
 A patch can be dug. A patch is usually not dug.
 A patch can be tended. A patch is usually not tended.
 
-A basic patch is a kind of patch. The printed name is "patch".
+A basic patch is a kind of patch. The printed name is "patch". The plural of basic patch is patches.
 The description is "A humble, weedy patch. With a spade you can dig it, a hoe you can tend it, and, with a bean, even grow a tree in it. (NB: Trees are delicate organisms, and beans will only consent to being planted in the correct region.)"
-The plural of basic patch is patches.
 
 One basic patch is part of every light tree.
 
-An underground patch is a kind of patch. The printed name is "dark patch".
+An underground patch is a kind of patch. The printed name is "dark patch". The plural of underground patch is dark patches.
 The description is "An underground patch. As in 'subterranean', rather than 'clandestine'. Perfect for planting anything that flourishes in the shade. Or rather 'the one thing that flourishes in the shade'."
-The plural of underground patch is dark patches.
 
 One underground patch is part of every cave tree.
 
 Book - Digging (TODO)
  
-To say patch_dig: say "[one of]Is dugged! Here! Urths![or]O looks! You dugged me. An' I mades this.[or]O what is this you did dug? It done be stuff, yeah?[or]I is pull this out of that hole you dugged.[or]Please be patient. I am newthing. Thanky for digs![or]Look! Urths and stuffs! Dugged it you did![at random]".
+To say patch_dig: say "[one of]Is dugged! Here! Urths![or]O looks! You dugged me. An['] I mades this.[or]O what is this you did dug? It done be stuff, yeah?[or]I is pull this out of that hole you dugged.[or]Please be patient. I am newthing. Thanky for digs![or]Look! Urths and stuffs! Dugged it you did![at random]".
 
 A shovel is a kind of thing.
 
-A basic shovel is a shovel. The printed name is "shovel".
+A basic shovel is a shovel. The printed name is "shovel". The plural of basic shovel is shovels.
 The description is "An essential for anyone that calls a spade a shovel, this simple tool masterpiece can be used to harvest Peat, dig for dirt (well, Urth), and occasionally land a juicy piece of Loam."
 
 An ace of spades is a shovel.

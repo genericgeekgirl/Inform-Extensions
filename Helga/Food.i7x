@@ -641,9 +641,9 @@ Book - Recipes
 
 Table of Recipes
 Topic	Recipe	Known	Tool	Ingredients
-"cheezy sammich" or "cheezy" or "cheesy" or "cheesy sammich"	"Cheezy Sammich"	1	Knifen Board	{"a bun", "a cheese"}
+"cheezy sammich" or "cheezy" or "cheesy" or "cheesy sammich" or "cheesy sandwich" or "cheezy sandwich"	"Cheezy Sammich"	1	Knifen Board	{"a bun", "a cheese"}
 "lazy salad" or "lazy" or "salad"	"Lazy Salad"	1	Knifen Board	{"a tomato", "a cheese"}
-"meaty sammich" or "meaty"	"Meaty Sammich"	1	Knifen Board	{"a bun", "a meat"}
+"meaty sammich" or "meaty" or "meaty sandwich"	"Meaty Sammich"	1	Knifen Board	{"a bun", "a meat"}
 
 Requesting recipes is an action applying to nothing.
 Understand "RECIPES" and "RECIPE" as requesting recipes.
@@ -696,12 +696,10 @@ A menu question rule (this is the prepare recipe rule):
 		try preparing "lazy salad";
 	exit.
         
-[TODO: How can I make this work across the board?]
-
 Check preparing:
 	if the topic understood is a topic listed in the Table of Recipes:
 		if the known entry is 0, say "You don't know how to prepare that yet." instead;
-		if the player does not enclose the tool entry, say "You need [a tool entry] to prepare that recipe." instead;
+		if the location does not enclose the tool entry, say "You need [a tool entry] to prepare that recipe." instead;
 		repeat with ingredient running through the ingredients entry:
 			let found be 0;
 			repeat with object running through the list of things enclosed by the player:
@@ -728,7 +726,7 @@ Carry out preparing:
 				let the new item be a new object cloned from the recipe;
 				now the new item is in the location;
 				try silently taking the new item;
-		say "Nice! You made a [recipe entry]. You used [ingredients entry].";
-		if sound-allowed is true, play sound of chopping in foreground; [TODO]
+		say "You slice and dice, turning [ingredients entry] into a [link][recipe entry][end link].";
+		if sound-allowed is true, play sound of chopping in foreground;
 
 Food ends here.

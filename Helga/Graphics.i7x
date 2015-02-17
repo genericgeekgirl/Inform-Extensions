@@ -90,7 +90,7 @@ Figure plop is the file "plop.png".
 
 The item illustration of lotion is figure lotion.
 The item illustration of allspice is figure allspice.
-The item illustration of bag is figure bag.
+The item illustration of the bag is figure bag.
 The item illustration of basic cheese is figure basic cheese.
 The item illustration of bunch of hellish grapes is figure bunch of hellish grapes.
 The item illustration of bun is figure bun.

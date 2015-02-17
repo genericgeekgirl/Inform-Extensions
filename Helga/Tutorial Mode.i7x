@@ -2,7 +2,7 @@ Tutorial Mode by Helga begins here.
 
 "Modified from Tutorial Mode, Version 2, by Emily Short, for use specifically with Discover a World."
 
-Tutorial mode is a truth state that varies. [Tutorial mode is true.] Tutorial mode is true.
+Tutorial mode is a truth state that varies. Tutorial mode is true.
 
 Section - Forcing player response
 
@@ -12,13 +12,15 @@ The completed instruction list is a list of rules that varies.
 
 Understand "restore" or "quit" or "q" or "save" or "restart" or "version" as "[meta]".
 Understand "imagination" or "img" or "about" or "info" or "credits" or "help" or "hint" or "hints" or "menu" or "walkthrough" as "[meta]".
-Understand "transcript" or "panels" or "sound" as "[meta]".
+Understand "*" or "transcript" or "panels" or "sound" as "[meta]".
+Understand "Imagine" as "[meta]" when the location is not in Outside Ur.
 
 After reading a command when tutorial mode is true (this is the require correct response rule):	
 	if the player's command includes "[meta]", make no decision;
 	if the player's command includes "study":
 		say "That command is not available right now.";
 		reject the player's command;
+	if the player's command includes "get", replace the matched text with "take";	
 	if the player's command includes "x", replace the matched text with "examine";
 	if the player's command includes "look at", replace the matched text with "examine";
 	if the player's command includes "i", replace the matched text with "inventory";
@@ -72,7 +74,7 @@ An instructional rule (this is the examine player rule):
 
 An instructional rule (this is the teach examining rule):
 	if the teach examining rule is listed in the completed instruction list, make no decision;
-	if the player can see a non-player thing (called target):
+	if the player can see a non-player thing (called target) that is not scenery:
 		now the expected command is "examine [target]";
 		say "[as the parser][one of]Individual objects have descriptions, too. Don't forget to EXAMINE each new item you come across.[or]Examine the [target].[or]Hint: '[the expected command in upper case]'.[stopping][as normal]";
 		now the held rule is the teach examining rule;
@@ -99,7 +101,7 @@ An instructional rule (this is the teach inventory rule):
 		now the held rule is the teach inventory rule;
 		rule succeeds;
 	otherwise:
-		say "[first time][as the parser]The list of items you are carrying can be seen on the right.[as normal][only]"
+		say "[first time][as the parser]The list of items you are carrying can be seen on the right. You can also type INVENTORY. If you want to get rid of something that you're holding, you can DROP it.[as normal][only]"
 
 An instructional rule (this is the teach looking rule): 
 	if the teach looking rule is listed in the completed instruction list, make no decision;
@@ -112,8 +114,6 @@ An instructional rule (this is the teach looking rule):
 Table of Instruction Followups
 selector	followup
 teach examining rule	"Since you will be examining things frequently, you can abbreviate this command as X, as in X [random visible non-player thing].[as normal]"
-teach taking rule	"If you want to get rid of something that you're holding, you can drop it."
 teach inventory rule	"In the future, you can shorten this command to INV or I."
-teach looking rule	"[navigation]. Why don't you try going to [link]Nylon Phool[end link]?"
 
 Tutorial Mode ends here.

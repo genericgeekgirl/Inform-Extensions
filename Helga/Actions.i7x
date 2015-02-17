@@ -49,7 +49,7 @@ try requesting actions for the noun.
 
 Volume - Hyperlinked Objects
 
-Rule for printing the name of a thing (called item) while looking or taking inventory:
+Rule for printing the name of a thing (called item) while looking or taking inventory or taking sidebar inventory:
 	let string be the printed name of item;
 	if item is scenery:
 		say "[string]";
@@ -58,7 +58,7 @@ Rule for printing the name of a thing (called item) while looking or taking inve
 	otherwise:
 		say "[link][string][as]> [string][end link]".
 
-Rule for printing the plural name of a thing (called item) while looking or taking inventory:
+Rule for printing the plural name of a thing (called item) while looking or taking inventory or taking sidebar inventory:
 	let string be the printed name of item;
 	let stringp be the printed plural name of item;
 	if item is scenery:

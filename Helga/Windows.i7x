@@ -4,18 +4,25 @@ Include Flexible Windows by Jon Ingold.
 
 Book - Inventory
 
+[The side-window is a graphics g-window spawned by the main-window.]
 The side-window is a text-buffer g-window spawned by the main-window.
 The position of the side-window is g-placeright. 
 The measurement of the side-window is 15.
 The scale method of side-window is g-proportional.
+[The side-window has back-colour g-white.]
 
 A window-drawing rule for the side-window (this is the construct inventory rule):
 	move focus to side-window, clearing the window;
-	try taking inventory;
+	try taking sidebar inventory;
 	return to main screen.
 
-Every turn when the side-window is g-present: follow the window-drawing rules for the side-window.
+Taking sidebar inventory is an action applying to nothing.
+Carry out taking sidebar inventory:
+if the number of things enclosed by the player is 0, say "You are empty-handed." instead;
+say "You are carrying: [line break]";
+list the contents of the player, with newlines, indented, giving inventory information, including contents, with extra indentation.
 
+Every turn when the side-window is g-present: follow the window-drawing rules for the side-window.
 
 The right-border is a graphics g-window spawned by the side-window.
 The position of right-border is g-placeleft.
@@ -77,11 +84,13 @@ follow the window-drawing rules for the banner-window.
 Book - Opening and Closing Windows on Command
 
 To open all windows:
+close the status window;
 if banner-window is g-present, shut down the banner-window;
 open up the side-window;
 open up the graphics-window;
 open up right-border;
-open up the banner-window.
+open up the banner-window;
+open the status window.
 
 Closing the panels is an action out of world.
 Understand "close panels" and "panels off" as closing the panels.

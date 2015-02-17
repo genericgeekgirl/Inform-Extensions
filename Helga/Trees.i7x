@@ -19,10 +19,16 @@ Every turn when Light Green Thumb is happening:
 
 Volume - Watering
 
-A watering-can is a kind of thing.
+A thing can be not-donatable. A thing is usually not not-donatable.
+
+A watering-can is a kind of thing. A watering-can is usually not-donatable.
 
 A watering can is a watering-can.
 The description is "A stainless-steel 5-gallon watering can. It can be used to water plants, trees, and crops."
+
+Understand "water" as watering can.
+Instead of drinking the watering can:
+say "You manage to pour water all over yourself in the process."
 
 The irrigator 9000 is a watering-can.
 The description is "Galvanised for your pleasure, the Irrigator 9000 offers unparalleled waterability for the constant gardener."
@@ -52,6 +58,9 @@ Check watering something (this is the needs a watering can rule):
 	if the player does not enclose a watering-can:
 		say "That's going to be tough without a watering can." instead.
 
+After examining a tree (called T):
+say "[The T] is [if T is lonely and T is thirsty]lonely and thirsty[otherwise if T is lonely]lonely[otherwise if T is thirsty]thirsty[otherwise]happy and ready to be harvested[end if]."
+                
 Check watering a tree (called T):
 	if T is not thirsty:
 		say "[The T] says, '[water fail response of T]'[line break]" instead.
@@ -240,7 +249,11 @@ The harvest response of paper tree is "[one of]Take these sheets away.[line brea
 Book - Egg Plants
 
 An egg plant is a kind of cave tree.
-The description of the Egg Plant is "The noble Egg Plant. As is fitting to a fruit as ovoidly perfect as a prolate moon, Egg Plants (of course) can only be found underground in cool, dark places."
+The description of the Egg Plant is "The noble Egg Plant. As is fitting to a fruit as ovoidly perfect as a prolate moon, Egg Plants (of course) can only be found underground in cool, dark places.[first time] (But for the sake of this tutorial, we shall imagine otherwise.)[only]"
+
+Imagining otherwise is an action applying to nothing.
+Understand "imagine otherwise" as imagining otherwise.
+Carry out imagining otherwise: say "That's the spirit!"
 
 The harvest response of egg plant is "[one of]This. For you.[or]We grew this. You take.[or]This harvest good. Have it.[or]Ooooof. Take harvest. Heavy.[or]We made this. You can have.[at random]".
 

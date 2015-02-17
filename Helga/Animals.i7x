@@ -34,6 +34,8 @@ Book - Capture
 
 Check taking a butterfly: say "You'll never catch it with your bare hands." instead.
 
+Understand the command "capture" and "catch" as "take".
+
 A net is a kind of thing. The printed name of a net is "butterfly net". Understand "butterfly net" as a net.
 The description is "It sure makes catching Butterflies easier, but at what cost?"
 
@@ -69,6 +71,8 @@ Chapter - Butterfly Lotion
 
 A lotion is a kind of thing. The printed name of a lotion is "butterfly lotion". Understand "butterfly lotion" as a lotion.
 The description is "A tiny tube of butterfly lotion, without which a butterfly cannot be massaged. Remember: butterflies chafe easily, but they still like it pretty hard."
+
+Instead of opening a lotion (called L): try using L.
 
 A lotion has a number called uses. Uses is usually 5.
 
@@ -302,7 +306,11 @@ Check touching a sad piggy:
 Book - Nibbling
 
 Nibbling is an action applying to one thing.
-Understand "nibble [piggy]" as nibbling.
+Understand "nibble [something]" as nibbling.
+
+Check nibbling:
+	if the noun is not a piggy:
+		try eating the noun instead.
 
 Before eating a piggy (called P): try nibbling P instead.
 
@@ -530,7 +538,16 @@ Animals ends here.
 "Are you sure you want to let your $animal out into the wilderness?"
 "Your $animal has gone to enjoy its life in the wilderness."]
 
-To say wisdom: say "[one of]A pig in the hand is worth two in the poke.[or]After you tend a weedy patch, plant something quickly, or all your efforts will be for naught.[or]Cherries are the root of all fruits[or]Cosma does not remember the butterflies, but we remember her.[or]Don't sweat the petty things. Also, don't pet the sweaty things.[or]Don't take any wooden coins.[or]Have you been hoeing weedy patches to no avail? Soil Appreciation will help you.[or]If a plant isn't hungry, don't feed it, silly.[or]If you want to choose what kinds of beans to plant, you're going to need a Bean Seasoner.[or]Now is the Kukubee Winter of our discontent.[or]Of course the chicken came before the egg. That's why it crossed the road.[or]What is the sound of one piggy napping?[or]You'll have more luck nibbling piggies if you pet and feed them first.[cycling]"
+To say wisdom: say "[one of]A pig in the hand is worth two in the poke[or]After you tend a weedy patch, plant something quickly, or all your efforts will be for naught[or]Cherries are the root of all fruits[or]Cosma does not remember the butterflies, but we remember her[or]Don't sweat the petty things. Also, don't pet the sweaty things[or]Don't take any wooden coins[or]If a plant isn't hungry, don't feed it, silly[or]Now is the Kukubee Winter of our discontent[or]Of course the chicken came before the egg. That's why it crossed the road[or]You'll have more luck nibbling piggies if you pet and feed them first[cycling]"
+
+Instead of talking to a piggy:
+say "The piggy oinks in response."
+
+Instead of talking to a chicken:
+say "The chicken clucks in surprise."
+
+Instead of talking to a butterfly:
+say "The butterfly says, [wisdom]."
 
 Volume - Seasoned Eggs
 

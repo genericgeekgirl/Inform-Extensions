@@ -15,7 +15,7 @@ Sound of newgame is the file "game_loaded.ogg".
 Sound of questcomplete is the file "quest_complete.ogg".
 Sound of achievement is the file "discover_new_item.ogg".
 
-Sound of forest is the file "sooth.ogg".
+Sound of forest is the file "Carefree.ogg".
 Sound of hell is the file "env_underworld.ogg".
 
 Sound of squishing grapes is the file "squish.ogg".

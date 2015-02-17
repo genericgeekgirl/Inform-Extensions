@@ -18,6 +18,17 @@ Volume - Seeds
 A crop seed is a kind of thing. Understand "seeds" and "packet of seeds" and "packet" as a crop seed.
 A crop seed has a text called produce.
 
+Before doing anything except examining to a crop seed (called C):
+	if C is part of a crop:
+		say "You can't see any such thing." instead.
+
+Before examining a crop seed (called C):
+	if C is part of a crop:
+		say "You can obtain seeds by feeding crop vegetables to piggies." instead.
+
+Does the player mean doing anything to a crop seed: it is unlikely.
+Does the player mean doing anything to a crop: it is likely.
+
 Book - Broccoli Seed
 
 A packet of broccoli seeds is a kind of crop seed.

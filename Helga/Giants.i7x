@@ -161,6 +161,9 @@ Understand "give [something] to [shrine]" as donating it to.
 
 Instead of inserting something into a shrine: try donating the noun to the second noun.
 
+Check donating something (called I) to a shrine:
+if I is not-donatable, say "You cannot donate that item." instead. [TODO: cute response]
+
 Carry out donating something (called I) to a shrine (called S):
 let G be the giant of S;
 let F be 5; [TODO]

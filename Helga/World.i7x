@@ -60,10 +60,14 @@ Chapter - Nylon Phool
 
 Nylon Phool is a street in Gentle_Island. "A twisty river flows next to this street and mushrooms grow on the rock walls.[first time][paragraph break][as the parser]There are animals all over and they can really help you out. But you usually have to be nice to them first.[as normal][only]"
 
+Swimming is an action applying to nothing.
+Understand "swim" or "swim in river" as swimming.
+Carry out swimming: say "You don't know how to swim!"
+
 The river is scenery in Nylon Phool. The description is "A twisty river flows next to the street." Understand "water" as river.
 Instead of drinking the river: say "The water level is too low for you to reach without falling in."
 The nylon-phool-mushrooms are scenery in Nylon Phool. The description is "Red and green mushrooms grow on the rock walls."
-Understand "mushrooms" as nylon-phool-mushrooms.
+Understand "mushrooms" and "mushroom" and "rock walls" and "walls" and "rock" as nylon-phool-mushrooms.
 The nylon-phool-ferns are scenery in Nylon Phool. The description is "Curly green ferns grow alongside the path."
 Understand "ferns" as nylon-phool-ferns.
 

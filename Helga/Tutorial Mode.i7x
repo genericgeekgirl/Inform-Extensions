@@ -21,6 +21,8 @@ After reading a command when tutorial mode is true (this is the require correct 
 		say "That command is not available right now.";
 		reject the player's command;
 	if the player's command includes "get", replace the matched text with "take";	
+	if the player's command includes "myself", replace the matched text with "me";	
+	if the player's command includes "self", replace the matched text with "me";	
 	if the player's command includes "x", replace the matched text with "examine";
 	if the player's command includes "look at", replace the matched text with "examine";
 	if the player's command includes "i", replace the matched text with "inventory";
@@ -65,8 +67,8 @@ An instructional rule (this is the first we imagine rule):
 An instructional rule (this is the examine player rule):
 	if examine player rule is listed in the completed instruction list, make no decision;
 	if the first we imagine rule is listed in the completed instruction list:
-		now the expected command is "examine"; [To get around issues of examine self, etc]
-		say "[as the parser][one of]Now try EXAMINING yourself to get a better idea of who you are.[or][or]Hint: 'EXAMINE ME'.[stopping][as normal]";
+		now the expected command is "examine me";
+		say "[as the parser][one of]Now EXAMINE yourself to get a better idea of who you are.[or][or]Hint: 'EXAMINE ME'.[stopping][as normal]";
 		now the held rule is the examine player rule;
 		rule succeeds;
 	otherwise:

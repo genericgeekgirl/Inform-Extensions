@@ -42,7 +42,9 @@ The description is "It sure makes catching Butterflies easier, but at what cost?
 Book - Massaging
 
 Understand the command "massage" as "touch".
+Instead of rubbing a butterfly (called B): try touching B.
 
+Instead of hugging a butterfly (called B): try squeezing B.
 Before squeezing a butterfly: say "Butterflies prefer to be massaged." instead.
 
 Check touching a butterfly (this is the massages require lotion rule):
@@ -93,6 +95,12 @@ Instead of using a lotion when a butterfly is in the location:
 Instead of using a lotion (called L) on a butterfly:
 	try using L.
         
+Using butterfly lotion is an action applying to two things.
+Understand "massage [something] with [lotion]" and "rub [something] with [lotion]" and "rub [lotion] on [something]" as using butterfly lotion.
+
+Instead of using butterfly lotion:
+if a lotion (called L) is enclosed by the player, try using L.
+
 Check using a lotion on something:
 	if the second noun is not the butterfly:
 		say "Nuh-uh. This lotion doesn't work on [printed plural name of second noun]. Only butterflies." instead.
@@ -221,8 +229,15 @@ Book - Squeezing
 The report touching other people rule is not listed in the report touching rulebook.
 The innuendo about squeezing people rule is not listed in any rulebook.
 
+Understand the command "hug" as something new.
+Hugging is an action applying to one thing.
+Understand "hug [something]" as hugging.
+Carry out hugging: say "You hug [the noun]."
+
 Instead of touching a chicken:
 	say "You give the chicken a nice pat. It clucks in surprise."
+
+Instead of hugging a chicken (called C): try squeezing the C.
 
 Before doing anything except taking to a grain (called G):
 	if G is part of a chicken:
@@ -273,6 +288,10 @@ A pig bait is a kind of thing. The description is "A sack of tempting pig bait. 
 Book - Petting
 
 Understand the command "pet" as "touch".
+
+Instead of rubbing a piggy (called P): try touching P.
+
+Instead of hugging a piggy: say "You hug the piggy. It oinks happily."
 
 Before squeezing a piggy:
 	say "Piggies do not enjoy being squeezed. Try petting it instead." instead.

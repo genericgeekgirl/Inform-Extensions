@@ -164,6 +164,9 @@ Instead of inserting something into a shrine: try donating the noun to the secon
 Check donating something (called I) to a shrine:
 if I is not-donatable, say "You cannot donate that item." instead. [TODO: cute response]
 
+Check donating something (called I) to a shrine (called S):
+if I is the player, try entering S instead.
+
 Carry out donating something (called I) to a shrine (called S):
 let G be the giant of S;
 let F be 5; [TODO]

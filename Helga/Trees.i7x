@@ -36,6 +36,22 @@ The description is "Galvanised for your pleasure, the Irrigator 9000 offers unpa
 Watering is an action applying to one thing.
 Understand "water [something]" as watering.
 
+Pouring is an action applying to one thing.
+Understand "pour [something]" as pouring.
+Carry out pouring: say "You can't pour that."
+
+Instead of pouring a watering-can (called C):
+try using C.
+
+Pouring it on is an action applying to two things.
+Understand "pour [something] on [something]" as pouring it on.
+
+Check pouring something on something:
+if the noun is not a watering-can, say "You can't pour that." instead.
+
+Instead of pouring a watering-can on something:
+try watering the second noun.
+
 Instead of using a watering-can:
 	try watering the player.
 
@@ -50,7 +66,7 @@ Before using a watering-can (called C):
 Check watering something:
 	if the noun is not a tree:
 		if the noun is the player:
-			say "Now you are soaking wet.";
+			say "You pour water all over yourself. Now you are soaking wet.";
 		otherwise:
 			say "Now [the noun] is soaking wet."
 
@@ -77,6 +93,8 @@ After watering a tree (called T):
 Volume - Petting
 
 [sound: PET_TRANT]
+
+Instead of hugging a tree (called T): try touching T.
 
 Check touching a tree (called T):
 	if T is not lonely:
@@ -576,6 +594,7 @@ The description is "Some tendrils of bitter saffron."
 
 Loving is an action applying to one thing.
 Understand "love [something]" as loving.
+Understand "show love to [something]" and "give love to [something]" as loving.
 Instead of loving something: try touching the noun.
 
 Instead of loving the saffron:

@@ -6,7 +6,7 @@ Include Multiple Sounds by Massimo Stella.
 
 Volume - Audio
 
-When play begins: set the background volume to 2.
+When play begins: set the background volume to 3.
 When play begins: set the foreground volume to 5.
 
 Book - Sounds

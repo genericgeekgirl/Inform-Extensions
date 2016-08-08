@@ -6,9 +6,6 @@ Include Multiple Sounds by Massimo Stella.
 
 Volume - Audio
 
-When play begins: set the background volume to 3.
-When play begins: set the foreground volume to 5.
-
 Book - Sounds
 
 Sound of newgame is the file "game_loaded.ogg".
@@ -46,7 +43,11 @@ sound of gas_harvest is the file "gas_tree.ogg".
 Book - Beginning & Ending Sounds
 
 When play begins:
-if sound-allowed is true, play sound of newgame.
+	if glulx sound is supported, now sound-allowed is true;
+	if sound-allowed is true:
+		set the background volume to 3;
+		set the foreground volume to 5;
+		play sound of newgame.
 
 When play ends:
 	stop the background sound;
@@ -80,7 +81,7 @@ To play the room sound for (R - a room):
                                                         
 Book - Turning Sound On and Off
 
-Sound-allowed is a truth state that varies. Sound-allowed is true.
+Sound-allowed is a truth state that varies. Sound-allowed is false.
 
 Turning off sound is an action out of world.
 Understand "sound off" as turning off sound.

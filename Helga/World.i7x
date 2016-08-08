@@ -31,7 +31,7 @@ The grass is scenery in Next Step. The description is "The grass is green."
 The sky is scenery in Next Step. The description is "The sky is blue."
 The clouds are scenery in Next Step. The description is "The clouds are white and fluffy."
 The next-step-trees are scenery in Next Step. The description is "A mixture of deciduous and evergreen trees dot the landscape."
-Understand "trees" as next-step-trees.
+Understand "trees" and "tree" as next-step-trees.
 
 [one-way directions]
 When play begins:
@@ -52,7 +52,7 @@ After going from Next Step:
 	continue the action.
 
 After looking for the third time:
-say "[as the parser][navigation]. Why don't you try going to [link]Nylon Phool[end link]?[as normal]"
+say "[as the parser][navigation]. Why don't you try going to Nylon Phool?[as normal]"
 
 To say navigation: say "There are no compass directions in Ur. A list of adjacent streets is in the status line above. You can also type STREETS.[paragraph break]You can travel to any street simply by typing the name of the street"
 
@@ -71,17 +71,22 @@ Understand "mushrooms" and "mushroom" and "rock walls" and "walls" and "rock" as
 The nylon-phool-ferns are scenery in Nylon Phool. The description is "Curly green ferns grow alongside the path."
 Understand "ferns" as nylon-phool-ferns.
 
+Instead of taking the nylon-phool-mushrooms: say "They're probably poisonous."
+
 The skulls are scenery in Nylon Phool. The description is "A collection of skulls, just chilling on a mushroom. On closer look, you realize they're a strange species of mushroom. Whew."
 
 One butterfly, one piggy and one chicken are in Nylon Phool.
 
 Chapter - Ortolana
 
-Ortolana is a street in Gentle_Island. "The homes on this street are made from hollowed out bottle trees. You can [link]enter[as]enter hut[end link] one of the huts. The local flora consists of groddle plants, bogwillow, firebean plants, cattails and mushrooms. Unripe barnacles are forming on the side of the huts.[paragraph break]You can see a table here[if the number of things on the table is not zero], on which is [a list of things on the table][end if]."
+Ortolana is a street in Gentle_Island. "The homes on this street are made from hollowed out bottle trees. You can enter one of the huts. The local flora consists of groddle plants, bogwillow, firebean plants, cattails and mushrooms. Unripe barnacles are forming on the side of the huts.[paragraph break]You can see a table here[if the number of things on the table is not zero], on which is [a list of things on the table][end if]."
 
 The flora is scenery in Ortolana. Understand "groddle plants" and "bogwillow" and "firebean plants" and "cattails" and "mushrooms" as flora.
 The description is "The local flora consists of groddle plants, bogwillow, firebean plants, cattails and mushrooms."
 The barnacles are scenery in Ortolana. The description is "Unripe barnacles form on the side of huts."
+
+Instead of taking the flora: say "You don't need that."
+Instead of taking the barnacles: say "There's nothing to scrape yet."
 
 The table is a supporter and scenery in Ortolana.
 The description is "It has four legs, like a pig. It isn't a pig. It's a plain old basic table. Do not nibble it."
@@ -91,11 +96,11 @@ One common crudites, one flummery, one spicy grog and one fruity juice are on th
 
 The hut is an open unopenable door and scenery in Ortolana. It is inside from Ortolana and outside from Shimla Shack.
 The description of the hut is "The homes on this street are made from hollowed out bottle trees. You can enter one of the huts."
-Understand "bottle trees" as hut.
+Understand "bottle trees" and "bottle tree" as hut.
 
 Chapter - Shimla Shack
 
-Shimla Shack is a room in Gentle_Island. "You are inside a firebog house. A stained red rug covers the floor and the walls are adorned with paper talismans, charms and strings of dried lizards. You can [link]exit[as]exit hut[end link] the hut to return to Ortolana.[first time][paragraph break][as the parser]In Ur, there are lots of things to harvest, craft and eat.[as normal][only][paragraph break]You can see a table here[if the number of things on the counter is not zero], on which is [a list of things on the counter][end if]."
+Shimla Shack is a room in Gentle_Island. "You are inside a firebog house. A stained red rug covers the floor and the walls are adorned with paper talismans, charms and strings of dried lizards. You can exit the hut to return to Ortolana.[first time][paragraph break][as the parser]In Ur, there are lots of things to harvest, craft and eat.[as normal][only][paragraph break]You can see a counter here[if the number of things on the counter is not zero], on which is [a list of things on the counter][end if]."
 
 The rug is scenery in Shimla Shack. The description is "Most rugs are said to pull the room together because they're aesthetically pleasing. This hardwearing floorcovering literally pulls the room together, because it has its own centre of gravity. Not really. It's just a rug."
 Understand the command "munch" as "eat".
@@ -106,7 +111,7 @@ Understand "paper talismans" and "talismans" and "charms" and "strings of dried 
 
 The describe what's on scenery supporters in room descriptions rule is not listed in any rulebook.
 
-The counter is a supporter and scenery in Shimla Shack.
+The counter is a supporter and scenery in Shimla Shack. Understand "table" as counter.
 The description is "Why own a counter? Because it is an admirably flat surface, useful for dividing large spaces. (This is known as 'The Counter Argument'. A Counter-Counter Argument exists, but it only confuses everything)."
 
 Six tomatoes, one basic cheese, six buns, and the knifen board are on the counter.
@@ -128,7 +133,7 @@ One fruit tree, one spice plant, one bean tree, one egg plant, one bubble tree, 
 
 Chapter - Namaste
 
-Namaste is a street in Gentle_Island. "This street is home to red, blue and purple trees, various ferns and a strange Purple Creature. There is a large wooden [link]sign[end link] here."
+Namaste is a street in Gentle_Island. "This street is home to red, blue and purple trees, various ferns and a strange Purple Creature. There is a large wooden sign here."
 
 The namaste-trees are scenery in Namaste. The description is "Red, blue and purple trees grow along this street."
 Understand "trees" as namaste-trees.
@@ -147,7 +152,7 @@ The description is "It looks a bit like a ghost. Less scary, though, what with b
 The grass guys is a person and scenery in Namaste.
 The description is "Someone has painted faces on these rocks. Or maybe they're alive. You're not quite sure."
 
-A sign is scenery. The description is "The sign reads 'This way to leave Gentle Island'. The arrow points towards [link]Savanna Sunset[end link]." Understand "arrow" as the sign. Understand "wooden sign" and "wooden" and "large wooden sign" as sign.
+A sign is scenery. The description is "The sign reads 'This way to leave Gentle Island'. The arrow points towards Savanna Sunset." Understand "arrow" as the sign. Understand "wooden sign" and "wooden" and "large wooden sign" as sign.
 
 Reading is an action applying to one thing.
 Understand "read [sign]" as reading.
@@ -155,12 +160,12 @@ Instead of reading the sign: try examining the sign.
 
 Chapter - Savanna Sunset
 
-Savanna Sunset is a street in Gentle_Island. "At one end of this street lined with pampas and acacia trees is a [link]teleporter[as]examine teleporter[end link]."
+Savanna Sunset is a street in Gentle_Island. "At one end of this street lined with pampas and acacia trees is a teleporter."
 
 The savanna-sunset-trees are scenery in Savanna Sunset. The description is "Pampas and acacia trees line this street."
 Understand "trees" and "pampas" and "acacia" as savanna-sunset-trees.
 
-The teleporter is a locked door and scenery. It is south from Savanna Sunset. The description is "This teleporter will take you off Gentle Island so you can explore the rest of the world. When you are ready to go, you may [link]ENTER[as]ENTER teleporter[end link] it."
+The teleporter is a locked door and scenery. It is south from Savanna Sunset. The description is "This teleporter will take you off Gentle Island so you can explore the rest of the world. When you are ready to go, you may enter it."
 
 Before entering the teleporter while the teleporter is locked:
 	say "Once you've left Gentle Island, there will be no turning back. You have scored [score] points of imagination out of a possible [maximum score]. Are you sure you'd like to proceed? (Y/N)";

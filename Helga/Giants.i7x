@@ -158,6 +158,11 @@ Donating it to is an action applying to two things.
 Understand "Donate [something] to [shrine]" as donating it to.
 
 Understand "give [something] to [shrine]" as donating it to.
+Understand "deposit [something] in [shrine]" as donating it to.
+
+Understand "donate [things] to [shrine]" as donating it to.
+Understand "give [things] to [shrine]" as donating it to.
+Understand "deposit [things] in [shrine]" as donating it to.
 
 Instead of inserting something into a shrine: try donating the noun to the second noun.
 

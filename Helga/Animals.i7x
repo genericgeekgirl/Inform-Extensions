@@ -32,7 +32,7 @@ A butterfly has a number called lifepoints. Lifepoints is usually 400.
 
 Book - Capture
 
-Check taking a butterfly: say "You'll never catch it with your bare hands." instead.
+Check taking a butterfly: say "The butterfly flutters just out of reach." instead.
 
 Understand the command "capture" and "catch" as "take".
 
@@ -83,7 +83,7 @@ Before going to nylon phool:
 
 One lotion is in Nylon Phool.
 
-Instead of eating or tasting a lotion (called L):
+Instead of eating or drinking or tasting a lotion (called L):
 	say "You tried to taste a little but you ended up tasting a lot! And now it's gone! Oddly mood enhancing though.";
 	increase the player's mood by 12;
 	remove L from play.
@@ -566,7 +566,7 @@ Instead of talking to a chicken:
 say "The chicken clucks in surprise."
 
 Instead of talking to a butterfly:
-say "The butterfly says, [wisdom]."
+say "The butterfly says, '[wisdom].'"
 
 Volume - Seasoned Eggs
 

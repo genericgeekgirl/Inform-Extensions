@@ -14,6 +14,7 @@ Understand "restore" or "quit" or "q" or "save" or "restart" or "version" as "[m
 Understand "imagination" or "img" or "about" or "info" or "credits" or "help" or "hint" or "hints" or "menu" or "walkthrough" as "[meta]".
 Understand "*" or "transcript" or "panels" or "sound" as "[meta]".
 Understand "Imagine" as "[meta]" when the location is not in Outside Ur.
+Understand "novice off" as "[meta]".
 
 After reading a command when tutorial mode is true (this is the require correct response rule):	
 	if the player's command includes "[meta]", make no decision;
@@ -25,6 +26,7 @@ After reading a command when tutorial mode is true (this is the require correct 
 	if the player's command includes "self", replace the matched text with "me";	
 	if the player's command includes "x", replace the matched text with "examine";
 	if the player's command includes "look at", replace the matched text with "examine";
+	if the player's command includes "l", replace the matched text with "look";	
 	if the player's command includes "i", replace the matched text with "inventory";
 	if the player's command includes "inv", replace the matched text with "inventory";
 	if the expected command is "", make no decision;
@@ -60,7 +62,7 @@ The instructional rules are a rulebook.
 An instructional rule (this is the first we imagine rule):
 	if the first we imagine rule is listed in the completed instruction list, make no decision;
 	now the expected command is "imagine";
-	say "[as the parser][one of]The [bold type]>[as the parser] prompt below is my way of asking you what you want to do next. You may respond by typing an instruction, usually an imperative verb. Try it out by typing IMAGINE now.[or]Please type IMAGINE to begin.[stopping][as normal]";
+	say "[as the parser][one of]The [bold type]>[as the parser] prompt below is my way of asking you what you want to do next. You may respond by typing an instruction, usually an imperative verb followed by a noun. Try it out by typing IMAGINE now.[or]Please type IMAGINE to begin.[stopping][as normal]";
 	now the held rule is the first we imagine rule;
 	rule succeeds;
                                         

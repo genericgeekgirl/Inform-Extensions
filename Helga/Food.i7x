@@ -578,7 +578,7 @@ EZ Cooking ends when EZCooking is 1.
 Every turn when EZ Cooking is happening:
 	if a lazy salad has been handled and a cheezy sammich has been handled and a meaty sammich has been handled:
 		now EZCooking is 1;
-		record "Breezy, EZ Cookin[']" as achieved;
+		record "Breezy, EZ Cooking" as achieved;
 		if sound-allowed is true, play sound of achievement in foreground;
 		say "[as the parser]Looks like your skills just got a little tastier! Well done, kid.[as normal]".
 
@@ -726,7 +726,7 @@ Carry out preparing:
 				let the new item be a new object cloned from the recipe;
 				now the new item is in the location;
 				try silently taking the new item;
-		say "You slice and dice, turning [ingredients entry] into a [link][recipe entry][end link].";
+		say "You slice and dice, turning [ingredients entry] into a [recipe entry].";
 		if sound-allowed is true, play sound of chopping in foreground;
 
 Food ends here.

@@ -33,6 +33,16 @@ say "You manage to pour water all over yourself in the process."
 The irrigator 9000 is a watering-can.
 The description is "Galvanised for your pleasure, the Irrigator 9000 offers unparalleled waterability for the constant gardener."
 
+Filling is an action applying to one thing.
+Understand "fill [something]" as filling.
+
+Check filling something:
+	if the noun is not a watering-can:    
+		say "I don't know what you mean by that."
+
+Carry out filling a watering-can:
+    say "The watering can is already full!"
+    
 Watering is an action applying to one thing.
 Understand "water [something]" as watering.
 
@@ -67,6 +77,8 @@ Check watering something:
 	if the noun is not a tree:
 		if the noun is the player:
 			say "You pour water all over yourself. Now you are soaking wet.";
+		if the noun is the river:
+			say "Congratulations. You've watered the river.";
 		otherwise:
 			say "Now [the noun] is soaking wet."
 
@@ -109,6 +121,18 @@ After touching a tree (called T):
 	decrease the player's energy by 2;
 	try T increasing health.
 	
+Volume - Tending
+
+Tending is an action applying to one thing.
+Understand "tend [something]" and "tend to [something]" as tending.
+
+Check tending something (this is the can only tend tree rule):
+	if the noun is not a tree:
+		say "I don't know what you mean by that." instead.
+
+Carry out tending a tree:
+	say "[as the parser]Regular watering and petting keeps trees happy and healthy."
+
 Volume - Harvesting
 
 Harvesting is an action applying to one thing.
@@ -128,7 +152,7 @@ Check harvesting something (this is the can only harvest trees rule):
 		say "I don't know what you mean by that." instead.
 
 Check harvesting a tree (called T) (this is the nothing to pick rule):
-	if the fruit count of T is 0, say "There's nothing to pick, cowboy." instead.
+	if the fruit count of T is 0, say "There's nothing to pick, cowboy[first time].[paragraph break][as the parser]You need to tend to the tree before you can harvest anything from it[only][as normal]." instead.
 
 Carry out harvesting a tree (called T):
 	say "You harvested [a T] and received [fruit count of T] [printed plural name of random trant_fruit that is part of T].[paragraph break][The T] says '[harvest response of T]'[line break]";
@@ -148,6 +172,8 @@ After harvesting a tree (called T):
 Volume - Trees
 
 A tree is a kind of thing. A tree is fixed in place.
+
+Instead of taking a tree, say "You can't take an entire tree!"
 
 A light tree is a kind of tree.
 A cave tree is a kind of tree.
@@ -214,7 +240,7 @@ The description is "The delectable Spice Plant. Seductively dangling with Allspi
 
 The harvest response of spice plant is "[one of]Ooooo! Easy there, little grabbyhands...[or]Careful what you're yanking, little friend.[or]Well now. It's a little spice you're after, is it?[or]My... you're a little handsy. Have we been introduced?[or]Oooh! I say! Goosed by a Glitch.[at random]".
 
-The pet response of spice plant is "[one of]Eh? What? How nice...[or]My, my: such soft hands.[or]Oh my! This is unexpectedly satisfying...[or]Well I never...[or]Nice job, kid, but could be spicer. Know whaddai mean?[at random]".
+The pet response of spice plant is "[one of]Eh? What? How nice...[or]My, my: such soft hands.[or]Oh my! This is unexpectedly satisfying...[or]Well I never...[or]Nice job, kid, but could be spicier. Know whaddai mean?[at random]".
 
 The water response of spice plant is "[one of]Now now, young'un, not too much water...[or]I'd prefer a fine scotch, but if water is all you have...[or]Petting? Watering? My my, we ARE attentive.[or]Such a delicate pour you have, my sweet.[or]You could pour slurry from a bucket and make it refreshing...[at random]".
 

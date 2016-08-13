@@ -1,5 +1,8 @@
-Version 3 of Hiding Under by Eric Eve begins here.
-"Allows things to be hidden under other things, using a many-to-one underconcealment relation. Can be used either standalone (with basic functionality) or in conjunction with Underside (to add fuller functionality to both extensions). Version 3 of Hiding Under avoids using phrases deprecated in Version 6E59 of Inform."
+Version 3 of Hiding Under by Adri begins here.
+
+[Note: This extension has been adapted ever-so-slightly from Eric Eve's Hiding Under]
+
+Use authorial modesty.
 
 Part 1 - The Underconcealment Relation
 
@@ -56,7 +59,7 @@ This is the revised looking under rule:
 	say find-hidden-under the noun;
       now nothing is hidden under the noun;   
    otherwise;
-      consider the standard looking under rule;
+      say "There is nothing under [the noun].";
    end if.
 
 The revised looking under rule is listed instead of the standard looking under rule in the carry out looking under rules.

@@ -48,7 +48,7 @@ Carry out looking behind:
 	say find-hidden-behind the noun;
       now nothing is hidden behind the noun;   
    otherwise;
-      say "You find nothing of interest.";
+      say "There is nothing behind [the noun].";
    end if.
 
 Part 5 - Common Grammar
